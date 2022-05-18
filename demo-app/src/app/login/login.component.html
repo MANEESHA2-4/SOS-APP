@@ -1,0 +1,53 @@
+<!-- <body>
+    <div class="center">
+      <h1 class="text-light-dark" >LOGIN</h1>
+      <form [formGroup]="formgroup">
+        <div class="text_field">
+          <input type="text"  placeholder="Username" formControlName="username" class="form-control"/>
+          <span class="text-danger"
+                *ngIf="formgroup.controls['username'].touched && formgroup.hasError('required','username')">*
+                Name is required!!</span>
+        </div>
+        <div class="text_field">
+          <input type="password"  placeholder="Password" formControlName="password" class="form-control"/>
+          <span class="text-danger"
+                *ngIf="formgroup.controls['password'].touched && formgroup.hasError('required','password')">*
+                Password is required!!</span>
+        </div>
+         <div class="pass">Forgot Password?</div> -->
+        <!-- <input type="submit" value="Login" />
+        <label for="signup" class="signup_link">Not a member? <a routerLink="/signup" class="text-primary" id="footer">Signup</a></label>
+      </form>
+    </div>
+  </body>  -->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+                <div class="form-group">
+                    <label for="email" class='fa fa-envelope'></label>
+                    <input type="email" placeholder="Email Address" formControlName="email">
+                    <span class="text-danger" *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched"><br>Invalid Email Address</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="fa fa-lock"></label>
+                    <input type="password" placeholder="Password" formControlName="password">
+                    <span class="text-danger" *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched"><br>Invalid Password</span>
+                </div>
+
+                <div class="text-center">
+                    <button id="submitButton" type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+                </div>
+                <div class="text-center text-success" *ngIf="successMessage">{{successMessage}}</div>
+                <div class="signup text-center">
+                  <label for="signup" class="text-dark"
+                    >Don't Have a Account?
+                    <a routerLink="/signup" class="text-danger">Signup</a></label
+                  >
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
