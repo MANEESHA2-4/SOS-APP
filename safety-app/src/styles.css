@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(../node_modules/bootstrap/dist/css/bootstrap.css);
+body{
+    /* background-image: url('https://static.vecteezy.com/system/resources/previews/001/984/361/original/abstract-modern-pattern-background-white-and-grey-geometric-texture-art-illustration-free-vector.jpg'); */
+    /* background-image: url('./assets/round.jpg'); */
+    background-image: url(./assets/side.webp);
+    background: size 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+} 
+    
+
+.lineUp {
+    animation: 3s anim-lineUp ease-out;
+  }
+  @keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+   .next {
+    animation: 3s anim-lineUp ease-out;
+  }
+  @keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
