@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "df",
+  "main": "index.js",
+  "scripts": {
+    "test": "no test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MANEESHA2-4/SOS-APP.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "maneesha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MANEESHA2-4/SOS-APP/issues"
+  },
+  "homepage": "https://github.com/MANEESHA2-4/SOS-APP#readme",
+  "dependencies": {
+    "@cloudant/cloudant": "^4.5.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemailer": "^6.7.5"
+  }
+}
