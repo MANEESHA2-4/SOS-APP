@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">FIRSTNAME</th>
+          <th scope="col">LASTNAME</th>
+          <th scope="col">COUNTRY</th>
+          <th scope="col">MOBILE NO</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of store">
+          <th>{{ row.firstname }}</th>
+          <th>{{ row.lastname }}</th>
+          <th>{{ row.country }}</th>
+         <th>{{ row.mobileno}}</th>
+        
+          <!-- <th>{{ row._id }}</th>
+          <th>{{ row._rev }}</th> -->
+          <td>
+            <!-- <button type="button" class="btn btn-outline-danger"(click)="erase()">Delete</button> -->
+            <button class="btn btn-primary"(click)="erase(row._id,row._rev)" >Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>

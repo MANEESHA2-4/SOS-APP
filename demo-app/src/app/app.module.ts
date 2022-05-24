@@ -12,7 +12,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NextPageComponent } from './next-page/next-page.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddComponent } from './add/add.component';
+import { FaqComponent } from './faq/faq.component';
+import { RemoveComponent } from './remove/remove.component';
+import { TermsComponent } from './terms/terms.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import {HttpClientModule} from '@angular/common/http'
     FooterComponent,
     NavbarComponent,
     SignupComponent,
-    NextPageComponent
+    NextPageComponent,
+    DashboardComponent,
+    AddComponent,
+    FaqComponent,
+    RemoveComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,

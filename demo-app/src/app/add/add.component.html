@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>ADD CONTACTS</h1>
+  <form [formGroup]="addform">
+
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" formControlName="firstname" class="form-control" placeholder="Your name..">
+
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" formControlName="lastname" class="form-control" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" formControlName="country" class="form-control">
+      <option value="India">India</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="mobileno">Mobile Number</label>
+    <!-- <textarea id="mobileno" name="mobileno" placeholder="Write something.." style="height:200px"></textarea> -->
+    <input type="text" value="" placeholder="enter your mobile number" formControlName="mobileno" class="form-control"
+      id="mobileno">
+    <div>
+      <!-- <button type="button" class="btn btn-primary" click="getuser()">ADD</button> -->
+      <button type="button" class="btn btn-primary" (click)="add(this.addform.value)">ADD</button>
+
+    </div>
+
+  </form>
+
+</div>

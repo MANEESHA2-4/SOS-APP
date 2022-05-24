@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators, NgForm } from '@angular/forms';
+
 import{DatabaseService}from'../database.service'
 @Component({
   selector: 'app-signup',
@@ -23,6 +24,9 @@ ngOnInit(): void {
     password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]]
   })
 }
+
+
+
 
 register(FormValue:NgForm){
   this.successMessage = "Successfully Registered..."

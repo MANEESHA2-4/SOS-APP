@@ -11,22 +11,6 @@ export class LoginComponent implements OnInit {
   successMessage:string ="";
   loginForm!: FormGroup; 
   constructor(private fb: FormBuilder) { }
-
-  // formgroup!: FormGroup;
-
-  // constructor(private formbuilder:FormBuilder) { }
-
-//   ngOnInit(): void {
-//     this.formgroup=this.formbuilder.group(
-
-//       {
-//         username:['',Validators.required],
-//         password:['',Validators.required]
-//       }
-//     )
-//   }
-
-// }
 ngOnInit(): void {
   this.loginForm = this.fb.group({
     email:['',[Validators.required, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
