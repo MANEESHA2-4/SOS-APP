@@ -35,6 +35,47 @@ app.post('/postquery', (request, response) => {
   //   response.redirect("..");
   // console.log('Data added');
 });
+app.post('/post_query', (request, response) => {
+  
+  var object = {
+    firstname: request.body.firstname,
+    lastname: request.body.lastname,
+    country: request.body.country,
+    mobileno: request.body. mobileno
+  };
+  dbconnection.insert(object,'add_form').then(
+    (res) => {if(res){
+      console.log('data posted');
+      response.send(res);
+    }else{
+      response.send('error');
+    }
+    }),
+    console.log('Data Added');
+});
+app.get('/get_query', (request, response) => {
+  console.log('start');
+  dbconnection.get('add_form').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+app.get('/get_all_query/:id', (request, response) => {
+  dbconnection.getAll(request.params.id, 'add_form').then((res) => {
+    if (res) {
+      console.log(res);
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+
+  console.log('end');
+});
+
 app.listen(port, (err) => {
   if (err) {
     return console.log('something bad happened', err);
