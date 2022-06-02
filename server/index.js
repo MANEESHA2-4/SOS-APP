@@ -8,33 +8,13 @@ const dbconnection = require('./db');
 const { request, response } = require('express');
 app.use(bodyparser.json());
 app.use(express.static('public'));
+var nano = require('nano');
 app.use(
   cors({
     origin: 'http://localhost:4200',
   })
 );
-app.post('/postquery', (request, response) => {
-  console.log('Hello');
-  // console.log(request);
-  var object = {
-    name: request.body.name,
-    password: request.body.password,
-    email: request.body.email,
-    mobileNumber: request.body. mobileNumber
-  };
-  dbconnection.insert(object).then(
-    (res) => {
-      console.log('data posted');
-      response.send(res);
-    },
-    (rej) => {
-      console.log('data cant posted');
-      response.send(rej);
-    }
-  );
-  //   response.redirect("..");
-  // console.log('Data added');
-});
+
 app.post('/post_query', (request, response) => {
   
   var object = {
@@ -53,6 +33,37 @@ app.post('/post_query', (request, response) => {
     }),
     console.log('Data Added');
 });
+
+app.post('/postdata', function (req,res) {
+  var name = req.body.firstname;
+  console.log(name);
+  var objectnew = {
+      name : req.body.name,
+      mobileNumber : req.body.mobileNumber,
+      email : req.body.email,
+      password : req.body.password,
+      "type" : "user"
+      
+      
+  }
+  console.log("data from angular",objectnew);
+  dbconnection.trainee.insert(objectnew).then((data) => {
+      console.log("data inserted successfully",data);
+      res.send(data);
+  }).catch((err=>{
+    console.log("err2",err);
+    res.status(400).send({
+      message:err
+    })
+    }));
+})
+  
+  
+
+
+
+
+
 app.get('/get_query', (request, response) => {
   console.log('start');
   dbconnection.get('add_form').then((res) => {
@@ -65,6 +76,183 @@ app.get('/get_query', (request, response) => {
 });
 app.get('/get_all_query/:id', (request, response) => {
   dbconnection.getAll(request.params.id, 'add_form').then((res) => {
+    if (res) {
+      console.log(res);
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+
+  console.log('end');
+});
+
+
+
+
+
+app.get('/getdata/:id', (req,res) => {
+  console.log("retreived......",req.params.id);
+
+ 
+  var object = {
+      selector: {
+          
+          "email" : req.params.id
+       
+          
+
+      }
+  }
+  dbconnection.trainee.find(object).then((data => {
+    
+     
+      console.log("firstname",data);  
+      res.json(data);      
+      
+  }))
+})
+
+//---------------query--------//
+app.post('/post_data', (request, response) => {
+  var object = {
+    firstname: request.body.firstname,
+    lastname: request.body.lastname,
+    email: request.body.email,
+    mobileno: request.body.mobileno,
+    query: request.body.query,
+    type:"query"
+  };
+  dbconnection.insert(object, 'query-data').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+  console.log('Data added');
+});
+
+
+app.get('/get_data', (request, response) => {
+  console.log('start');
+  var data={
+    selector:{
+      type:"query",
+    }
+  }
+  dbconnection.get(data,"query-data").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+
+
+
+app.get('/get_all_data/:id', (request, response) => {
+  dbconnection.getAll(request.params.id, 'query-data').then((res) => {
+    if (res) {
+      console.log(res);
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+
+  console.log('end');
+});
+
+//-----------------------//
+
+app.post('/post_report', (request, response) => {
+  var object = {
+    name: request.body.name,
+    dateofbirth: request.body.dateofbirth,
+    gender: request.body.gender,
+    mobileno: request.body.mobileno,
+    city: request.body.city,
+    time:request.body.time
+  };
+  dbconnection.insert(object, 'query-data').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+  console.log('Data added');
+});
+
+
+
+
+
+
+
+
+app.post('/post_msg', (request, response) => {
+  var object = {
+    name: request.body.name,
+    
+    email: request.body.email,
+   
+    message: request.body.message,
+
+    type : "contact"
+  };
+  dbconnection.insert(object, 'contact_form').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+  console.log('Data added');
+});
+
+
+app.get('/get_msg', (request, response) => {
+  console.log('start');
+  dbconnection.get('contact_form').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+
+
+app.get('/get_all_msg/:id', (request, response) => {
+  dbconnection.getAll(request.params.id, 'contact_form').then((res) => {
+    if (res) {
+      console.log(res);
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+
+  console.log('end');
+});
+
+
+app.get('/get_report', (request, response) => {
+  console.log('start');
+  dbconnection.get('query-data').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+
+app.get('/get_all_report/:id', (request, response) => {
+  dbconnection.getAll(request.params.id, 'query-data').then((res) => {
     if (res) {
       console.log(res);
       response.send(res);

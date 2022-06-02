@@ -13,7 +13,7 @@ module.exports.getemail = function(params)
         from:'sosapp24@gmail.com',
         to:params,
         subject:'node email',
-        text:'Hello everyone'
+        text:'Welcome to Emergency-SOS...Hi! I am here to help you'
     }
     sender.sendMail(composemail,function(err,res){
         if(err)
