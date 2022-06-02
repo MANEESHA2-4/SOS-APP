@@ -1,37 +1,4 @@
-<!-- 
-        
-    <div class="container">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">NAME</th>
-              <th scope="col">MOBILE NUMBER</th>
-              <th scope="col">DOB</th>
-              <th scope="col">CITY</th>
-              <th scope="col">PLACE</th>
-              <th scope="col">TIME</th>
 
-              
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of store">
-              <td>{{ row.name }}</td>
-              <td>{{ row.mobilenumber}}</td>
-              <td>{{ row.dateofbirth }}</td>
-             <td>{{ row.city}}</td>
-             <td>{{ row.Place}}</td>
-             <td>{{ row.time}}</td>
-
-            
-              <td>
-                 <button type="button" class="btn btn-outline-danger"(click)="erase(row._id, row._rev))">Delete</button>  -->
-                 <!-- <button class="btn btn-primary"(click)="erase(row,row)" >Delete</button> -->
-               <!-- </td>
-            </tr>
-          </tbody>
-        </table>
-        </div> -->
         <div class="container">
           <table class="table table-hover">
             <thead>
@@ -46,14 +13,13 @@
             </thead>
             <tbody>
               <tr *ngFor="let row of store">
-                <th>{{ row.name }}</th>
-                <th>{{ row.mobileno}}</th>
-                <th>{{ row. dateofbirth }}</th>
-                <th>{{ row.gender }}</th>
-                <th>{{ row.city }}</th>
-        <th>{{row.time}}</th>
-                <!-- <th>{{ row._id }}</th>
-                  <th>{{ row._rev }}</th> -->
+                <th scope="col">{{ row.name }}</th>
+                <th scope="col">{{ row.mobileno}}</th>
+                <th scope="col">{{ row. dateofbirth }}</th>
+                <th scope="col">{{ row.gender }}</th>
+                <th scope="col">{{ row.city }}</th>
+        <th scope="col">{{row.time}}</th>
+              
                 <td>
                   <button class="btn btn-primary" (click)="erase(row._id, row._rev)">
                     Delete
