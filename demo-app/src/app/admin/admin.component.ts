@@ -43,13 +43,12 @@ login(obj:any){
   this.password=obj.password
  this.api.checkuserlogin(this.email,this.password).subscribe(data=>{
      console.log(data);
-     if(data.docs[0].email == data.docs[0].email && data.docs[0].password == this.password && data.docs[0].id == "admin")
+     if((data.docs[0].email == data.docs[0].email && data.docs[0].password == this.password && data.docs[0].id == "admin"))
      {
        alert("success!!")
       this.route.navigate(['dashboard-admin']);
      }
      else{
-      // this.toastr.warning("Hi Patient wrong authentication,Please enter correct Email and Password");
       alert("Login authentication failed");
      }
     })
