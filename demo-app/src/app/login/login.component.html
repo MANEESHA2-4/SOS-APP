@@ -1,29 +1,9 @@
-<!-- <body>
-    <div class="center">
-      <h1 class="text-light-dark" >LOGIN</h1>
-      <form [formGroup]="formgroup">
-        <div class="text_field">
-          <input type="text"  placeholder="Username" formControlName="username" class="form-control"/>
-          <span class="text-danger"
-                *ngIf="formgroup.controls['username'].touched && formgroup.hasError('required','username')">*
-                Name is required!!</span>
-        </div>
-        <div class="text_field">
-          <input type="password"  placeholder="Password" formControlName="password" class="form-control"/>
-          <span class="text-danger"
-                *ngIf="formgroup.controls['password'].touched && formgroup.hasError('required','password')">*
-                Password is required!!</span>
-        </div>
-         <div class="pass">Forgot Password?</div> -->
-        <!-- <input type="submit" value="Login" />
-        <label for="signup" class="signup_link">Not a member? <a routerLink="/signup" class="text-primary" id="footer">Signup</a></label>
-      </form>
-    </div>
-  </body>  -->
+
+<div class="container">
   <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <form [formGroup]="loginForm">
 
                 <div class="form-group">
                     <label for="email" class='fa fa-envelope'></label>
@@ -38,7 +18,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button id="submitButton" type="submit" class="btn btn-primary" routerLink="/dashboard">Login</button>
+                    <button id="submitButton" type="submit" class="btn btn-primary"  (click)="login(this.loginForm.value)">Login</button>
                 </div>
                 <!-- <div class="text-center">
                   <label for="login" class="text-dark"
@@ -55,4 +35,5 @@
             </form>
         </div>
     </div>
+</div>
 </div>

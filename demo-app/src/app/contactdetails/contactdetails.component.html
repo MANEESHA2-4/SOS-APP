@@ -1,0 +1,29 @@
+<div class="container">
+  <button type="button"class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of store">
+          <th>{{ row.name }}</th>
+         
+          <th>{{ row.email }}</th>
+         
+          <th>{{ row.message }}</th>
+  
+          <!-- <th>{{ row._id }}</th>
+            <th>{{ row._rev }}</th> -->
+            <td>
+             
+              <button class="btn btn-primary"(click)="erase(row._id,row._rev)" >Delete</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

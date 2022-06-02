@@ -18,7 +18,7 @@ export class RemoveComponent implements OnInit {
    this.get();
   }
   erase (id:string,rev:string){
-    this.api.delete(id,rev).subscribe((data) => {
+    this.api.deletecontact(id,rev).subscribe((data) => {
       console.log(data);
       alert("your data was deleted");
       window.location.reload();
@@ -40,6 +40,7 @@ export class RemoveComponent implements OnInit {
          this.api.getAll(element.id).subscribe(res=>{
           console.log(res);
           this.exchange=res;
+          console.log(this.exchange);
           // this.exchange=this.exchange.data;
           this.store.push(this.exchange);
           console.log("data is came");

@@ -1,0 +1,161 @@
+<!-- <div class="container">
+    <h1>REPORT FORM</h1>
+    <hr>
+    <form class="myform" [formGroup]="fg" (ngSubmit)=" addreport(this.fg.value)">
+      <div class="field">
+        <label for="name">Name :</label>
+        <input type="text" name="name" id="name" formControlName="name" placeholder="Enter your Name here">
+      </div>
+      <div class="check">
+        <span *ngIf="fg.controls['name'].invalid && fg.controls['name'].touched">*Name is required</span>
+      </div>
+      <div class="field">
+        <label for="mobilenumber">Mobile Number :</label>
+        <input type="text" name="mobilenumber" id="mobilenumber" formControlName="mobilenumber" placeholder="mobile Number">
+      </div>
+      <div class="check">
+        <span *ngIf="fg.controls['mobilenumber'].invalid && fg.controls['mobilenumber'].touched">*mobile number is required</span>
+      </div>
+      <div class="field">
+        <label for="dateofbirth">Date Of Birth :</label>
+        <input type="date" name="dateofbirth" id="date of birth" formControlName="dateofbirth" placeholder="D.O.B">
+      </div>
+      <div class="check">
+        <span *ngIf="fg.controls['date of birth'].invalid && fg.controls['date of birth'].touched">*date of birth is required</span>
+      </div>
+      <div class="field" id="check-gen">
+        <label for="gender">Gender :</label>
+        <input type="text" name="gender" id="gender" formControlName="gender" placeholder="Gender">
+      </div>
+      <div class="check">
+        <span *ngIf="fg.controls['gender'].invalid && fg.controls['gender'].touched">*Gender is required</span>
+      </div>
+      <div class="field">
+        <label for="city">City :</label>
+        <input type="text" name="city" id="city" formControlName="city" placeholder="City">
+      </div>
+      <div class="check">
+        <span *ngIf="fg.controls['city'].invalid && fg.controls['city'].touched">*City is required</span>
+      </div>
+      <div class="field">
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" formControlName="date">
+      </div>
+      <div class="field">
+        <label for="time-of-test">Time Of Test :</label>
+        <input type="time" name="time" id="time" formControlName="time">
+      </div>
+      
+     
+      <div class="field">
+        <label for="Place">Place :</label>
+        <input type="text" name="Place" id="Place" formControlName="Place" placeholder="Place">
+      </div>
+      <div class="check">
+        <span *ngIf="fg.controls['Place'].invalid && fg.controls['Place'].touched">*Place  is required</span>
+      </div>
+      
+      <div class="buttons">
+        <button id="btn" (click)="addreport(this.fg.value)"
+         [disabled]="!fg.valid">Send</button>
+      </div>
+    </form>
+  </div>
+   -->
+
+   <section>
+    <div class="container">
+      <h2>Raise your Issue</h2>
+      <form [formGroup]="addform">
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox">
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control"
+              />
+              <span for="name" class="text">Name </span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input
+                type="text"
+                id="mobileno"
+                formControlName="mobileno"
+                class="form-control"
+              />
+              <span for="mobileno" class="text">Mobile no </span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input
+                type="date"
+                id="dateofbirth"
+                formControlName="dateofbirth"
+                class="form-control"
+              />
+              <span for="dateofbirth" class="text">Date of birth </span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input
+                type="text"
+                id="gender"
+                formControlName="gender"
+                class="form-control"
+              />
+              <span for="gender" class="text">Gender </span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input
+                type="text"
+                value=""
+                formControlName="city"
+                class="form-control"
+                id="city"
+              />
+              <span for="city" class="text">City</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          -
+        </div>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox textarea">
+              <input
+                type="time"
+                value=""
+                formControlName="time"
+                class="form-control"
+                id="time"
+              />
+              <span for="time" class="text">Time</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row100">
+          <div class="col">
+            <input
+              type="submit"
+              value="send"
+              (click)="addreport(this.addform.value)"
+              [disabled]="!addform.valid"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>

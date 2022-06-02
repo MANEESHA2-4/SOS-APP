@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(../node_modules/bootstrap/dist/css/bootstrap.css);
+/* body{
+  
+  background-image:url("./assets/background.jpg");
+} */
 body{
-    /* background-image: url('https://www.xmple.com/wallpaper/blue-pink-linear-gradient-1920x1080-c2-db7093-40e0d0-a-165-f-14.svg'); */
-
-background-repeat: no-repeat;
-background-attachment: fixed;
+    background-image: url('./assets/surf.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width:100vw;
 }

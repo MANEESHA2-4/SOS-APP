@@ -1,0 +1,92 @@
+<!-- <section>
+    <div class="imgBx"><img src="../../assets/project 14.jpg" /></div>
+    <div class="content">
+      <div class="formbox">
+        <h2>Admin</h2>
+        <form
+          class="myform"
+          [formGroup]="adminform"
+          (ngSubmit)="alogin(this.adminform.value)"
+        >
+          <div class="inputbox">
+            <input
+              type="text"
+              placeholder="Username"
+              formControlName="username"
+              id="adminname"
+              class="form-control"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                adminform.controls['username'].touched &&
+                adminform.hasError('required', 'username')
+              "
+              >* Name is required!!</span
+            >
+          </div>
+          <div class="inputbox">
+            <input
+              type="password"
+              placeholder="Password"
+              formControlName="password"
+              id="password"
+              class="form-control"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                adminform.controls.password.errors &&
+                adminform.controls.password.touched
+              "
+            >
+              <br />Atleast 6 character Password is Required
+            </span>
+          </div>
+          <div class="inputbox">
+            <input type="submit" value="Login" routerLinkActive="active" />
+          </div>
+          <div class="text-center text-success" *ngIf="successMessage">
+            {{ successMessage }}
+          </div> -->
+          <!-- <p>
+            Don't have a account?
+            <a routerLink="/sign-up" class="text-primary">Signup</a>
+          </p>  routerLink="/dashboard"
+              routerLinkActive="active" -->
+        <!-- </form>
+      </div>
+    </div>
+  </section> -->
+
+
+  
+<div class="container">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-12">
+              <form [formGroup]="loginForm">
+  
+                  <div class="form-group">
+                      <label for="email" class='fa fa-envelope'></label>
+                      <input type="email" placeholder="Email Address" formControlName="email">
+                      <span class="text-danger" *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched"><br>Invalid Email Address</span>
+                  </div>
+  
+                  <div class="form-group">
+                      <label for="password" class="fa fa-lock"></label>
+                      <input type="password" placeholder="Password" formControlName="password">
+                      <span class="text-danger" *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched"><br>Invalid Password</span>
+                  </div>
+  
+                  <div class="text-center">
+                      <button id="submitButton" type="submit" class="btn btn-primary" routerLink="/dashboard-admin" (click)="login(this.loginForm.value)">Login</button>
+                  </div>
+                  
+                    
+              </form>
+          </div>
+      </div>
+  </div>
+  </div>
+  

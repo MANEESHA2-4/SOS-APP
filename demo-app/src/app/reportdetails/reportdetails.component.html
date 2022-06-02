@@ -1,0 +1,65 @@
+<!-- 
+        
+    <div class="container">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">NAME</th>
+              <th scope="col">MOBILE NUMBER</th>
+              <th scope="col">DOB</th>
+              <th scope="col">CITY</th>
+              <th scope="col">PLACE</th>
+              <th scope="col">TIME</th>
+
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of store">
+              <td>{{ row.name }}</td>
+              <td>{{ row.mobilenumber}}</td>
+              <td>{{ row.dateofbirth }}</td>
+             <td>{{ row.city}}</td>
+             <td>{{ row.Place}}</td>
+             <td>{{ row.time}}</td>
+
+            
+              <td>
+                 <button type="button" class="btn btn-outline-danger"(click)="erase(row._id, row._rev))">Delete</button>  -->
+                 <!-- <button class="btn btn-primary"(click)="erase(row,row)" >Delete</button> -->
+               <!-- </td>
+            </tr>
+          </tbody>
+        </table>
+        </div> -->
+        <div class="container">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Mobile NO</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Gender</th>
+                <th scope="col">City</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of store">
+                <th>{{ row.name }}</th>
+                <th>{{ row.mobileno}}</th>
+                <th>{{ row. dateofbirth }}</th>
+                <th>{{ row.gender }}</th>
+                <th>{{ row.city }}</th>
+        <th>{{row.time}}</th>
+                <!-- <th>{{ row._id }}</th>
+                  <th>{{ row._rev }}</th> -->
+                <td>
+                  <button class="btn btn-primary" (click)="erase(row._id, row._rev)">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>

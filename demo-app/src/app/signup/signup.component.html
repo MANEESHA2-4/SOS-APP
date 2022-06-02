@@ -1,33 +1,8 @@
-<!-- <body>
-  <div class="center" id="login">
-    <h1>SIGN UP</h1>
-    <form [formGroup]="formgroups">
-      <div class="text_field">
-        <input type="text"  placeholder="Name" formControlName="name" class="form-control"/>
-        <span class="text-danger"
-                *ngIf="formgroups.controls['name'].touched && formgroups.hasError('required','name')">*
-                Name is required!!</span>
-      </div>
-      <div class="text_field">
-        <input type="password"  placeholder="Password" formControlName="password" class="form-control"/>
-        <span class="text-danger"
-                *ngIf="formgroups.controls['password'].touched && formgroups.hasError('required','password')">*
-                Password must be character!!</span>
-        </div>
-      <div class="text_field">
-        <input type="password" placeholder="Confirm Password" formControlName="confirm password" class="form-control"/>
-        <span class="text-danger"
-                 *ngIf="formgroups.controls['confirm password'].touched && formgroups.hasError('required','confirm password')">*
-                Password is required!!</span> 
-      </div>
-      <input type="submit" value="signup" />
-    </form>
-    </div>
-</body> -->
+
 <div class="container-fluid">
   <div class="row">
       <div class="col-12">
-          <form [formGroup]="regForm" (ngSubmit)="register(this.regForm.value)">
+          <form [formGroup]="regForm" (ngSubmit)="storing(this.regForm.value)">
 
               <div class="form-group">
                   <label for="name" class="fa fa-user"></label>
@@ -62,7 +37,7 @@
               </div>
 
               <div class="text-center">
-                  <button id="submitButton" type="submit" class="btn btn-primary" [disabled]="!regForm.valid">
+                  <button id="submitButton" type="submit" class="btn btn-primary">
                       Register
                   </button>
               </div>

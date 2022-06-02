@@ -1,0 +1,84 @@
+<section>
+    <div class="container">
+      <h2>Raise your Issue</h2>
+      <form [formGroup]="addform">
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox">
+              <input
+                type="text"
+                id="firstname"
+                formControlName="firstname"
+                class="form-control"
+              />
+              <span for="firstname" class="text">First Name </span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input
+                type="text"
+                id="lastname"
+                formControlName="lastname"
+                class="form-control"
+              />
+              <span for="lastname" class="text">Last Name </span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input
+                type="text"
+                id="email"
+                formControlName="email"
+                class="form-control"
+              />
+              <span for="email" class="text">Email </span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input
+                type="text"
+                value=""
+                formControlName="mobileno"
+                class="form-control"
+                id="mobileno"
+              />
+              <span for="mobileno" class="text">Mobile</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          -
+        </div>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox textarea">
+              <input
+                type="text"
+                value=""
+                formControlName="query"
+                class="form-control"
+                id="query"
+              />
+              <span for="query" class="text">Type Your Message Here....</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row100">
+          <div class="col">
+            <input
+              type="submit"
+              value="Hit me"
+              (click)="addQuery(this.addform.value)"
+              [disabled]="!addform.valid"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>

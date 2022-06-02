@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -12,12 +13,26 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NextPageComponent } from './next-page/next-page.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
 import { FaqComponent } from './faq/faq.component';
 import { RemoveComponent } from './remove/remove.component';
-import { TermsComponent } from './terms/terms.component'
+import { TermsComponent } from './terms/terms.component';
+import { BlogComponent } from './blog/blog.component';
+import { FeatureComponent } from './feature/feature.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { AdminComponent } from './admin/admin.component';
+import { QueryComponent } from './query/query.component';
+import { ViewqueryComponent } from './viewquery/viewquery.component';
+import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ContactdetailsComponent } from './contactdetails/contactdetails.component';
+import { ReportformComponent } from './reportform/reportform.component';
+import { ReportdetailsComponent } from './reportdetails/reportdetails.component';
+import { HttpCallInterceptorService } from './httpcallinterceptorservice.service.spec';
+// import { ToastarService } from './toastarservice.service';
+
 
 @NgModule({
   declarations: [
@@ -35,16 +50,31 @@ import { TermsComponent } from './terms/terms.component'
     AddComponent,
     FaqComponent,
     RemoveComponent,
-    TermsComponent
+    TermsComponent,
+    BlogComponent,
+    FeatureComponent,
+    GalleryComponent,
+    AdminComponent,
+    QueryComponent,
+    ViewqueryComponent,
+    DashboardAdminComponent,
+    ContactUsComponent,
+    ContactdetailsComponent,
+    ReportformComponent,
+    ReportdetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [ {provide: HTTP_INTERCEPTORS,
+    useClass: HttpCallInterceptorService,
+    multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

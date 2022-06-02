@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators, NgForm } from '@angular/forms';
 
 import{DatabaseService}from'../database.service'
+ import { ToastarService } from '../toastarservice.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -12,10 +13,10 @@ export class SignupComponent implements OnInit {
 
   // constructor(private formbuilder:FormBuilder) { }
   successMessage:string =""
-
+userdata :  any = [];
   regForm!:FormGroup;
 
-  constructor(private api:DatabaseService,private formbuilder:FormBuilder) { }
+  constructor(private api:DatabaseService,private formbuilder:FormBuilder,private alert :ToastarService ) { }
 ngOnInit(): void {
   this.regForm = this.formbuilder.group({
     name: ['',[Validators.required]],
@@ -25,17 +26,43 @@ ngOnInit(): void {
   })
 }
 
+storing(formvalue:any) {
+this.api.storedata(formvalue).subscribe((data)=>{
+      console.log("data returned from server",data);
+     
+    console.log(data.id);
+    var userid = data.id;
 
+    console.log("userid",userid);
 
+  this.userdata = formvalue
 
-register(FormValue:NgForm){
-  this.successMessage = "Successfully Registered..."
-this.api.registerdata(FormValue).subscribe((data)=>{
-  alert("Data posted Successfully");
-  this.regForm.reset();
-},rej=>{
-  console.log("Error"+rej);
-});
-console.log(FormValue)
-}
-}
+  formvalue.id = userid;
+  console.log(formvalue);
+   this.userdata = {
+    formvalue
+  }
+  console.log(this.userdata);
+  console.log(this.userdata.formvalue);
+
+  localStorage.setItem("userdata",JSON.stringify(this.userdata.formvalue));
+    
+   console.log("from form",formvalue);
+   
+  },rej => {
+  console.log(rej);
+  // this.alert.showError("data cant post","error");
+});}
+} 
+  
+// register(FormValue:NgForm){
+//   this.successMessage = "Successfully Registered..."
+// this.api.registerdata(FormValue).subscribe((data)=>{
+//   alert("Data posted Successfully");
+//   this.regForm.reset();
+// },rej=>{
+//   console.log("Error"+rej);
+// });
+// console.log(FormValue)
+// }
+// }
