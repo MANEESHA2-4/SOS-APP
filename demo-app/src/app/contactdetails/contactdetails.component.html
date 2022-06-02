@@ -11,14 +11,12 @@
       </thead>
       <tbody>
         <tr *ngFor="let row of store">
-          <th>{{ row.name }}</th>
+          <th scope="col">{{ row.name }}</th>
          
-          <th>{{ row.email }}</th>
+          <th scope="col">{{ row.email }}</th>
          
-          <th>{{ row.message }}</th>
+          <th scope="col">{{ row.message }}</th>
   
-          <!-- <th>{{ row._id }}</th>
-            <th>{{ row._rev }}</th> -->
             <td>
              
               <button class="btn btn-primary"(click)="erase(row._id,row._rev)" >Delete</button>
