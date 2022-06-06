@@ -1,3 +1,9 @@
 .container{
     height: 100vh;
+    border: 2px solid gray;
+    background-image: linear-gradient(to right,pink,rgb(156, 222, 238));
+    margin-top: 40px;
+}
+.caption{
+    text-align: center;
 }

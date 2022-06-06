@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let row of object">
+        <tr *ngFor="let row of store">
           <th scope="col">{{ row.firstname }}</th>
           <th scope="col">{{ row.lastname }}</th>
           <th scope="col">{{ row.email }}</th>
@@ -22,6 +22,10 @@
             <button class="btn btn-primary" (click)="erase(row._id, row._rev)">
               Delete
             </button>
+          </td>
+          <td>
+             
+            <button class="btn btn-primary" routerLink="/reply" >Reply</button>
           </td>
         </tr>
       </tbody>

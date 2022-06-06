@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup,FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import{DatabaseService}from'../database.service'
  import { ToastarService } from '../toastarservice.service';
@@ -16,7 +17,7 @@ export class SignupComponent implements OnInit {
 userdata :  any = [];
   regForm!:FormGroup;
 
-  constructor(private api:DatabaseService,private formbuilder:FormBuilder,private alert :ToastarService ) { }
+  constructor(private api:DatabaseService,private formbuilder:FormBuilder,private alert :ToastarService,private route : Router) { }
 ngOnInit(): void {
   this.regForm = this.formbuilder.group({
     name: ['',[Validators.required]],
@@ -46,8 +47,10 @@ this.api.storedata(formvalue).subscribe((data)=>{
   console.log(this.userdata.formvalue);
 
   localStorage.setItem("userdata",JSON.stringify(this.userdata.formvalue));
+  this.route.navigate(['dashboard']);
     
    console.log("from form",formvalue);
+
    
   },rej => {
   console.log(rej);

@@ -1,28 +1,27 @@
 <div class="container">
-  <button type="button"class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
+  <h1 class="caption">User's Feedback</h1>
+  
     <table class="table table-hover">
-      <caption>Contact Entry</caption>
+      <caption></caption>
       <thead>
         <tr>
           
           <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Message</th>
+          <th scope="col">Feedback</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let row of store">
           <th scope="col">{{ row.name }}</th>
-         
-          <th scope="col">{{ row.email }}</th>
-         
           <th scope="col">{{ row.message }}</th>
   
             <td>
              
               <button class="btn btn-primary"(click)="erase(row._id,row._rev)" >Delete</button>
             </td>
+           
         </tr>
       </tbody>
     </table>
+    <button type="button"class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
   </div>

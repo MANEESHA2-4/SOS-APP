@@ -66,9 +66,7 @@ storedata(formvalue:any){
   getAll(id:any){
     return this.http.get(`http://localhost:8000/get_all_query/${id}`);
   }
-  // getdata(id:any){
-  //   return this.http.get(`http://localhost:8000/get__query/${id}`);
-  // }
+  
 
   addQuery(doc:any){
        console.log(doc);
@@ -82,7 +80,16 @@ storedata(formvalue:any){
      }
     
 
-
+     addreply(doc:any){
+      console.log(doc);
+      return this.http.post('http://localhost:8000/post_reply/',doc)
+    }
+    getreply(){
+     return this.http.get('http://localhost:8000/get_reply/')
+    }
+    getAllreply(id:any){
+     return this.http.get(`http://localhost:8000/get_all_reply/${id}`);
+    }
 
      addreport(doc:any){
       console.log(doc);
@@ -108,7 +115,6 @@ getAllmessage(id:any){
 report(db:string,doc: object):Observable<{}> {
 
   const url = this.url+db;
-  // this.mail(doc);
   return this.http.post(url,doc,this.httpOptions)
   
   

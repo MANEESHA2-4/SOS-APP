@@ -8,5 +8,7 @@ body{
     background-image: url('./assets/surf.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    width:100vw;
+  
+   overflow-x: hidden;
+   
 }

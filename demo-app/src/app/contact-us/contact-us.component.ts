@@ -15,7 +15,6 @@ store:any=[];
   ngOnInit(): void {
     this.addform=this.formbuilder.group({
       name:['',Validators.required],
-      email:['',Validators.required],
       message:['',Validators.required],
       _id:[''],
       _rev:[''],

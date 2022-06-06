@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   [x: string]: any;
   successMessage:string ="";
   loginForm!: FormGroup; 
+  userdata : any = [];
 
   sos : any = {
     email:'',
@@ -32,22 +33,22 @@ ngOnInit(): void {
   })
 }
 
-// login(){
-//   this.successMessage="Successfully Loggined In..."
-// }
+
 
 login(obj:any){
   this.email=obj.email
   this.password=obj.password
  this.api.checkuserlogin(this.email,this.password).subscribe(data=>{
      console.log(data);
+
      if((data.docs[0].password == this.password))
      {
        alert("success!!")
+       this.userdata = {obj}
+  localStorage.setItem("userdata",JSON.stringify(this.userdata.obj));
       this.route.navigate(['dashboard']);
      }
      else{
-      // this.toastr.warning("Hi Patient wrong authentication,Please enter correct Email and Password");
       alert("Login authentication failed");
      }
     })

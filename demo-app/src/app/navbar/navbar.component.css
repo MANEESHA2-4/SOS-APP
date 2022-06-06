@@ -11,9 +11,10 @@
   background-image: url('https://www.xmple.com/wallpaper/blue-pink-linear-gradient-1920x1080-c2-db7093-40e0d0-a-165-f-14.svg');
 } */
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .body{
       float: none;
       width: 100%;
     }
-  }
+  } */
+ 

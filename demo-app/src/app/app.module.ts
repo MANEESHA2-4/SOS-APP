@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -31,7 +30,10 @@ import { ContactdetailsComponent } from './contactdetails/contactdetails.compone
 import { ReportformComponent } from './reportform/reportform.component';
 import { ReportdetailsComponent } from './reportdetails/reportdetails.component';
 import { HttpCallInterceptorService } from './httpcallinterceptorservice.service.spec';
-// import { ToastarService } from './toastarservice.service';
+import { ReplyComponent } from './reply/reply.component';
+import { ReceiveComponent } from './receive/receive.component';
+
+
 
 
 @NgModule({
@@ -62,6 +64,9 @@ import { HttpCallInterceptorService } from './httpcallinterceptorservice.service
     ContactdetailsComponent,
     ReportformComponent,
     ReportdetailsComponent,
+    ReplyComponent,
+    ReceiveComponent,
+   
     
   ],
   imports: [
@@ -70,7 +75,6 @@ import { HttpCallInterceptorService } from './httpcallinterceptorservice.service
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    // BrowserAnimationsModule,
   ],
   providers: [ {provide: HTTP_INTERCEPTORS,
     useClass: HttpCallInterceptorService,

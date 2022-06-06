@@ -22,6 +22,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ContactdetailsComponent } from './contactdetails/contactdetails.component';
 import { ReportformComponent } from './reportform/reportform.component';
 import { ReportdetailsComponent } from './reportdetails/reportdetails.component';
+import { ReplyComponent } from './reply/reply.component';
+import { ReceiveComponent } from './receive/receive.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'news',component:NewsComponent },
@@ -44,7 +46,9 @@ const routes: Routes = [
   {path:'contact-us',component:ContactUsComponent},
   {path:'contactdetails',component:ContactdetailsComponent},
   {path:'reportform',component:ReportformComponent},
-  {path:'reportdetails',component:ReportdetailsComponent}
+  {path:'reportdetails',component:ReportdetailsComponent},
+  {path:'reply',component:ReplyComponent},
+  {path:'receive',component:ReceiveComponent}
 ];
 
 @NgModule({

@@ -3,32 +3,23 @@ import { FormBuilder,FormGroup,Validator,NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatabaseService } from '../database.service';
 @Component({
-  selector: 'app-viewquery',
-  templateUrl: './viewquery.component.html',
-  styleUrls: ['./viewquery.component.css']
+  selector: 'app-receive',
+  templateUrl: './receive.component.html',
+  styleUrls: ['./receive.component.css']
 })
-export class ViewqueryComponent implements OnInit {
-
+export class ReceiveComponent implements OnInit {
   addform!:FormGroup;
   alluser!:any;
   exchange!:any;
-  store:any=[];
-  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router) { }
+  object:any=[];
+  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router ) {}
 
   ngOnInit(): void {
-    this.getQuery();
+    this.getreply()
   }
-  erase (id:string,rev:string){
-    this.api.deletequery(id,rev).subscribe((data) => {
-      console.log(data);
-      alert("your data was deleted");
-      window.location.reload();
-    });
-    
-  }
-  getQuery(){
-    this.store=[];
-    this.api.getQuery().subscribe(res=>{
+  getreply(){
+    this.object=[];
+    this.api.getreply().subscribe(res=>{
       console.log(res);
       console.log("response is comming");
       this.alluser=res;
@@ -40,10 +31,10 @@ export class ViewqueryComponent implements OnInit {
             if (Object.prototype.hasOwnProperty.call(this.alluser, key)) {
               const element = this.alluser[key];
               console.log(element.id);
-              this.api.getAllQuery(element.id).subscribe(res=>{
+              this.api.getAllreply(element.id).subscribe(res=>{
                 console.log(res);
                 this.exchange=res;
-                this.store.push(this.exchange);
+                this.object.push(this.exchange);
                 console.log("data receved");
               },rej=>{
                 console.log("error"+rej);
@@ -53,4 +44,5 @@ export class ViewqueryComponent implements OnInit {
           }
     },rej=>{
         console.log("opps! Somthing went wrong"+rej);
-    })}}
+    })}
+}

@@ -1,0 +1,26 @@
+<section class="reply">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="contact_inner">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="contact_form_inner">
+                                
+                                    <h3>Response-Panel</h3>
+                                    <form [formGroup]="addform">
+                                    <input type="text" class="form-control form-group" formControlName="admin" id="admin"placeholder="Admin" />
+                                    <input type="text" class="form-control form-group" formControlName="username" id="username"placeholder="User" />
+
+                                    <textarea class="form-control form-group"formControlName="message" id="message" placeholder="Reply"></textarea>
+                                    <button class="contact_form_submit"  (click)="addreply(this.addform.value)">Send Reply</button>
+                                </form>
+                            </div>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</section>

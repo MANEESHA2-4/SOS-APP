@@ -1,25 +1,39 @@
-body{
-    color:#fff
-  }
+
   .right_conatct_social_icon{
        background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
   }
-  .contact_us{
-      background-color: #f1f1f1;
+  .reply{
+      
       padding: 120px 0px;
+      height: 100vh;
+      margin-left: 320px;
   }
-  
+  h3{
+    text-align: center;
+    margin: 20px;
+    margin-left: 90px;
+  }
+  .form-control{
+      width: 500px;
+      margin-left: 50px;
+      margin-top: 10px;
+  }
   .contact_inner{
       background-color: #fff;
       position: relative;
       box-shadow: 20px 22px 44px #cccc;
-      border-radius: 25px;
+      border-radius: 1px;
+      width: 600px;
+      height: 340px;
   }
   .contact_field{
       padding: 60px 340px 90px 100px;
   }
   .right_conatct_social_icon{
       height: 100%;
+  }
+  textarea{
+      resize: none;
   }
   
   .contact_field h3{
@@ -51,69 +65,24 @@ body{
       letter-spacing: 1px;
   }
   
-  .contact_info_sec {
-      position: absolute;
-      /* background-color: #680686; */
-      background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
-      right: 1px;
-      top: 18%;
-      height: 340px;
-      width: 340px;
-      padding: 40px;
-      border-radius: 25px 0 0 25px;
-  }
-  .contact_info_sec h4{
-      letter-spacing: 1px;
-      padding-bottom: 15px;
-  }
+
   
-  .info_single{
-      margin: 30px 0px;
-  }
-  .info_single i{
-      margin-right: 15px;
-  }
-  .info_single span{
-      font-size: 14px;
-      letter-spacing: 1px;
-  }
+ 
   
   button.contact_form_submit {
       background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
       border: none;
       color: #fff;
       padding: 10px 15px;
-      width: 100%;
+      width: 40%;
       margin-top: 25px;
       border-radius: 35px;
       cursor: pointer;
       font-size: 14px;
       letter-spacing: 2px;
-  }
-  .socil_item_inner li{
-      list-style: none;
-  }
-  .socil_item_inner li a{
-      color: #fff;
-      margin: 0px 15px;
-      font-size: 14px;
-  }
-  .socil_item_inner{
-      padding-bottom: 10px;
+      margin-left: 200px;
+      margin-top: 20px;
   }
   
-  .map_sec{
-      padding: 50px 0px;
-  }
-  .map_inner h4, .map_inner p{
-      color: #000;
-      text-align: center
-  }
-  .map_inner p{
-      font-size: 13px;
-  }
-  .map_bind{
-     margin-top: 50px;
-      border-radius: 30px;
-      overflow: hidden;
-  }
+  
+ 
