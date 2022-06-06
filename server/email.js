@@ -14,9 +14,9 @@ app.use(
     })
 )
 
-app.get('/', function (request, response) {
-    response.json({"name":"maneesha"});
-  });
+// app.get('/', function (request, response) {
+//     response.json({"name":"maneesha"});
+//   });
 
   app.post('/mail',(request,response,next)=>{
     console.log('mmm');

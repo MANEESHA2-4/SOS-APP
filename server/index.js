@@ -9,6 +9,7 @@ const { request, response } = require('express');
 app.use(bodyparser.json());
 app.use(express.static('public'));
 var nano = require('nano');
+const setmail = require('./send');
 app.use(
   cors({
     origin: 'http://localhost:4200',
@@ -21,9 +22,10 @@ app.post('/post_query', (request, response) => {
     firstname: request.body.firstname,
     lastname: request.body.lastname,
     country: request.body.country,
-    mobileno: request.body. mobileno
+    mobileno: request.body. mobileno,
+    type:"query"
   };
-  dbconnection.insert(object,'add_form').then(
+  dbconnection.insert(object,'query-data').then(
     (res) => {if(res){
       console.log('data posted');
       response.send(res);
@@ -33,6 +35,20 @@ app.post('/post_query', (request, response) => {
     }),
     console.log('Data Added');
 });
+
+app.post('/mail',(request,response,next)=>{
+  console.log('mmm');
+ 
+  var object ={
+      first_name:request.body.first_name,
+      
+      email:request.body.email_id,
+      mobile:request.body.Mobile,
+  }
+  // console.log(email);
+  setmail.getemail(request.body.email_id);
+  console.log(object);
+})
 
 app.post('/postdata', function (req,res) {
   var name = req.body.firstname;
@@ -121,9 +137,9 @@ app.post('/post_data', (request, response) => {
     email: request.body.email,
     mobileno: request.body.mobileno,
     query: request.body.query,
-    type:"query"
+   
   };
-  dbconnection.insert(object, 'query-data').then((res) => {
+  dbconnection.insert(object,"query-data" ).then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -136,12 +152,9 @@ app.post('/post_data', (request, response) => {
 
 app.get('/get_data', (request, response) => {
   console.log('start');
-  var data={
-    selector:{
-      type:"query",
-    }
-  }
-  dbconnection.get(data,"query-data").then((res) => {
+  
+  
+  dbconnection.get("query-data").then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -153,6 +166,49 @@ app.get('/get_data', (request, response) => {
 
 
 app.get('/get_all_data/:id', (request, response) => {
+  dbconnection.getAll(request.params.id, 'query-data').then((res) => {
+    if (res) {
+      console.log(res);
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+
+  console.log('end');
+});
+
+//-------------------//
+app.post('/post_reply', (request, response) => {
+  var object = {
+    message: request.body.message,
+   
+   
+  };
+  dbconnection.insert(object,"query-data" ).then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+  console.log('Data added');
+});
+
+app.get('/get_reply', (request, response) => {
+  console.log('start');
+  
+  
+  dbconnection.get("query-data").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+
+app.get('/get_all_reply/:id', (request, response) => {
   dbconnection.getAll(request.params.id, 'query-data').then((res) => {
     if (res) {
       console.log(res);
@@ -196,12 +252,9 @@ app.post('/post_report', (request, response) => {
 app.post('/post_msg', (request, response) => {
   var object = {
     name: request.body.name,
-    
-    email: request.body.email,
-   
     message: request.body.message,
-
-    type : "contact"
+type:'contact'
+    
   };
   dbconnection.insert(object, 'contact_form').then((res) => {
     if (res) {
