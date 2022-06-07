@@ -4,6 +4,10 @@
   
   background-image:url("./assets/background.jpg");
 } */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import '~ngx-toastr/toastr';
+
 body{
     background-image: url('./assets/surf.jpg');
     background-repeat: no-repeat;

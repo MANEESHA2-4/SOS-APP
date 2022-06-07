@@ -46,7 +46,7 @@ app.post('/postdata', function (req,res) {
   dbconnection.trainee.insert(objectnew).then((data) => {
       console.log("data inserted successfully",data);
       res.send(data);
-  }).catch((err=>{
+  },).catch((err=>{
     console.log("err2",err);
     res.status(400).send({
       message:err
@@ -121,7 +121,7 @@ app.post('/post_query', (_request, response) => {
     }else{
       response.send('error');
     }
-    }),
+    })
     console.log('Data Added');
 });
 
