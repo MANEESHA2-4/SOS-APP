@@ -32,6 +32,8 @@ import { ReportdetailsComponent } from './reportdetails/reportdetails.component'
 import { HttpCallInterceptorService } from './httpcallinterceptorservice.service.spec';
 import { ReplyComponent } from './reply/reply.component';
 import { ReceiveComponent } from './receive/receive.component';
+import { NewuserComponent } from './newuser/newuser.component';
+
 
 
 
@@ -66,8 +68,8 @@ import { ReceiveComponent } from './receive/receive.component';
     ReportdetailsComponent,
     ReplyComponent,
     ReceiveComponent,
-   
-    
+    NewuserComponent,
+  
   ],
   imports: [
     BrowserModule,

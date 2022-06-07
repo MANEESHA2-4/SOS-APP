@@ -1,67 +1,11 @@
-<!-- <section>
-    <div class="imgBx"><img src="../../assets/project 14.jpg" /></div>
-    <div class="content">
-      <div class="formbox">
-        <h2>Admin</h2>
-        <form
-          class="myform"
-          [formGroup]="adminform"
-          (ngSubmit)="alogin(this.adminform.value)"
-        >
-          <div class="inputbox">
-            <input
-              type="text"
-              placeholder="Username"
-              formControlName="username"
-              id="adminname"
-              class="form-control"
-            />
-            <span
-              class="text-danger"
-              *ngIf="
-                adminform.controls['username'].touched &&
-                adminform.hasError('required', 'username')
-              "
-              >* Name is required!!</span
-            >
-          </div>
-          <div class="inputbox">
-            <input
-              type="password"
-              placeholder="Password"
-              formControlName="password"
-              id="password"
-              class="form-control"
-            />
-            <span
-              class="text-danger"
-              *ngIf="
-                adminform.controls.password.errors &&
-                adminform.controls.password.touched
-              "
-            >
-              <br />Atleast 6 character Password is Required
-            </span>
-          </div>
-          <div class="inputbox">
-            <input type="submit" value="Login" routerLinkActive="active" />
-          </div>
-          <div class="text-center text-success" *ngIf="successMessage">
-            {{ successMessage }}
-          </div> -->
-          <!-- <p>
-            Don't have a account?
-            <a routerLink="/sign-up" class="text-primary">Signup</a>
-          </p>  routerLink="/dashboard"
-              routerLinkActive="active" -->
-        <!-- </form>
-      </div>
-    </div>
-  </section> -->
 
 
-  
+<div class="title">
+  <h1 class="heading">Admin</h1>
+</div>
+ 
 <div class="container">
+  
     <div class="container-fluid">
       <div class="row">
           <div class="col-12">

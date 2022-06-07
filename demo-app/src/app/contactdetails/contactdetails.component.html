@@ -6,18 +6,18 @@
       <thead>
         <tr>
           
-          <th scope="col">Name</th>
-          <th scope="col">Feedback</th>
+          <th scope="row">Name</th>
+          <th scope="row">Feedback</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let row of store">
-          <th scope="col">{{ row.name }}</th>
-          <th scope="col">{{ row.message }}</th>
+        <tr *ngFor="let obj of object">
+          <th scope="row">{{ obj.name }}</th>
+          <th scope="row">{{ obj.message }}</th>
   
             <td>
              
-              <button class="btn btn-primary"(click)="erase(row._id,row._rev)" >Delete</button>
+              <button class="btn btn-primary"(click)="erase(obj._id,obj._rev)" >Delete</button>
             </td>
            
         </tr>

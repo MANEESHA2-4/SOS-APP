@@ -19,5 +19,22 @@
 }  */
 .container{
     padding: 70px;
+border: 2px solid gray;
+background-image: linear-gradient(to right,rgb(135, 162, 231),rgb(141, 193, 241));
 
+}
+.form-control{
+    width:60%;
+}
+#size{
+width:123%
+}
+#logout{
+    margin-left: 20px;
+}
+.contact-us{
+    margin-left: 555px;
+    
+    width: 63%;
+    margin-top: -286px;
 }

@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ApiserviceService } from '../apiservice.service';
 
 
@@ -40,13 +42,17 @@ login(obj:any){
   this.password=obj.password
  this.api.checkuserlogin(this.email,this.password).subscribe(data=>{
      console.log(data);
+     this.userId=data.docs[0]._id;
+     localStorage.setItem("UserId",this.userId)
+     this.userId=localStorage.getItem("UserId")
 
-     if((data.docs[0].password == this.password))
+     if((data.docs[0].password === this.password))
      {
        alert("success!!")
        this.userdata = {obj}
   localStorage.setItem("userdata",JSON.stringify(this.userdata.obj));
-      this.route.navigate(['dashboard']);
+      this.route.navigate(['dashboard'],{queryParams:{data:this.UserId}});
+      localStorage.setItem('emailreply',this.email);
      }
      else{
       alert("Login authentication failed");

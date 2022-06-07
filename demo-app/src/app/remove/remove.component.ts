@@ -11,7 +11,7 @@ export class RemoveComponent implements OnInit {
   addform!:FormGroup;
   alluser!:any;
   exchange!:any;
-  store:any=[];
+  object:any=[];
   constructor(private formbuilder:FormBuilder,private api:DatabaseService) { }
 
   ngOnInit(): void {
@@ -25,32 +25,56 @@ export class RemoveComponent implements OnInit {
     });
     
   }
-  get(){
-    this.api.get().subscribe(res=>{
-     console.log(res);
-     console.log("response is comming");
-     this.alluser=res;
+  // get(){
+  //   this.api.get().subscribe(res=>{
+  //    console.log(res);
+  //    console.log("response is comming");
+  //    this.alluser=res;
      
-     this.alluser=this.alluser.rows;
-     console.log(this.alluser);
-     for (const key in this.alluser) {
-        if (Object.prototype.hasOwnProperty.call(this.alluser, key)) {
-         const element = this.alluser[key];
-         console.log(element.id);
-         this.api.getAll(element.id).subscribe(res=>{
-          console.log(res);
-          this.exchange=res;
-          console.log(this.exchange);
+  //    this.alluser=this.alluser.rows;
+  //    console.log(this.alluser);
+  //    for (const key in this.alluser) {
+  //       if (Object.prototype.hasOwnProperty.call(this.alluser, key)) {
+  //        const element = this.alluser[key];
+  //        console.log(element.id);
+  //        this.api.getAll(element.id).subscribe(res=>{
+  //         console.log(res);
+  //         this.exchange=res;
+  //         console.log(this.exchange);
           
-          this.store.push(this.exchange);
-          console.log("data is came");
-         },rej=>{
-          console.log("error"+rej);
-         })
+  //         this.store.push(this.exchange);
+  //         console.log("data is came");
+  //        },rej=>{
+  //         console.log("error"+rej);
+  //        })
         
-        }
-       }
-    },rej=>{
-      console.log("opps! Somthing went wrong"+rej);
-    })
+  //       }
+  //      }
+  //   },rej=>{
+  //     console.log("opps! Somthing went wrong"+rej);
+  //   })
+  // }}
+
+
+  get(){
+    this.api.get().subscribe(data=>{
+      console.log(data);
+      console.log('Data was fetching');
+      this.alluser=data;
+      this.alluser=this.alluser.docs;
+      console.log(this.alluser);
+      for(const i of this.alluser){
+        // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
+        //   const elt = this.alldata[i];
+        //   console.log(elt.id);
+        //   this.api.supplierId(elt.id).subscribe(res=>{
+        //     console.log(res);
+            this.object.push(i);
+            console.log('Fetched successfuly in add component');
+          // })
+        // }
+  
+      }
+    
+    });
   }}

@@ -12,7 +12,7 @@ export class ContactdetailsComponent implements OnInit {
   addform!:FormGroup;
   alluser!:any;
   exchange!:any;
-  store:any=[];
+  object:any=[];
   constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router) { }
 
   ngOnInit(): void {
@@ -26,33 +26,22 @@ export class ContactdetailsComponent implements OnInit {
     });
     
   }
-  getmessage(){
-    this.store=[];
-    this.api.getmessage().subscribe(res=>{
-      console.log(res);
-      console.log("response is comming");
-      this.alluser=res;
-      this.alluser=this.alluser.rows;
-      console.log(this.alluser);
+
+
+getmessage(){
+  this.api.getmessage().subscribe(data=>{
+    console.log(data);
+    console.log('Data was fetching');
+    this.alluser=data;
+    this.alluser=this.alluser.docs;
+    console.log(this.alluser);
+    for(const i of this.alluser){
       
-      for (const key in this.alluser) {
-            if (Object.prototype.hasOwnProperty.call(this.alluser, key)) {
-              const element = this.alluser[key];
-              console.log(element.id);
-              this.api.getAllmessage(element.id).subscribe(res=>{
-                console.log(res);
-                this.exchange=res;
-               
-                this.store.push(this.exchange);
-                console.log("data receved");
-              },rej=>{
-                console.log("error"+rej);
-              })
-            
-            }
-          }
-    },rej=>{
-        console.log("opps! Somthing went wrong"+rej);
-    })
-  }
-}
+          this.object.push(i);
+          console.log('Fetched successfuly in add component');
+       
+
+    }
+  
+  });
+}}

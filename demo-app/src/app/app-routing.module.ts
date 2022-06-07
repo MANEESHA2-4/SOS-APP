@@ -24,6 +24,7 @@ import { ReportformComponent } from './reportform/reportform.component';
 import { ReportdetailsComponent } from './reportdetails/reportdetails.component';
 import { ReplyComponent } from './reply/reply.component';
 import { ReceiveComponent } from './receive/receive.component';
+import { NewuserComponent } from './newuser/newuser.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'news',component:NewsComponent },
@@ -41,14 +42,23 @@ const routes: Routes = [
   {path:'gallery',component:GalleryComponent},
   {path:'admin',component:AdminComponent},
   {path:'query',component:QueryComponent},
-  {path:'viewquery',component:ViewqueryComponent},
+  {path:'viewquery',component:ViewqueryComponent,
+    children:[
+      {path:'reply/:name',component:ReplyComponent}
+    ]
+},
   {path:'dashboard-admin',component:DashboardAdminComponent},
   {path:'contact-us',component:ContactUsComponent},
   {path:'contactdetails',component:ContactdetailsComponent},
   {path:'reportform',component:ReportformComponent},
-  {path:'reportdetails',component:ReportdetailsComponent},
-  {path:'reply',component:ReplyComponent},
-  {path:'receive',component:ReceiveComponent}
+  {path:'reportdetails',component:ReportdetailsComponent,
+  children:[
+    {path:'reply/:name',component:ReplyComponent}
+  ]},
+  {path:'reply/:name',component:ReplyComponent},
+  {path:'receive',component:ReceiveComponent},
+  {path:'newuser',component:NewuserComponent},
+ 
 ];
 
 @NgModule({

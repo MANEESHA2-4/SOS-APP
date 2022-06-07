@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder, Validators } from '@angular/forms';
+import { FormGroup,FormBuilder, Validators, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import{DatabaseService}from'../database.service'
@@ -56,16 +56,17 @@ this.api.storedata(formvalue).subscribe((data)=>{
   console.log(rej);
   // this.alert.showError("data cant post","error");
 });}
-} 
+register(FormValue:NgForm){
+  this.successMessage = "Successfully Registered..."
+this.api.registerdata(FormValue).subscribe((data)=>{
+  alert("Data posted Successfully");
+  this.regForm.reset();
+},rej=>{
+  console.log("Error"+rej);
+});
+console.log(FormValue)
+}
+}
+
+ 
   
-// register(FormValue:NgForm){
-//   this.successMessage = "Successfully Registered..."
-// this.api.registerdata(FormValue).subscribe((data)=>{
-//   alert("Data posted Successfully");
-//   this.regForm.reset();
-// },rej=>{
-//   console.log("Error"+rej);
-// });
-// console.log(FormValue)
-// }
-// }

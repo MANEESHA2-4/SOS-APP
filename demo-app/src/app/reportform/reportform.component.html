@@ -63,12 +63,14 @@
   </div>
    -->
 
-   <section>
+   <section class="entire">
     <div class="container">
-      <h2>Raise your Issue</h2>
+      <h2 class="heading">Report Form</h2>
       <form [formGroup]="addform">
         <div class="row100">
           <div class="col">
+            <span for="name" class="text">Name </span>
+            <span class="line"></span>
             <div class="inputBox">
               <input
                 type="text"
@@ -76,48 +78,52 @@
                 formControlName="name"
                 class="form-control"
               />
-              <span for="name" class="text">Name </span>
-              <span class="line"></span>
+             
             </div>
           </div>
           <div class="col">
             <div class="inputBox">
+              <span for="mobileno" class="text">Mobile no </span>
+              <span class="line"></span>
               <input
                 type="text"
                 id="mobileno"
                 formControlName="mobileno"
                 class="form-control"
               />
-              <span for="mobileno" class="text">Mobile no </span>
-              <span class="line"></span>
+              
             </div>
           </div>
           <div class="col">
             <div class="inputBox">
+              <span for="dateofbirth" class="text">Date of birth </span>
+              <span class="line"></span>
               <input
                 type="date"
                 id="dateofbirth"
                 formControlName="dateofbirth"
                 class="form-control"
               />
-              <span for="dateofbirth" class="text">Date of birth </span>
-              <span class="line"></span>
+             
             </div>
           </div>
           <div class="col">
             <div class="inputBox">
+              <span for="gender" class="text">Gender </span>
+              <span class="line"></span>
               <input
                 type="text"
                 id="gender"
                 formControlName="gender"
                 class="form-control"
               />
-              <span for="gender" class="text">Gender </span>
-              <span class="line"></span>
+             
             </div>
           </div>
           <div class="col">
             <div class="inputBox">
+              <span for="city" class="text">City</span>
+              <span class="line"></span>
               <input
                 type="text"
                 value=""
@@ -125,8 +131,7 @@
                 class="form-control"
                 id="city"
               />
-              <span for="city" class="text">City</span>
-              <span class="line"></span>
+             
             </div>
           </div>
           -
@@ -134,6 +139,8 @@
         <div class="row100">
           <div class="col">
             <div class="inputBox textarea">
+              <span for="time" class="text">Time</span>
+              <span class="line"></span>
               <input
                 type="time"
                 value=""
@@ -141,8 +148,7 @@
                 class="form-control"
                 id="time"
               />
-              <span for="time" class="text">Time</span>
-              <span class="line"></span>
+             
             </div>
           </div>
         </div>

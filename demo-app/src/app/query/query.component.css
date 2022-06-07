@@ -1,0 +1,12 @@
+.entire{
+    border: 2px solid gray;
+   box-shadow: black;
+   background-image: linear-gradient(to right,rgb(135, 162, 231),rgb(141, 193, 241));
+    width: 50%;
+  margin-left: 380px;
+  margin-top: 80px;
+  height: 70vh;
+}
+.heading{
+    text-align: center;
+}

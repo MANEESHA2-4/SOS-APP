@@ -13,7 +13,7 @@ export class ApiserviceService {
   }
 
  
-  checkuserlogin(email:any,password:any)
+  checkuserlogin(email:any,_password:any)
  {
   return this.http.get<any>('http://localhost:8000/getdata/'+email);
  }
@@ -22,5 +22,5 @@ export class ApiserviceService {
     return this.http.post<any>('http://localhost:8000/mail/',formvalue);
 }
 
-}
 
+}

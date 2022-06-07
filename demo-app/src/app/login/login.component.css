@@ -22,12 +22,18 @@ form{
   margin: 25px;
   width: 40%;
 }
+.title{
+  text-align: center;
+  margin-top: 30px;
+}
 .container-fluid {
   margin-left: 320px;
-  margin-top: 100px;
+  margin-top: 50px;
   width: 500px;
   border: 2px solid silver;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
+background-image: linear-gradient(to right,rgb(98, 197, 221),rgb(62, 233, 150));
+
    margin-bottom:120px; 
    /* background-image: url('../../assets/top.jpg'); */
 }

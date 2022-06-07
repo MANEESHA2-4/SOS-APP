@@ -1,6 +1,9 @@
 .container{
     width: 558px;
     margin-top: 50px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right,rgb(135, 162, 231),rgb(141, 193, 241));
+    padding: 20px;
 }
 input[type=text], select, textarea {
     width: 100%; 
@@ -20,8 +23,7 @@ input[type=text], select, textarea {
     border-radius: 4px;
     cursor: pointer;
   }
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+  
+  .heading{
+    text-align: center;
   }

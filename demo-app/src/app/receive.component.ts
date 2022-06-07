@@ -47,10 +47,7 @@ export class ReceiveComponent implements OnInit {
 //     })}
 // }
 getreply(){
-  this.object=[];
-let id=localStorage.getItem("emailreply");
-console.log("id",id)
-  this.api.getreply(id).subscribe(data=>{
+  this.api.getreply().subscribe(data=>{
     console.log(data);
     console.log('Data was fetching');
     this.alluser=data;
@@ -63,7 +60,7 @@ console.log("id",id)
       //   this.api.supplierId(elt.id).subscribe(res=>{
       //     console.log(res);
           this.object.push(i);
-          console.log('Fetched successfuly in add component',this.object);
+          console.log('Fetched successfuly in add component');
         // })
       // }
 

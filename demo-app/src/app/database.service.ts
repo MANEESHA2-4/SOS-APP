@@ -21,35 +21,43 @@ export class DatabaseService {
     })
   }
 
+  sendreply(formvalue:any) {
+    return this.http.post<any>('http://localhost:8000/mail/',formvalue);
+}
+
+
   registerdata(formObject:any){
     return this.http.post('http://localhost:8000/postquery',formObject)
   }
+  getnewuser(){
+    return this.http.get('http://localhost:8000/get_newuser/')
+   }
   add(doc:any){
     console.log(doc);
     return this.http.post('http://localhost:8000/post_query/',doc);
   }
   delete(id:string,rev:string){
-    const urld = this.url+'add_form/'+id+'/?rev='+rev;
+    const urld = this.url+'login_form/'+id+'/?rev='+rev;
     return this.http.delete(urld,this.httpOptions);
 
   }
   deletecontact(id:string,rev:string){
-    const urld = this.url+'add_form/'+id+'/?rev='+rev;
+    const urld = this.url+'login_form/'+id+'/?rev='+rev;
     return this.http.delete(urld,this.httpOptions);
 
   }
   deletemail(id:string,rev:string){
-    const urld = this.url+'contact_form/'+id+'/?rev='+rev;
+    const urld = this.url+'login_form/'+id+'/?rev='+rev;
     return this.http.delete(urld,this.httpOptions);
 
   }
   deletequery(id:string,rev:string){
-    const urld = this.url+'query-data/'+id+'/?rev='+rev;
+    const urld = this.url+'login_form/'+id+'/?rev='+rev;
     return this.http.delete(urld,this.httpOptions);
 
   }
   deletereport(id:string,rev:string){
-    const urld = this.url+'query-data/'+id+'/?rev='+rev;
+    const urld = this.url+'login_form/'+id+'/?rev='+rev;
     return this.http.delete(urld,this.httpOptions);
 
   }
@@ -84,8 +92,8 @@ storedata(formvalue:any){
       console.log(doc);
       return this.http.post('http://localhost:8000/post_reply/',doc)
     }
-    getreply(){
-     return this.http.get('http://localhost:8000/get_reply/')
+    getreply(id:any){
+     return this.http.get(`http://localhost:8000/get_reply/${id}`)
     }
     getAllreply(id:any){
      return this.http.get(`http://localhost:8000/get_all_reply/${id}`);
@@ -119,5 +127,6 @@ report(db:string,doc: object):Observable<{}> {
   
   
 }
+
 
 }

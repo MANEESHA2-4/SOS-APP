@@ -8,32 +8,67 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-light" routerLink=""  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >Home</a>
+            <a class="nav-link text-light bg-dark" routerLink=""  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" routerLink="login"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >Login</a>
-          </li>
-          <li class="nav-item">
+
+          <ul>
+           
+            <li>
+                <a href="#" class="nav-link text-light bg-dark"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Login ▾</a>
+                <ul class="dropdown">
+                    <li><a href="#" class="nav-link text-light bg-dark" routerLink="login">User</a></li>
+                    <li><a href="#" class="nav-link text-light bg-dark" routerLink="admin">Admin</a></li>
+                </ul>
+            </li>
+            
+       
+          <!-- <li class="nav-item">
+            <a class="nav-link text-light " routerLink="login"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >Login</a>
+          </li> -->
+          <!-- <li class="nav-item">
             <a class="nav-link text-light" routerLink="admin" routerLinkActive="active-link">Admin</a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a class="nav-link text-light" routerLink="faq" routerLinkActive="active-link">FAQ</a>
-          </li>
+            <a class="nav-link text-light bg-dark" routerLink="faq" routerLinkActive="active-link">FAQ</a>
+          </li> 
           <!-- <li class="nav-item">
             <a class="nav-link text-light" routerLink="blog" routerLinkActive="active-link">Blog</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link text-light" routerLink="about" routerLinkActive="active-link">About</a>
+            <a class="nav-link text-light bg-dark" routerLink="about" routerLinkActive="active-link">About</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link text-light" routerLink="contact-us" routerLinkActive="active-link">Contact</a>
-          </li> -->
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link text-light" routerLink="query" routerLinkActive="active-link">Query</a>
           </li> -->
           
-        </ul>
+        <!-- </ul>
       </div>
     </div>
     </nav>
-  
+   <!-- .navbar -->
+   <!-- <nav>
+    <div class="wrapper">
+      <div class="logo"><a href="#">CodingNepal</a></div>
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+        <li><a href="#">Home</a></li>
+        <li>
+          <a href="#" class="desktop-item">Login</a>
+          <input type="checkbox" id="showDrop">
+          <label for="showDrop" class="mobile-item">Login</label>
+          <ul class="drop-menu">
+            <li><a href="#" routerLink="login">User</a></li>
+            <li><a href="#"  routerLink="admin">Admin</a></li>
+          </ul>
+        </li>
+        <li><a href="#"  routerLink="about">About</a></li>
+
+        <li><a href="#"  routerLink="faq">Faq</a></li>
+        </ul>
+        </div>
+        </nav> -->

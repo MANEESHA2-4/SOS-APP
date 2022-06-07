@@ -3,6 +3,7 @@ body{
   }
   .right_conatct_social_icon{
        background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
+       height: 100%;
   }
   .contact_us{
       background-color: #f1f1f1;
@@ -18,9 +19,7 @@ body{
   .contact_field{
       padding: 60px 340px 90px 100px;
   }
-  .right_conatct_social_icon{
-      height: 100%;
-  }
+  
   
   .contact_field h3{
      color: rgb(0, 0, 0);
