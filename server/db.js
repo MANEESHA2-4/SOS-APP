@@ -13,15 +13,15 @@ let password = '8db4bc5abe318da5e50e638f8cb126b5';
 
 let cloudant = Cloudant({ url: url, username: username, password: password });
 
-insert = function (paramsvalue, dbname) {
+let insert = function (paramsvalue, dbname) {
   console.log(paramsvalue);
   return cloudant.use(dbname).insert(paramsvalue);
 };
 
-get = function (id,dbname) {
+ let get = function (id,dbname) {
   return cloudant.use(dbname).find(id);
 };
-getAll = function (id, dbname) {
+let getAll = function (id, dbname) {
   return cloudant.use(dbname).get(id);
 };
 

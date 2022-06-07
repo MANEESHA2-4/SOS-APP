@@ -5,7 +5,7 @@ app.use(express.static('public'));
 const port = 8000;
 const cors = require('cors');
 const dbconnection = require('./db');
-const { request, response } = require('express');
+ 
 app.use(bodyparser.json());
 app.use(express.static('public'));
 let nano = require('nano');
@@ -16,7 +16,7 @@ app.use(
   })
 );
 
-app.post('/mail',(request,response,next)=>{
+app.post('/mail',(request,_response,_next)=>{
   console.log('mmm');
  
   let object ={
