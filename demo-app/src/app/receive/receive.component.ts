@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
+
 import { DatabaseService } from '../database.service';
 @Component({
   selector: 'app-receive',
@@ -12,7 +12,7 @@ export class ReceiveComponent implements OnInit {
   alluser!:any;
   exchange!:any;
   object:any=[];
-  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router ) {}
+  constructor(private api:DatabaseService ) {}
 
   ngOnInit(): void {
     this.getreply()
