@@ -8,7 +8,7 @@ const dbconnection = require('./db');
 const { request, response } = require('express');
 app.use(bodyparser.json());
 app.use(express.static('public'));
-var nano = require('nano');
+let nano = require('nano');
 const setmail = require('./send');
 app.use(
   cors({
@@ -19,21 +19,21 @@ app.use(
 app.post('/mail',(request,response,next)=>{
   console.log('mmm');
  
-  var object ={
+  let object ={
       first_name:request.body.first_name,
       
       email:request.body.email_id,
       mobile:request.body.Mobile,
   }
-  // console.log(email);
+  
   setmail.getemail(request.body.email_id);
   console.log(object);
 })
 
 app.post('/postdata', function (req,res) {
-  var name = req.body.firstname;
+  let name = req.body.firstname;
   console.log(name);
-  var objectnew = {
+  let objectnew = {
       name : req.body.name,
       mobileNumber : req.body.mobileNumber,
       email : req.body.email,
@@ -56,7 +56,7 @@ app.post('/postdata', function (req,res) {
   
 app.get('/get_newuser', (request, response) => {
   console.log('start');
-  var data={
+  let data={
     selector:{
       type:"user",
     }
@@ -79,7 +79,7 @@ app.get('/getdata/:id', (req,res) => {
   console.log("retreived......",req.params.id);
 
  
-  var object = {
+  let object = {
       selector: {
           
           "email" : req.params.id
@@ -107,7 +107,7 @@ app.get('/getdata/:id', (req,res) => {
 
 app.post('/post_query', (request, response) => {
   
-  var object = {
+  let object = {
     firstname: request.body.firstname,
     lastname: request.body.lastname,
     country: request.body.country,
@@ -127,7 +127,7 @@ app.post('/post_query', (request, response) => {
 
 app.get('/get_query', (request, response) => {
   console.log('start',request.params.id);
-  var data={
+  let data={
     selector:{
       type:"add",
       username:request.params.id,
@@ -143,24 +143,12 @@ app.get('/get_query', (request, response) => {
     }
   });
 });
-// app.get('/get_all_query/:id', (request, response) => {
-//   dbconnection.getAll(request.params.id, 'add_form').then((res) => {
-//     if (res) {
-//       console.log(res);
-//       response.send(res);
-//     } else {
-//       response.send('error');
-//     }
-//   });
-
-//   console.log('end');
-// });
 
 
 
 //---------------query--------//
 app.post('/post_data', (request, response) => {
-  var object = {
+  let object = {
     firstname: request.body.firstname,
     lastname: request.body.lastname,
     email: request.body.email,
@@ -182,7 +170,7 @@ app.post('/post_data', (request, response) => {
 
 app.get('/get_data', (request, response) => {
   console.log('start');
-  var data={
+  let data={
     selector:{
       type:"query",
     }
@@ -199,22 +187,13 @@ app.get('/get_data', (request, response) => {
 
 
 
-// app.get('/get_all_data/:id', (request, response) => {
-//   dbconnection.getAll(request.params.id, 'query-data').then((res) => {
-//     if (res) {
-//       console.log(res);
-//       response.send(res);
-//     } else {
-//       response.send('error');
-//     }
-//   });
 
-//   console.log('end');
-// });
+
+
 
 //--------reply-----------//
 app.post('/post_reply', (request, response) => {
-  var object = {
+  let object = {
     message: request.body.message,
     username:request.body.username,
    type:"reply"
@@ -232,7 +211,7 @@ app.post('/post_reply', (request, response) => {
 
 app.get('/get_reply/:id', (request, response) => {
   console.log('start',request.params.id);
-  var data={
+  let data={
     selector:{
      username:request.params.id,
       type:"reply",
@@ -250,23 +229,12 @@ app.get('/get_reply/:id', (request, response) => {
   });
 });
 
-// app.get('/get_all_reply/:id', (request, response) => {
-//   dbconnection.getAll(request.params.id, 'login-form').then((res) => {
-//     if (res) {
-//       console.log(res);
-//       response.send(res);
-//     } else {
-//       response.send('error');
-//     }
-//   });
 
-//   console.log('end');
-// });
 
 //-----------------------//
 
 app.post('/post_report', (request, response) => {
-  var object = {
+  let object = {
     name: request.body.name,
     dateofbirth: request.body.dateofbirth,
     gender: request.body.gender,
@@ -287,7 +255,7 @@ app.post('/post_report', (request, response) => {
 
 app.get('/get_report', (request, response) => {
   console.log('start');
-  var data={
+  let data={
     selector:{
       type:"report",
     }
@@ -301,19 +269,7 @@ app.get('/get_report', (request, response) => {
   });
 });
 
-// app.get('/get_all_report/:id', (request, response) => {
-//   dbconnection.getAll(request.params.id, 'query-data').then((res) => {
-//     if (res) {
-//       console.log(res);
-//       response.send(res);
-//     } else {
-//       response.send('error');
-//     }
-//   });
 
-//   console.log('end');
-// });
-//-----------------------//
 
 
 
@@ -321,7 +277,7 @@ app.get('/get_report', (request, response) => {
 
 
 app.post('/post_msg', (request, response) => {
-  var object = {
+  let object = {
     name: request.body.name,
     message: request.body.message,
 type:'message'
@@ -340,7 +296,7 @@ type:'message'
 
 app.get('/get_msg', (request, response) => {
   console.log('start');
-  var data={
+  let data={
     selector:{
       type:"message",
     }
@@ -355,18 +311,8 @@ app.get('/get_msg', (request, response) => {
 });
 
 
-// app.get('/get_all_msg/:id', (request, response) => {
-//   dbconnection.getAll(request.params.id, 'contact_form').then((res) => {
-//     if (res) {
-//       console.log(res);
-//       response.send(res);
-//     } else {
-//       response.send('error');
-//     }
-//   });
 
-//   console.log('end');
-// });
+
 
 
 

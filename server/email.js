@@ -14,14 +14,12 @@ app.use(
     })
 )
 
-// app.get('/', function (request, response) {
-//     response.json({"name":"maneesha"});
-//   });
 
-  app.post('/mail',(request,response,next)=>{
+
+  app.post('/mail',(request,_response,_next)=>{
     console.log('mmm');
    
-    var object ={
+    let object ={
         first_name:request.body.first_name,
         last_name:request.body.last_name,
         email:request.body.email_id,
