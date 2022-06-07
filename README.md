@@ -47,8 +47,7 @@
       
       * sign in form- When new user regiser in the form, The email and password match to the database the user dashboard page will appear in the website.
       
-      * User Dashboard-This Dashboard is used only by registered user,In this Dashboard Provides some services like Raising Query,Sending Report,sending Feedback,adding and removing contacts.These services are provided in form format.once,form get submit.it will sent to admin dashboard.
-besides, when a user logged in to the dashboard,their email_id will auto-filled in the form field.
+      * User Dashboard-This Dashboard is used only by registered user,In this Dashboard Provides some services like Raising Query,Sending Report,sending Feedback,adding and removing contacts.These services are provided in form format.once,form get submit.it will sent to admin dashboard.besides, when a user logged in to the dashboard,their email_id will auto-filled in the form field.
        
       * Sending E-mail- Once,the user logged in,user can contact us by simply clicking the button send-email.Admin will respond the user immediately.
       
