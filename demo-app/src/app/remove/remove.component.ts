@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators,NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { DatabaseService } from '../database.service';
 
 @Component({
@@ -25,35 +25,7 @@ export class RemoveComponent implements OnInit {
     });
     
   }
-  // get(){
-  //   this.api.get().subscribe(res=>{
-  //    console.log(res);
-  //    console.log("response is comming");
-  //    this.alluser=res;
-     
-  //    this.alluser=this.alluser.rows;
-  //    console.log(this.alluser);
-  //    for (const key in this.alluser) {
-  //       if (Object.prototype.hasOwnProperty.call(this.alluser, key)) {
-  //        const element = this.alluser[key];
-  //        console.log(element.id);
-  //        this.api.getAll(element.id).subscribe(res=>{
-  //         console.log(res);
-  //         this.exchange=res;
-  //         console.log(this.exchange);
-          
-  //         this.store.push(this.exchange);
-  //         console.log("data is came");
-  //        },rej=>{
-  //         console.log("error"+rej);
-  //        })
-        
-  //       }
-  //      }
-  //   },rej=>{
-  //     console.log("opps! Somthing went wrong"+rej);
-  //   })
-  // }}
+
 
 
   get(){
@@ -64,15 +36,10 @@ export class RemoveComponent implements OnInit {
       this.alluser=this.alluser.docs;
       console.log(this.alluser);
       for(const i of this.alluser){
-        // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
-        //   const elt = this.alldata[i];
-        //   console.log(elt.id);
-        //   this.api.supplierId(elt.id).subscribe(res=>{
-        //     console.log(res);
+        
             this.object.push(i);
             console.log('Fetched successfuly in add component');
-          // })
-        // }
+          
   
       }
     

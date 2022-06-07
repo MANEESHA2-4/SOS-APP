@@ -11,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NextPageComponent } from './next-page/next-page.component';
+
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
@@ -20,7 +20,7 @@ import { RemoveComponent } from './remove/remove.component';
 import { TermsComponent } from './terms/terms.component';
 import { BlogComponent } from './blog/blog.component';
 import { FeatureComponent } from './feature/feature.component';
-import { GalleryComponent } from './gallery/gallery.component';
+
 import { AdminComponent } from './admin/admin.component';
 import { QueryComponent } from './query/query.component';
 import { ViewqueryComponent } from './viewquery/viewquery.component';
@@ -49,7 +49,7 @@ import { NewuserComponent } from './newuser/newuser.component';
     FooterComponent,
     NavbarComponent,
     SignupComponent,
-    NextPageComponent,
+   
     DashboardComponent,
     AddComponent,
     FaqComponent,
@@ -57,7 +57,7 @@ import { NewuserComponent } from './newuser/newuser.component';
     TermsComponent,
     BlogComponent,
     FeatureComponent,
-    GalleryComponent,
+    
     AdminComponent,
     QueryComponent,
     ViewqueryComponent,

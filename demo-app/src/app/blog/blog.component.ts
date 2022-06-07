@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { /* TODO document why this constructor is empty */  }
+  constructor() { /* TODO  */  }
 
   ngOnInit(): void {
-    // TODO document why this method 'ngOnInit' is empty
+    // TODO 
   
   }
 

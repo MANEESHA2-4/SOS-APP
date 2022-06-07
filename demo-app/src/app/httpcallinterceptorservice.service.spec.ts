@@ -1,8 +1,8 @@
 import { Injectable, Injector } from '@angular/core';
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
+import {  HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-// import { ToastrService } from 'ngx-toastr';
+
 
 
 @Injectable()
@@ -17,8 +17,7 @@ export class HttpCallInterceptorService implements HttpInterceptor {
         // this.toastr.success("Details Entered Successfully")
       }, err => {
         console.log(err)
-        // alert(err.error.reason)
-        // this.toastr.error(err.error.message.reason);
+      
       })
     )
   }

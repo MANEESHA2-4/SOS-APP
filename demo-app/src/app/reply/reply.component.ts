@@ -12,7 +12,7 @@ export class ReplyComponent implements OnInit {
   store:any=[];
   value:boolean=true;
   route: any;
-  // emailsend:any;
+ 
   currentpage = {name:'string'}
   constructor(private formbuilder:FormBuilder,private api:DatabaseService,private active:ActivatedRoute) {
     this.active.params.subscribe((data:Params)=>{
@@ -43,7 +43,7 @@ export class ReplyComponent implements OnInit {
    
 
     
-    //this.addform.controls['name'].setValue(userdetails?.name);
+    
     this.addform.controls['username'].setValue(this.currentpage.name);
 
     
@@ -62,7 +62,7 @@ export class ReplyComponent implements OnInit {
     this.api.addreply(formvalue).subscribe(res=>{
      console.log("hello"+res);
      console.log("Your data was posted successfully!");
-     // window.location.replace("/query")
+     
      alert('your data is added successfully')
      },rej=>{
      console.log("opps! Can not post data"+rej);

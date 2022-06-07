@@ -13,7 +13,7 @@ import { TermsComponent } from './terms/terms.component';
 import { RemoveComponent } from './remove/remove.component';
 import { BlogComponent } from './blog/blog.component';
 import { FeatureComponent } from './feature/feature.component';
-import { GalleryComponent } from './gallery/gallery.component';
+
 import { AdminComponent } from './admin/admin.component';
 import { QueryComponent } from './query/query.component';
 import { ViewqueryComponent } from './viewquery/viewquery.component';
@@ -39,7 +39,7 @@ const routes: Routes = [
   {path:'remove',component:RemoveComponent},
   {path:'blog',component:BlogComponent},
   {path:'feature',component:FeatureComponent},
-  {path:'gallery',component:GalleryComponent},
+  
   {path:'admin',component:AdminComponent},
   {path:'query',component:QueryComponent},
   {path:'viewquery',component:ViewqueryComponent,

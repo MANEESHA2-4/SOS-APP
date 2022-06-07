@@ -10,9 +10,7 @@ import{DatabaseService}from'../database.service'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  // formgroups!: FormGroup;
-
-  // constructor(private formbuilder:FormBuilder) { }
+  
   successMessage:string =""
 userdata :  any = [];
   regForm!:FormGroup;
@@ -32,7 +30,7 @@ this.api.storedata(formvalue).subscribe((data)=>{
       console.log("data returned from server",data);
      
     console.log(data.id);
-    var userid = data.id;
+    let userid = data.id;
 
     console.log("userid",userid);
 
@@ -54,7 +52,7 @@ this.api.storedata(formvalue).subscribe((data)=>{
    
   },rej => {
   console.log(rej);
-  // this.alert.showError("data cant post","error");
+
 });}
 register(FormValue:NgForm){
   this.successMessage = "Successfully Registered..."

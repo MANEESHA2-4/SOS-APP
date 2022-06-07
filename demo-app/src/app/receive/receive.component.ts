@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup,Validator,NgForm } from '@angular/forms';
+import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatabaseService } from '../database.service';
 @Component({
@@ -17,35 +17,7 @@ export class ReceiveComponent implements OnInit {
   ngOnInit(): void {
     this.getreply()
   }
-  // getreply(){
-  //   this.object=[];
-  //   this.api.getreply().subscribe(res=>{
-  //     console.log(res);
-  //     console.log("response is comming");
-  //     this.alluser=res;
-      // this.alluser=this.alluser.data;
-      // this.alluser=this.alluser.rows;
-      // console.log(this.alluser);
-      // const temp = this.alluser;
-//       for (const key in this.alluser) {
-//             if (Object.prototype.hasOwnProperty.call(this.alluser, key)) {
-//               const element = this.alluser[key];
-//               console.log(element.id);
-//               this.api.getAllreply(element.id).subscribe(res=>{
-//                 console.log(res);
-//                 this.exchange=res;
-//                 this.object.push(this.exchange);
-//                 console.log("data receved");
-//               },rej=>{
-//                 console.log("error"+rej);
-//               })
-            
-//             }
-//           }
-//     },rej=>{
-//         console.log("opps! Somthing went wrong"+rej);
-//     })}
-// }
+  
 getreply(){
   this.object=[];
 let id=localStorage.getItem("emailreply");
@@ -57,15 +29,10 @@ console.log("id",id)
     this.alluser=this.alluser.docs;
     console.log(this.alluser);
     for(const i of this.alluser){
-      // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
-      //   const elt = this.alldata[i];
-      //   console.log(elt.id);
-      //   this.api.supplierId(elt.id).subscribe(res=>{
-      //     console.log(res);
+      
           this.object.push(i);
           console.log('Fetched successfuly in add component',this.object);
-        // })
-      // }
+       
 
     }
   
