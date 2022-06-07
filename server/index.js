@@ -16,17 +16,17 @@ app.use(
   })
 );
 
-app.post('/mail',(request,_response,_next)=>{
+app.post('/mail',(_request,_response,_next)=>{
   console.log('mmm');
  
   let object ={
-      first_name:request.body.first_name,
+      first_name:_request.body.first_name,
       
-      email:request.body.email_id,
-      mobile:request.body.Mobile,
+      email:_request.body.email_id,
+      mobile:_request.body.Mobile,
   }
   
-  setmail.getemail(request.body.email_id);
+  setmail.getemail(_request.body.email_id);
   console.log(object);
 })
 
@@ -54,7 +54,7 @@ app.post('/postdata', function (req,res) {
     }));
 })
   
-app.get('/get_newuser', (request, response) => {
+app.get('/get_newuser', (_request, response) => {
   console.log('start');
   let data={
     selector:{
@@ -105,13 +105,13 @@ app.get('/getdata/:id', (req,res) => {
 
 
 
-app.post('/post_query', (request, response) => {
+app.post('/post_query', (_request, response) => {
   
   let object = {
-    firstname: request.body.firstname,
-    lastname: request.body.lastname,
-    country: request.body.country,
-    mobileno: request.body. mobileno,
+    firstname: _request.body.firstname,
+    lastname: _request.body.lastname,
+    country: _request.body.country,
+    mobileno: _request.body. mobileno,
     type:"add"
   };
   dbconnection.insert(object,'login_form').then(
@@ -125,12 +125,12 @@ app.post('/post_query', (request, response) => {
     console.log('Data Added');
 });
 
-app.get('/get_query', (request, response) => {
-  console.log('start',request.params.id);
+app.get('/get_query', (_request, response) => {
+  console.log('start',_request.params.id);
   let data={
     selector:{
       type:"add",
-      username:request.params.id,
+      username:_request.params.id,
     
     }
   }
@@ -147,13 +147,13 @@ app.get('/get_query', (request, response) => {
 
 
 //---------------query--------//
-app.post('/post_data', (request, response) => {
+app.post('/post_data', (_request, response) => {
   let object = {
-    firstname: request.body.firstname,
-    lastname: request.body.lastname,
-    email: request.body.email,
-    mobileno: request.body.mobileno,
-    query: request.body.query,
+    firstname: _request.body.firstname,
+    lastname: _request.body.lastname,
+    email: _request.body.email,
+    mobileno: _request.body.mobileno,
+    query: _request.body.query,
     type:"query"
    
   };
@@ -168,7 +168,7 @@ app.post('/post_data', (request, response) => {
 });
 
 
-app.get('/get_data', (request, response) => {
+app.get('/get_data', (_request, response) => {
   console.log('start');
   let data={
     selector:{
@@ -192,10 +192,10 @@ app.get('/get_data', (request, response) => {
 
 
 //--------reply-----------//
-app.post('/post_reply', (request, response) => {
+app.post('/post_reply', (_request, response) => {
   let object = {
-    message: request.body.message,
-    username:request.body.username,
+    message: _request.body.message,
+    username:_request.body.username,
    type:"reply"
    
   };
@@ -209,11 +209,11 @@ app.post('/post_reply', (request, response) => {
   console.log('Data added');
 });
 
-app.get('/get_reply/:id', (request, response) => {
-  console.log('start',request.params.id);
+app.get('/get_reply/:id', (_request, response) => {
+  console.log('start',_request.params.id);
   let data={
     selector:{
-     username:request.params.id,
+     username:_request.params.id,
       type:"reply",
       
     }
@@ -233,14 +233,14 @@ app.get('/get_reply/:id', (request, response) => {
 
 //-----------------------//
 
-app.post('/post_report', (request, response) => {
+app.post('/post_report', (_request, response) => {
   let object = {
-    name: request.body.name,
-    dateofbirth: request.body.dateofbirth,
-    gender: request.body.gender,
-    mobileno: request.body.mobileno,
-    city: request.body.city,
-    time:request.body.time,
+    name: _request.body.name,
+    dateofbirth: _request.body.dateofbirth,
+    gender: _request.body.gender,
+    mobileno: _request.body.mobileno,
+    city: _request.body.city,
+    time:_request.body.time,
     type:"report"
   };
   dbconnection.insert(object, 'login_form').then((res) => {
@@ -253,7 +253,7 @@ app.post('/post_report', (request, response) => {
   console.log('Data added');
 });
 
-app.get('/get_report', (request, response) => {
+app.get('/get_report', (_request, response) => {
   console.log('start');
   let data={
     selector:{
@@ -276,10 +276,10 @@ app.get('/get_report', (request, response) => {
 
 
 
-app.post('/post_msg', (request, response) => {
+app.post('/post_msg', (_request, response) => {
   let object = {
-    name: request.body.name,
-    message: request.body.message,
+    name: _request.body.name,
+    message: _request.body.message,
 type:'message'
     
   };
@@ -294,7 +294,7 @@ type:'message'
 });
 
 
-app.get('/get_msg', (request, response) => {
+app.get('/get_msg', (_request, response) => {
   console.log('start');
   let data={
     selector:{
