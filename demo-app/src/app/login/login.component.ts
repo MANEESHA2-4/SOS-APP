@@ -52,7 +52,7 @@ login(obj:any){
        alert("success!!")
       this.userdata = {obj}
       localStorage.setItem("userdata",JSON.stringify(this.userdata.obj));
-      // this.toastr.success("valid to access");
+      
 
       this.route.navigate(['dashboard'],{queryParams:{data:this.UserId}});
       localStorage.setItem('emailreply',this.email);

@@ -7,6 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
  providedIn: 'root'
 })
 export class ToastarService {
+  success(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
 
  constructor(private notifyService:ToastrService,private client : HttpClientModule) {
   

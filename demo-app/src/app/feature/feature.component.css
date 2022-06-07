@@ -23,7 +23,7 @@ body{
   line-height:1.6em;
   font-size:14px;
   color:rgba(1,1,1,0.7);
-  line-height: 28px;
+ 
   transform: translateY(300px);
   animation: slideUp .8s ease-in-out forwards .8s;
   }
@@ -440,33 +440,11 @@ body{
   
   
   
-  /*COMMENTS*/
-  .comments{
-  position:relative;
-  overflow:hidden;
-  max-height:60vh;
-  }
+ 
   
-  .marquee2 {
-  position: relative;
-  overflow:hidden;
-  line-height:1.6em;
-  }
+ 
   
-  .marquee2 p{
-  border-bottom:1px solid rgba(1,1,1,0.1);
-  position:relative;
-  padding:0.4rem 0;
-  }
-  
-  .marquee2 p:before{
-  content:"\f10d";
-  font-family:"FontAwesome";
-  margin-right:5px;
-  position:relative;
-  top:-5px;
-  }
-  
+ 
   @keyframes marquee1 {
   0% {
   top: 10%;
