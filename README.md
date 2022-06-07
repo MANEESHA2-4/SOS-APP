@@ -12,15 +12,15 @@
                    * npm npm install npm -g npm version npm -v:6.14.8
 
                    * Procedures :1.ng new filename 
-                                2.ng g s servicename
+                                 2.ng g s servicename
 
                    * Packages-Angular: 1.ng g c componentname 
-                                      2.npm i bootstrap --save  
-                                      3.npm i -g@angular -cli
+                                       2.npm i bootstrap --save  
+                                       3.npm i -g@angular -cli
 
                    * Packages-Nodejs : 1.npm init 
-                                      2.npm i express body-parser cors--save
-                                      3.npm i nodemailer 
+                                       2.npm i express body-parser cors--save
+                                       3.npm i nodemailer 
        
  **Technologies Used:**
       
