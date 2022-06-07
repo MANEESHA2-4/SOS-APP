@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { /* TODO  */  }
+  constructor() { console.log("about")  }
 
   ngOnInit(): void {
-    // TODO 
-  
+    console.log("about")
   }
 
 }

@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
     let userId: any=localStorage.getItem("userdata")
     let user=JSON.parse(userId.toString())
     this.email=user['email']
-   // this.name=user['password']
+   
    
 
 

@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeatureComponent implements OnInit {
 
-  constructor() { /* TODO  */  }
+  constructor() {console.log("feature") }
 
   ngOnInit(): void {
-    // TODO 
+    console.log("feature") 
   
   }
 

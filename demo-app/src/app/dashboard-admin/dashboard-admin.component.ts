@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardAdminComponent implements OnInit {
 
-  constructor() { /* TODO  */  }
+  constructor() { console.log("dashboard-admin")  }
 
   ngOnInit(): void {
-    // TODO 
+    console.log("dashboard-admin") 
   
   }
 
