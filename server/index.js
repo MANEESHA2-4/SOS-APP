@@ -16,26 +16,6 @@ app.use(
   })
 );
 
-app.post('/post_query', (request, response) => {
-  
-  var object = {
-    firstname: request.body.firstname,
-    lastname: request.body.lastname,
-    country: request.body.country,
-    mobileno: request.body. mobileno,
-    type:"query"
-  };
-  dbconnection.insert(object,'query-data').then(
-    (res) => {if(res){
-      console.log('data posted');
-      response.send(res);
-    }else{
-      response.send('error');
-    }
-    }),
-    console.log('Data Added');
-});
-
 app.post('/mail',(request,response,next)=>{
   console.log('mmm');
  
@@ -74,33 +54,21 @@ app.post('/postdata', function (req,res) {
     }));
 })
   
-  
-
-
-
-
-
-app.get('/get_query', (request, response) => {
+app.get('/get_newuser', (request, response) => {
   console.log('start');
-  dbconnection.get('add_form').then((res) => {
+  var data={
+    selector:{
+      type:"user",
+    }
+  }
+  
+  dbconnection.get(data,"login_form").then((res) => {
     if (res) {
       response.send(res);
     } else {
       response.send('error');
     }
   });
-});
-app.get('/get_all_query/:id', (request, response) => {
-  dbconnection.getAll(request.params.id, 'add_form').then((res) => {
-    if (res) {
-      console.log(res);
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
-
-  console.log('end');
 });
 
 
@@ -128,6 +96,67 @@ app.get('/getdata/:id', (req,res) => {
       
   }))
 })
+  
+
+
+
+//------------add-form----------------//
+
+
+
+
+app.post('/post_query', (request, response) => {
+  
+  var object = {
+    firstname: request.body.firstname,
+    lastname: request.body.lastname,
+    country: request.body.country,
+    mobileno: request.body. mobileno,
+    type:"add"
+  };
+  dbconnection.insert(object,'login_form').then(
+    (res) => {if(res){
+      console.log('data posted');
+      response.send(res);
+    }else{
+      response.send('error');
+    }
+    }),
+    console.log('Data Added');
+});
+
+app.get('/get_query', (request, response) => {
+  console.log('start',request.params.id);
+  var data={
+    selector:{
+      type:"add",
+      username:request.params.id,
+    
+    }
+  }
+  console.log("email",data);
+  dbconnection.get(data,'login_form').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+// app.get('/get_all_query/:id', (request, response) => {
+//   dbconnection.getAll(request.params.id, 'add_form').then((res) => {
+//     if (res) {
+//       console.log(res);
+//       response.send(res);
+//     } else {
+//       response.send('error');
+//     }
+//   });
+
+//   console.log('end');
+// });
+
+
 
 //---------------query--------//
 app.post('/post_data', (request, response) => {
@@ -137,9 +166,10 @@ app.post('/post_data', (request, response) => {
     email: request.body.email,
     mobileno: request.body.mobileno,
     query: request.body.query,
+    type:"query"
    
   };
-  dbconnection.insert(object,"query-data" ).then((res) => {
+  dbconnection.insert(object,"login_form" ).then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -152,9 +182,13 @@ app.post('/post_data', (request, response) => {
 
 app.get('/get_data', (request, response) => {
   console.log('start');
+  var data={
+    selector:{
+      type:"query",
+    }
+  }
   
-  
-  dbconnection.get("query-data").then((res) => {
+  dbconnection.get(data,"login_form").then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -165,27 +199,28 @@ app.get('/get_data', (request, response) => {
 
 
 
-app.get('/get_all_data/:id', (request, response) => {
-  dbconnection.getAll(request.params.id, 'query-data').then((res) => {
-    if (res) {
-      console.log(res);
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
+// app.get('/get_all_data/:id', (request, response) => {
+//   dbconnection.getAll(request.params.id, 'query-data').then((res) => {
+//     if (res) {
+//       console.log(res);
+//       response.send(res);
+//     } else {
+//       response.send('error');
+//     }
+//   });
 
-  console.log('end');
-});
+//   console.log('end');
+// });
 
-//-------------------//
+//--------reply-----------//
 app.post('/post_reply', (request, response) => {
   var object = {
     message: request.body.message,
-   
+    username:request.body.username,
+   type:"reply"
    
   };
-  dbconnection.insert(object,"query-data" ).then((res) => {
+  dbconnection.insert(object,"login_form" ).then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -195,11 +230,18 @@ app.post('/post_reply', (request, response) => {
   console.log('Data added');
 });
 
-app.get('/get_reply', (request, response) => {
-  console.log('start');
-  
-  
-  dbconnection.get("query-data").then((res) => {
+app.get('/get_reply/:id', (request, response) => {
+  console.log('start',request.params.id);
+  var data={
+    selector:{
+     username:request.params.id,
+      type:"reply",
+      
+    }
+  }
+ console.log("email",data);
+  dbconnection.get(data,"login_form").then((res) => {
+    console.log(res,"response");
     if (res) {
       response.send(res);
     } else {
@@ -208,18 +250,18 @@ app.get('/get_reply', (request, response) => {
   });
 });
 
-app.get('/get_all_reply/:id', (request, response) => {
-  dbconnection.getAll(request.params.id, 'query-data').then((res) => {
-    if (res) {
-      console.log(res);
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
+// app.get('/get_all_reply/:id', (request, response) => {
+//   dbconnection.getAll(request.params.id, 'login-form').then((res) => {
+//     if (res) {
+//       console.log(res);
+//       response.send(res);
+//     } else {
+//       response.send('error');
+//     }
+//   });
 
-  console.log('end');
-});
+//   console.log('end');
+// });
 
 //-----------------------//
 
@@ -230,9 +272,10 @@ app.post('/post_report', (request, response) => {
     gender: request.body.gender,
     mobileno: request.body.mobileno,
     city: request.body.city,
-    time:request.body.time
+    time:request.body.time,
+    type:"report"
   };
-  dbconnection.insert(object, 'query-data').then((res) => {
+  dbconnection.insert(object, 'login_form').then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -242,7 +285,35 @@ app.post('/post_report', (request, response) => {
   console.log('Data added');
 });
 
+app.get('/get_report', (request, response) => {
+  console.log('start');
+  var data={
+    selector:{
+      type:"report",
+    }
+  }
+  dbconnection.get(data,'login_form').then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
 
+// app.get('/get_all_report/:id', (request, response) => {
+//   dbconnection.getAll(request.params.id, 'query-data').then((res) => {
+//     if (res) {
+//       console.log(res);
+//       response.send(res);
+//     } else {
+//       response.send('error');
+//     }
+//   });
+
+//   console.log('end');
+// });
+//-----------------------//
 
 
 
@@ -253,10 +324,10 @@ app.post('/post_msg', (request, response) => {
   var object = {
     name: request.body.name,
     message: request.body.message,
-type:'contact'
+type:'message'
     
   };
-  dbconnection.insert(object, 'contact_form').then((res) => {
+  dbconnection.insert(object, 'login_form').then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -269,7 +340,12 @@ type:'contact'
 
 app.get('/get_msg', (request, response) => {
   console.log('start');
-  dbconnection.get('contact_form').then((res) => {
+  var data={
+    selector:{
+      type:"message",
+    }
+  }
+  dbconnection.get(data,'login_form').then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -279,43 +355,21 @@ app.get('/get_msg', (request, response) => {
 });
 
 
-app.get('/get_all_msg/:id', (request, response) => {
-  dbconnection.getAll(request.params.id, 'contact_form').then((res) => {
-    if (res) {
-      console.log(res);
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
+// app.get('/get_all_msg/:id', (request, response) => {
+//   dbconnection.getAll(request.params.id, 'contact_form').then((res) => {
+//     if (res) {
+//       console.log(res);
+//       response.send(res);
+//     } else {
+//       response.send('error');
+//     }
+//   });
 
-  console.log('end');
-});
+//   console.log('end');
+// });
 
 
-app.get('/get_report', (request, response) => {
-  console.log('start');
-  dbconnection.get('query-data').then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
-});
 
-app.get('/get_all_report/:id', (request, response) => {
-  dbconnection.getAll(request.params.id, 'query-data').then((res) => {
-    if (res) {
-      console.log(res);
-      response.send(res);
-    } else {
-      response.send('error');
-    }
-  });
-
-  console.log('end');
-});
 
 app.listen(port, (err) => {
   if (err) {
