@@ -29,7 +29,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ContactdetailsComponent } from './contactdetails/contactdetails.component';
 import { ReportformComponent } from './reportform/reportform.component';
 import { ReportdetailsComponent } from './reportdetails/reportdetails.component';
-import { HttpCallInterceptorService } from './httpcallinterceptorservice.service.spec';
+// import { HttpCallInterceptorService } from './httpcallinterceptorservice.service.spec';
 import { ReplyComponent } from './reply/reply.component';
 import { ReceiveComponent } from './receive/receive.component';
 import { NewuserComponent } from './newuser/newuser.component';
@@ -83,9 +83,9 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     ToastrModule.forRoot()
   ],
-  providers: [ {provide: HTTP_INTERCEPTORS,
-    useClass: HttpCallInterceptorService,
-    multi: true}],
+  // providers: [ {provide: HTTP_INTERCEPTORS,
+    // useClass: HttpCallInterceptorService,
+    // multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

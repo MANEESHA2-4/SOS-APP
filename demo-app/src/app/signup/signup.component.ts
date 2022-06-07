@@ -45,7 +45,9 @@ this.api.storedata(formvalue).subscribe((data)=>{
   console.log(this.userdata.formvalue);
 
   localStorage.setItem("userdata",JSON.stringify(this.userdata.formvalue));
+
   this.route.navigate(['dashboard']);
+ this.alert.showSuccess("Success","Data posted Successfully");
     
    console.log("from form",formvalue);
 
@@ -54,17 +56,17 @@ this.api.storedata(formvalue).subscribe((data)=>{
   console.log(rej);
 
 });}
-register(FormValue:NgForm){
-  this.successMessage = "Successfully Registered..."
-this.api.registerdata(FormValue).subscribe((result)=>{
-  console.log(result);
-  alert("Data posted Successfully");
-  this.regForm.reset();
-},rej=>{
-  console.log("Error"+rej);
-});
-console.log(FormValue)
-}
+// register(FormValue:NgForm){
+//   this.successMessage = "Successfully Registered..."
+// this.api.registerdata(FormValue).subscribe((result)=>{
+//   console.log(result);
+//   alert("Data posted Successfully");
+//   // this.regForm.reset();
+// },rej=>{
+//   console.log("Error"+rej);
+// });
+// console.log(FormValue)
+// }
 }
 
  

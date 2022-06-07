@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatabaseService } from '../database.service';
+import { ToastarService } from '../toastarservice.service';
 @Component({
   selector: 'app-reportdetails',
   templateUrl: './reportdetails.component.html',
@@ -13,7 +14,8 @@ export class ReportdetailsComponent implements OnInit {
   alluser!:any;
   exchange!:any;
   object:any=[];
-  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router) { }
+  toastr: any;
+  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router, private tostr: ToastarService) { }
 
   ngOnInit(): void {
     this.getreport();
@@ -22,10 +24,13 @@ export class ReportdetailsComponent implements OnInit {
     
     this.api.deletereport(id,rev).subscribe((data) => {
       console.log(data);
-      alert("your data was deleted");
-      window.location.reload();
+      // alert("your data was deleted");
+      
+      this.tostr.showSuccess("Deleted",'Deleted succesfully');
+      window.setTimeout(function(){location.reload()},1500)
+      
     });
-    
+    // location.reload();
   }
 
 

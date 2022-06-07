@@ -1,8 +1,8 @@
-
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastarService } from '../toastarservice.service';
+import { ToastrService } from 'ngx-toastr';
 import { ApiserviceService } from '../apiservice.service';
 
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     password:''
   }
 
-  constructor(private fb: FormBuilder,private api:ApiserviceService,private route: Router,private toastr:ToastarService) {
+  constructor(private fb: FormBuilder,private api:ApiserviceService,private route: Router) {
     this.loginForm = this.fb.group({
       email : [this.sos.email],
       password : [this.sos.password]
@@ -48,12 +48,9 @@ login(obj:any){
 
      if((data.docs[0].password === this.password))
      {
-     
        alert("success!!")
-      this.userdata = {obj}
-      localStorage.setItem("userdata",JSON.stringify(this.userdata.obj));
-      
-
+       this.userdata = {obj}
+  localStorage.setItem("userdata",JSON.stringify(this.userdata.obj));
       this.route.navigate(['dashboard'],{queryParams:{data:this.UserId}});
       localStorage.setItem('emailreply',this.email);
      }
