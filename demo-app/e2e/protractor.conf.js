@@ -23,7 +23,7 @@ exports.config = {
     showColors: true,
     defaultTimeoutInterval: 30000,
     print: function() {
-      //code-smell
+    console.log("code-smell")
     }
   },
   onPrepare() {

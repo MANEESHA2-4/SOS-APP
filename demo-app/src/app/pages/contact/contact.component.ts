@@ -20,12 +20,11 @@ export class ContactComponent implements OnInit {
       _id:[''],
       _rev:[''],
       first_name:['',Validators.required],
-      // last_name:['',Validators.required],
+     
       email_id:['',Validators.required],
       Mobile:['',Validators.required],
     })
-    // this.contactform.controls['first_name'].setValue(userdetails?.name);
-    //  this.contactform.controls['Mobile'].setValue(userdetails?.mobileNumber);
+    
     
     this.contactform.controls['email_id'].setValue(userdetails?.email);
 

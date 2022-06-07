@@ -107,10 +107,7 @@
   border-radius: 10px;
   animation: 2s anim-lineUp ease-out infinite;
 }
-.video{
-  width:"320" ;
-  height:"240"
-}
+
 @keyframes anim-lineUp {
   0% {
     opacity: 0;
@@ -157,6 +154,7 @@
   margin-left: 20px;
     width: 674px;
     height: 65vh;
+   
 }
 .description{
   width: 600px;

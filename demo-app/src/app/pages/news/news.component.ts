@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { /* TODO */  }
+  constructor() { console.log("news")}
   ngOnInit(): void {
-    // TODO 
+    console.log("news")
   
     
   }

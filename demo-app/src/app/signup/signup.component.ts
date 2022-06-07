@@ -56,7 +56,7 @@ this.api.storedata(formvalue).subscribe((data)=>{
 });}
 register(FormValue:NgForm){
   this.successMessage = "Successfully Registered..."
-this.api.registerdata(FormValue).subscribe((data)=>{
+this.api.registerdata(FormValue).subscribe((_data)=>{
   alert("Data posted Successfully");
   this.regForm.reset();
 },rej=>{

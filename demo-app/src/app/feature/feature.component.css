@@ -23,6 +23,9 @@ body{
   line-height:1.6em;
   font-size:14px;
   color:rgba(1,1,1,0.7);
+  line-height: 28px;
+  transform: translateY(300px);
+  animation: slideUp .8s ease-in-out forwards .8s;
   }
   
   img{
@@ -44,6 +47,8 @@ body{
   .title{
   font-family:var(--titlefont);
   margin-top: 50px;
+  overflow: hidden;
+  height: auto;
   }
   
   .btn1, .btn2{
@@ -672,11 +677,7 @@ body{
     margin-top: 20px;
   }
   
-  p{
-    line-height: 28px;
-    transform: translateY(300px);
-    animation: slideUp .8s ease-in-out forwards .8s;
-  }
+  
   
   .btns {
     height: 100%;
@@ -685,10 +686,7 @@ body{
     overflow: hidden;
   }
   
-  .title {
-    overflow: hidden;
-    height: auto;
-  }
+  
   .up{
     margin-left: 150px;
     margin-top: -113px;

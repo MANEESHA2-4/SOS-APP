@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { DatabaseService } from 'src/app/database.service';
+
 
 @Component({
   selector: 'app-home',
@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { /* TODO  */  }
+  constructor() { console.log("home")  }
   ngOnInit(): void {
-    // TODO 
+    console.log("home") 
   
   }
 
