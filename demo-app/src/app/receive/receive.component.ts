@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-
 import { DatabaseService } from '../database.service';
 @Component({
   selector: 'app-receive',
@@ -17,6 +16,8 @@ export class ReceiveComponent implements OnInit {
   ngOnInit(): void {
     this.getreply()
   }
+
+  
   
 getreply(){
   this.object=[];

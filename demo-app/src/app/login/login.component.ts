@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { ApiserviceService } from '../apiservice.service';
+import { SharedService } from '../service/shared.service';
 
 
 @Component({
@@ -22,7 +21,7 @@ export class LoginComponent implements OnInit {
     password:''
   }
 
-  constructor(private fb: FormBuilder,private api:ApiserviceService,private route: Router) {
+  constructor(private fb: FormBuilder,private api:ApiserviceService,private route: Router,public shared:SharedService) {
     this.loginForm = this.fb.group({
       email : [this.sos.email],
       password : [this.sos.password]
@@ -46,9 +45,11 @@ login(obj:any){
      localStorage.setItem("UserId",this.userId)
      this.userId=localStorage.getItem("UserId")
 
-     if((data.docs[0].password === this.password))
+     if((data.docs[0].email == this.email))
      {
+       this.shared.navShow=false;
        alert("success!!")
+      
        this.userdata = {obj}
   localStorage.setItem("userdata",JSON.stringify(this.userdata.obj));
       this.route.navigate(['dashboard'],{queryParams:{data:this.UserId}});

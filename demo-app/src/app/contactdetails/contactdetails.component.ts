@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../database.service';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastarService } from '../toastarservice.service';
 @Component({
   selector: 'app-contactdetails',
   templateUrl: './contactdetails.component.html',
@@ -13,7 +14,7 @@ export class ContactdetailsComponent implements OnInit {
   alluser!:any;
   exchange!:any;
   object:any=[];
-  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router) { }
+  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router,private tostr: ToastarService) { }
 
   ngOnInit(): void {
     this.getmessage();
@@ -21,8 +22,10 @@ export class ContactdetailsComponent implements OnInit {
   erase (id:string,rev:string){
     this.api.deletemail(id,rev).subscribe((data) => {
       console.log(data);
-      alert("your data was deleted");
-      window.location.reload();
+      // alert("your data was deleted");
+      // window.location.reload();
+      this.tostr.showSuccess("Deleted",'Deleted succesfully');
+      window.setTimeout(function(){location.reload()},1500)
     });
     
   }

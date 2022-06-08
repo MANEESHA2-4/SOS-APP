@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators, NgForm} from '@angular/forms';
+import { ToastarService } from '../toastarservice.service';
 
 import { DatabaseService } from '../database.service';
 @Component({
@@ -12,7 +13,7 @@ export class QueryComponent implements OnInit {
   store:any=[];
 
 
-  constructor(private formbuilder:FormBuilder,private api:DatabaseService) { }
+  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private tostr: ToastarService) { }
 
   ngOnInit(): void {
       this.addform=this.formbuilder.group({
@@ -36,7 +37,8 @@ export class QueryComponent implements OnInit {
         console.log("hello"+res);
         console.log("Your data was posted successfully!");
         // window.location.replace("/query")
-        alert('your data is added successfully')
+        // alert('your data is added successfully')
+        this.tostr.showSuccess("Success","Data added succesfully")
         },rej=>{
         console.log("opps! Can not post data"+rej);
         });

@@ -18,8 +18,13 @@ export class ApiserviceService {
   return this.http.get<any>('http://localhost:8000/getdata/'+email);
  }
 
+
  sendmail(formvalue:any) {
     return this.http.post<any>('http://localhost:8000/mail/',formvalue);
+}
+checkadminlogin(email:any,_password:any)
+{
+ return this.http.get<any>('http://localhost:8000/getadmindata/'+email);
 }
 
 

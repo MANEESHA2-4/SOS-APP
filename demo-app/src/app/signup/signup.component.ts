@@ -19,7 +19,8 @@ userdata :  any = [];
 ngOnInit(): void {
   this.regForm = this.formbuilder.group({
     name: ['',[Validators.required]],
-    mobileNumber: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
+    // mobileNumber: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
+    mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]] ,
     email:['',[Validators.required, Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
     password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]]
   })
@@ -56,17 +57,17 @@ this.api.storedata(formvalue).subscribe((data)=>{
   console.log(rej);
 
 });}
-// register(FormValue:NgForm){
-//   this.successMessage = "Successfully Registered..."
-// this.api.registerdata(FormValue).subscribe((result)=>{
-//   console.log(result);
-//   alert("Data posted Successfully");
-//   // this.regForm.reset();
-// },rej=>{
-//   console.log("Error"+rej);
-// });
-// console.log(FormValue)
-// }
+register(FormValue:NgForm){
+  this.successMessage = "Successfully Registered..."
+this.api.registerdata(FormValue).subscribe((result)=>{
+  console.log(result);
+  alert("Data posted Successfully");
+  this.regForm.reset();
+},rej=>{
+  console.log("Error"+rej);
+});
+console.log(FormValue)
+}
 }
 
  

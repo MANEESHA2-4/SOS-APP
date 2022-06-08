@@ -37,6 +37,7 @@ import { NewuserComponent } from './newuser/newuser.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { CardComponent } from './card/card.component';
 
 
 
@@ -71,6 +72,7 @@ import { CommonModule } from '@angular/common';
     ReplyComponent,
     ReceiveComponent,
     NewuserComponent,
+    CardComponent,
   
   ],
   imports: [

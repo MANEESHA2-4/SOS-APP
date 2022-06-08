@@ -3,6 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastarService } from '../toastarservice.service';
 import { ApiserviceService } from '../apiservice.service';
 
 
@@ -21,7 +22,7 @@ export class AdminComponent implements OnInit {
     password:''
   }
 
-  constructor(private fb: FormBuilder,private api:ApiserviceService,private route: Router) {
+  constructor(private fb: FormBuilder,private api:ApiserviceService,private route: Router,private tostr: ToastarService) {
     this.loginForm = this.fb.group({
       email : [this.sos.email],
       password : [this.sos.password]
@@ -41,15 +42,18 @@ ngOnInit(): void {
 login(obj:any){
   this.email=obj.email
   this.password=obj.password
- this.api.checkuserlogin(this.email,this.password).subscribe(data=>{
+ this.api.checkadminlogin(this.email,this.password).subscribe(data=>{
      console.log(data);
-     if((data.docs[0].email == this.email && data.docs[0].password == this.password && data.docs[0].id == "admin"))
+     if((data.docs[0].email == this.email && data.docs[0].password == this.password && data.docs[0].type == "admin"))
      {
-       alert("success!!")
+       this.tostr.showSuccess("valid","logged in successfully")
+      //  alert("success!!")
       this.route.navigate(['dashboard-admin']);
      }
      else{
-      alert("Login authentication failed");
+       alert("Login authentication failed");
+      
+
      }
     })
   

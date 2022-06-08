@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DatabaseService } from '../database.service';
+import { ToastarService } from '../toastarservice.service';
 
 @Component({
   selector: 'app-remove',
@@ -12,7 +13,7 @@ export class RemoveComponent implements OnInit {
   alluser!:any;
   exchange!:any;
   object:any=[];
-  constructor(private formbuilder:FormBuilder,private api:DatabaseService) { }
+  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private tostr: ToastarService) { }
 
   ngOnInit(): void {
    this.get();
@@ -20,8 +21,10 @@ export class RemoveComponent implements OnInit {
   erase (id:string,rev:string){
     this.api.deletecontact(id,rev).subscribe((data) => {
       console.log(data);
-      alert("your data was deleted");
-      window.location.reload();
+      // alert("your data was deleted");
+      // window.location.reload();
+      this.tostr.showSuccess("Deleted",'Deleted succesfully');
+      window.setTimeout(function(){location.reload()},1500)
     });
     
   }

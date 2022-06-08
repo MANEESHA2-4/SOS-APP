@@ -34,10 +34,11 @@
     width: 100%;
     max-width: 867px;
     margin: 25px 10px;
-    height: calc(100% - 50px);
+    height: 50vh;
     border: var(--border);
     border-radius: 5px;
-    background: var(--msger-bg);
+    background:rgb(68, 234, 167);
+    /* background: rgb(7, 248, 116); */
     box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
   }
   
@@ -46,8 +47,8 @@
     justify-content: space-between;
     padding: 10px;
     border-bottom: var(--border);
-    background: #eee;
-    color: #666;
+    background: rgb(7, 7, 7);
+    color: rgb(249, 249, 249);
   }
   
   .msger-chat {

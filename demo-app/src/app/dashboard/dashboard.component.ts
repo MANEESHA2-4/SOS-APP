@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CouchService } from '../couch.service';
 import { ApiserviceService } from '../apiservice.service';
 import { DatabaseService } from '../database.service';
+import { SharedService } from 'src/app/service/shared.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,20 +13,30 @@ import { DatabaseService } from '../database.service';
 export class DashboardComponent implements OnInit {
   email: any;
   name: any;
+  divboolean:any;
  
-  constructor(private activeparam:ActivatedRoute,private data:CouchService,private api:ApiserviceService,private database:DatabaseService) { 
+  constructor(private activeparam:ActivatedRoute,private data:CouchService,private api:ApiserviceService,private database:DatabaseService,private route:Router,private shared:SharedService ) { 
     
   }
 
+  changeTab(params:any)
+  {
+    this.divboolean = params;
+  }
 
   ngOnInit(): void {
     let userId: any=localStorage.getItem("userdata")
     let user=JSON.parse(userId.toString())
     this.email=user['email']
    
-   
+    this.divboolean = 1;
 
-
+}
+out() {
+  this.shared.navShow=true;
+  localStorage.clear();
+  this.route.navigate(['/login']);
+  
 }
 
 

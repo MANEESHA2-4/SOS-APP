@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm,FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastarService } from '../../toastarservice.service';
 import { ApiserviceService } from 'src/app/apiservice.service';
+import { SharedService } from 'src/app/service/shared.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -12,7 +14,7 @@ export class ContactComponent implements OnInit {
   contactform!: FormGroup;
   value:boolean=true;
 
-  constructor(private api:ApiserviceService,private fb:FormBuilder,private route:Router) {
+  constructor(private api:ApiserviceService,private fb:FormBuilder,private route:Router,private tostr: ToastarService,private shared:SharedService) {
     let store:any=localStorage.getItem('userdata');
     const userdetails = JSON.parse(store);
     console.log(userdetails);
@@ -37,6 +39,7 @@ export class ContactComponent implements OnInit {
     console.log("contact");
   }
 logout(){
+  this.shared.navShow=true;
   localStorage.clear();
   this.route.navigate(['/login'])
 
@@ -46,7 +49,8 @@ back(formvalue:any){
   this.api.sendmail(formvalue).subscribe((res)=> {
     console.log(res);
   });
-alert("Mail sent successfully");
+//alert("Mail sent successfully");
+this.tostr.showSuccess("Success","Mail sent Successfully")
   this.route.navigate(['/dashboard'])
 
 

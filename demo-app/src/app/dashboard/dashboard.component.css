@@ -52,6 +52,9 @@ body {
   margin: 0;
   padding: 0;
 }
+.main-content{
+  margin-top: 37px;
+}
 
 .dashboard-river {
   position: relative;
@@ -229,12 +232,23 @@ body {
 .profile > div {
   width: 50px;
   height: 50px;
-  border-radius: 200px;
-  background: url("https://picsum.photos/id/440/60/60");
-  background-position: center;
+  border-radius: 10px;
+  background: url('../../assets/person.png');
+  /* background-position: center; */
   background-size: cover;
 }
-
+#logout{
+  margin-top: 43px;
+    margin-left: -121px;
+    width: 112px;
+    height: 42px;
+    background: rgb(90, 232, 171);
+    box-shadow: 0 10px 20px 0 #3cb37177, inset 0px -7px 12px 1px mediumseagreen;
+    border-radius: 69px;
+    transition: all 0.4s ease-in-out;
+    border: solid rgb(90, 232, 171);
+    color:rgb(40, 39, 39)
+}
 .profile-small {
   display: none;
 }
@@ -546,6 +560,7 @@ body {
   margin-top: 35px;
   border: 0;
   border-top: 1px solid #ccc;
+  margin-top: 37px;
 }
 
 .main-content > hr:last-of-type {
@@ -664,6 +679,7 @@ body {
 .featured-clay > div:nth-child(6):hover {
   animation: glow75 8s linear infinite;
 }
+
 
 @keyframes glow {
   0% {
