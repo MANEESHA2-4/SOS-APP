@@ -63,7 +63,7 @@ const routes: Routes = [
 },
   {path:'dashboard-admin',component:DashboardAdminComponent},
   // {path:'contact-us',component:ContactUsComponent},
-  // {path:'contactdetails',component:ContactdetailsComponent},
+  {path:'contactdetails',component:ContactdetailsComponent},
   // {path:'reportform',component:ReportformComponent},
   {path:'reportdetails',component:ReportdetailsComponent,
   children:[

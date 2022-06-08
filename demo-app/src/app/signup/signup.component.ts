@@ -57,17 +57,17 @@ this.api.storedata(formvalue).subscribe((data)=>{
   console.log(rej);
 
 });}
-register(FormValue:NgForm){
-  this.successMessage = "Successfully Registered..."
-this.api.registerdata(FormValue).subscribe((result)=>{
-  console.log(result);
-  alert("Data posted Successfully");
-  this.regForm.reset();
-},rej=>{
-  console.log("Error"+rej);
-});
-console.log(FormValue)
-}
+// register(FormValue:NgForm){
+//   this.successMessage = "Successfully Registered..."
+// this.api.registerdata(FormValue).subscribe((result)=>{
+//   console.log(result);
+//   alert("Data posted Successfully");
+//   this.regForm.reset();
+// },rej=>{
+//   console.log("Error"+rej);
+// });
+// console.log(FormValue)
+// }
 }
 
  

@@ -15,7 +15,7 @@ export class ApiserviceService {
  
   checkuserlogin(email:any,_password:any)
  {
-  return this.http.get<any>('http://localhost:8000/getdata/'+email);
+  return this.http.get<any>('http://localhost:8000/checkuserlogin/'+email);
  }
 
 

@@ -11,6 +11,7 @@ import { DatabaseService } from '../database.service';
 export class QueryComponent implements OnInit {
   addform!:FormGroup;
   store:any=[];
+  obj:any;
 
 
   constructor(private formbuilder:FormBuilder,private api:DatabaseService,private tostr: ToastarService) { }
@@ -34,7 +35,8 @@ export class QueryComponent implements OnInit {
        console.log(formvalue);
        this.store.push(formvalue)
        this.api.addQuery(formvalue).subscribe(res=>{
-        console.log("hello"+res);
+        this.obj=res;
+        console.log("hello"+this.obj);
         console.log("Your data was posted successfully!");
         // window.location.replace("/query")
         // alert('your data is added successfully')

@@ -58,6 +58,8 @@ login(obj:any){
      else{
       alert("Login authentication failed");
      }
+    },err=>{
+      console.log(err);
     })
   
  }

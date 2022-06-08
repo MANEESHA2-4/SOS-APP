@@ -21,10 +21,12 @@
           <th scope="row">{{ obj.query }}</th>
   
           <td>
-            <button class="btn btn-primary" (click)="erase(obj._id, obj._rev)">
+            <button class="btn btn-primary" (click)="deletequery(obj,obj)">
               Delete
             </button>
-          </td>
+            <!-- <td><button class="btn btn-primary"
+              (click)="deleteuser(obj,obj)">delete</button></td>
+            </td> -->
           <td>
              
             <button class="btn btn-primary"  (click)="reply(obj.email)" >Reply</button>

@@ -9,6 +9,7 @@ import { ToastarService } from '../toastarservice.service';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
+  gfg = 5;
 addform!:FormGroup;
 store:any=[];
   constructor(private formbuilder:FormBuilder,private api:DatabaseService,private tostr: ToastarService) { }

@@ -11,7 +11,6 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
@@ -38,6 +37,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -83,7 +83,8 @@ import { CardComponent } from './card/card.component';
     HttpClientModule,
     BrowserAnimationsModule,
     CommonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgbModule
   ],
   // providers: [ {provide: HTTP_INTERCEPTORS,
     // useClass: HttpCallInterceptorService,

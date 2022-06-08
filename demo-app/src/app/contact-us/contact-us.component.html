@@ -12,6 +12,8 @@
                                     <form [formGroup]="addform">
                                     <input type="text" class="form-control form-group" formControlName="name" id="name"placeholder="Name" />
                                     <textarea class="form-control form-group"formControlName="message" id="message" placeholder="Feedback"></textarea>
+                                    <ngb-rating [(rate)]="gfg"></ngb-rating> 
+                                    <pre>Rate us: <b>{{gfg}}</b></pre>
                                     <button class="contact_form_submit"  (click)="addmessage(this.addform.value)">Send feedback</button>
                                 </form>
                             </div>

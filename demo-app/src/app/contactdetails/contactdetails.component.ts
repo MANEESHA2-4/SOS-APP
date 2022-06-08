@@ -19,15 +19,30 @@ export class ContactdetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getmessage();
   }
-  erase (id:string,rev:string){
-    this.api.deletemail(id,rev).subscribe((data) => {
-      console.log(data);
-      // alert("your data was deleted");
-      // window.location.reload();
-      this.tostr.showSuccess("Deleted",'Deleted succesfully');
-      window.setTimeout(function(){location.reload()},1500)
-    });
+  // erase (id:string,rev:string){
+  //   this.api.deletemail(id,rev).subscribe((data) => {
+  //     console.log(data);
+  //     // alert("your data was deleted");
+  //     // window.location.reload();
+  //     this.tostr.showSuccess("Deleted",'Deleted succesfully');
+  //     window.setTimeout(function(){location.reload()},1500)
+  //   },err=>{
+  //     console.log(err);
+  //   });
     
+  // }
+
+
+  removecontact(data:any,data1:any){
+    this.api.deletecontact(data._id,data1._rev).subscribe(_res=>{
+      console.log('Your data was Deleted from the database');
+      this.tostr.showSuccess("Deleted",'Deleted succesfully');
+    })
+    setTimeout(function(){
+      location.reload();
+    },2000);
+    
+       
   }
 
 
@@ -46,5 +61,8 @@ getmessage(){
 
     }
   
-  });
+  },err=>{
+    console.log(err);
+  })
+  
 }}

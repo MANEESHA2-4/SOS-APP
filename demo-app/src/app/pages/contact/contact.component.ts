@@ -66,6 +66,8 @@ this.tostr.showSuccess("Success","Mail sent Successfully")
       console.log(Formvalue);
       console.log(data);
       
+    },err=>{
+      console.log(err);
     })
   }
 }

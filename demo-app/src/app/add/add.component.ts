@@ -35,7 +35,7 @@ export class AddComponent implements OnInit {
        this.api.add(formvalue).subscribe(res=>{
         console.log("hello"+res);
         console.log("Your data was posted successfully!");
-        window.location.replace("/remove")
+        // window.location.replace("/remove")
         alert('your data is added successfully')
         },rej=>{
         console.log("opps! Can not post data"+rej);
