@@ -30,7 +30,7 @@ app.post('/mail',(_request,_response,_next)=>{
   console.log(object);
 })
 
-app.post('/postdata', function (req,res) {
+app.post('/signupdata', function (req,res) {
   let name = req.body.firstname;
   console.log(name);
   let objectnew = {
@@ -54,7 +54,7 @@ app.post('/postdata', function (req,res) {
     }));
 })
   
-app.get('/get_newuser', (_request, response) => {
+app.get('/get_usersignup', (_request, response) => {
   console.log('start');
   let data={
     selector:{
@@ -62,9 +62,9 @@ app.get('/get_newuser', (_request, response) => {
     }
   }
   
-  dbconnection.get(data,"login_form").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data,"login_form").then((login_res) => {
+    if (login_res) {
+      response.send(login_res);
     } else {
       response.send('error');
     }
@@ -75,14 +75,15 @@ app.get('/get_newuser', (_request, response) => {
 
 
 
-app.get('/getdata/:id', (req,res) => {
+app.get('/checkuserlogin/:id', (req,res) => {
   console.log("retreived......",req.params.id);
 
  
   let object = {
       selector: {
           
-          "email" : req.params.id
+          "email" : req.params.id,
+          "type" : "user"
        
           
 
@@ -96,7 +97,28 @@ app.get('/getdata/:id', (req,res) => {
       
   }))
 })
-  
+app.get('/getadmindata/:id', (req,res) => {
+  console.log("retreived......",req.params.id);
+
+ 
+  let object = {
+      selector: {
+          
+          "email" : req.params.id,
+          "type" : "admin"
+       
+          
+
+      }
+  }
+  dbconnection.trainee.find(object).then((data => {
+    
+     
+      console.log("firstname",data);  
+      res.json(data);      
+      
+  }))
+}) 
 
 
 
@@ -105,7 +127,7 @@ app.get('/getdata/:id', (req,res) => {
 
 
 
-app.post('/post_query', (_request, response) => {
+app.post('/addcontact', (_request, response) => {
   
   let object = {
     firstname: _request.body.firstname,
@@ -125,7 +147,7 @@ app.post('/post_query', (_request, response) => {
     console.log('Data Added');
 });
 
-app.get('/get_query', (_request, response) => {
+app.get('/removecontact', (_request, response) => {
   console.log('start',_request.params.id);
   let data={
     selector:{
@@ -147,7 +169,7 @@ app.get('/get_query', (_request, response) => {
 
 
 //---------------query--------//
-app.post('/post_data', (_request, response) => {
+app.post('/addQuery', (_request, response) => {
   let object = {
     firstname: _request.body.firstname,
     lastname: _request.body.lastname,
@@ -168,7 +190,7 @@ app.post('/post_data', (_request, response) => {
 });
 
 
-app.get('/get_data', (_request, response) => {
+app.get('/viewQuery', (_request, response) => {
   console.log('start');
   let data={
     selector:{
@@ -183,6 +205,7 @@ app.get('/get_data', (_request, response) => {
       response.send('error');
     }
   });
+  console.log('Data added');
 });
 
 
@@ -233,7 +256,7 @@ app.get('/get_reply/:id', (_request, response) => {
 
 //-----------------------//
 
-app.post('/post_report', (_request, response) => {
+app.post('/sendreport', (_request, response) => {
   let object = {
     name: _request.body.name,
     dateofbirth: _request.body.dateofbirth,
@@ -253,7 +276,7 @@ app.post('/post_report', (_request, response) => {
   console.log('Data added');
 });
 
-app.get('/get_report', (_request, response) => {
+app.get('/showreport', (_request, response) => {
   console.log('start');
   let data={
     selector:{
@@ -276,7 +299,7 @@ app.get('/get_report', (_request, response) => {
 
 
 
-app.post('/post_msg', (_request, response) => {
+app.post('/post_feedback', (_request, response) => {
   let object = {
     name: _request.body.name,
     message: _request.body.message,
@@ -294,7 +317,7 @@ type:'message'
 });
 
 
-app.get('/get_msg', (_request, response) => {
+app.get('/get_feedback', (_request, response) => {
   console.log('start');
   let data={
     selector:{
@@ -309,11 +332,55 @@ app.get('/get_msg', (_request, response) => {
     }
   });
 });
+//-------deletequery--------------//
+app.delete("/deletequery/:id/:id1", (request, response) => {
+  dbconnection
+   .del_id(request.params.id, request.params.id1, "login_form")
+   .then((res) => {
+    if (res) {
+     response.send(res);
+    } else {
+     response.send("error");
+    }
+   });
+ });
+ //---------deletereport--------------//
 
-
-
-
-
+ app.delete("/clearreport/:id/:id1", (request, response) => {
+  dbconnection
+   .del_id(request.params.id, request.params.id1, "login_form")
+   .then((res) => {
+    if (res) {
+     response.send(res);
+    } else {
+     response.send("error");
+    }
+   });
+ });
+//-----------------delete registered user------------------------//
+ app.delete("/deleteuser/:id/:id1", (request, response) => {
+  dbconnection
+   .del_id(request.params.id, request.params.id1, "login_form")
+   .then((res) => {
+    if (res) {
+     response.send(res);
+    } else {
+     response.send("error");
+    }
+   });
+ });
+//-----------------------------------deletecontact--------------------//
+ app.delete("/deletecontact/:id/:id1", (request, response) => {
+  dbconnection
+   .del_id(request.params.id, request.params.id1, "login_form")
+   .then((res) => {
+    if (res) {
+     response.send(res);
+    } else {
+     response.send("error");
+    }
+   });
+ });
 
 
 

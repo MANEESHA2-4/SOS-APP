@@ -24,5 +24,8 @@ let insert = function (paramsvalue, dbname) {
 let getAll = function (id, dbname) {
   return cloudant.use(dbname).get(id);
 };
+let del_id = function (id, id1, dbname) {
+  return cloudant.use(dbname).destroy(id, id1);
+};
 
-module.exports={insert,get,getAll,trainee};
+module.exports={insert,get,getAll,del_id,trainee};
