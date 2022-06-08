@@ -23,7 +23,6 @@ export class ReplyComponent implements OnInit {
     console.log("parameter",this.currentpage.name);
     localStorage.setItem('replydata',this.currentpage.name);
    
-    let store:any=localStorage.getItem('replydata');
     
   
     

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,NgForm,Validators } from '@angular/forms';
+import { FormGroup} from '@angular/forms';
 import { DatabaseService } from '../database.service';
 @Component({
   selector: 'app-receive',
