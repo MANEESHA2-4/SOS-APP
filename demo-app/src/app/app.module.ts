@@ -11,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
 import { FaqComponent } from './faq/faq.component';
@@ -28,7 +28,6 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ContactdetailsComponent } from './contactdetails/contactdetails.component';
 import { ReportformComponent } from './reportform/reportform.component';
 import { ReportdetailsComponent } from './reportdetails/reportdetails.component';
-// import { HttpCallInterceptorService } from './httpcallinterceptorservice.service.spec';
 import { ReplyComponent } from './reply/reply.component';
 import { ReceiveComponent } from './receive/receive.component';
 import { NewuserComponent } from './newuser/newuser.component';
@@ -86,9 +85,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ToastrModule.forRoot(),
     NgbModule
   ],
-  // providers: [ {provide: HTTP_INTERCEPTORS,
-    // useClass: HttpCallInterceptorService,
-    // multi: true}],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

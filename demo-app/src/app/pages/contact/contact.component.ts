@@ -49,7 +49,7 @@ back(formvalue:any){
   this.api.sendmail(formvalue).subscribe((res)=> {
     console.log(res);
   });
-//alert("Mail sent successfully");
+
 this.tostr.showSuccess("Success","Mail sent Successfully")
   this.route.navigate(['/dashboard'])
 

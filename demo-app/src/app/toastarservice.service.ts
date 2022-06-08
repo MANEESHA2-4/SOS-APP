@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
  providedIn: 'root'
 })
 export class ToastarService {
-  success(arg0: string) {
+  success(_arg0: string) {
     throw new Error('Method not implemented.');
   }
 

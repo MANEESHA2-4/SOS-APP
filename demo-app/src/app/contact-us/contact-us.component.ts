@@ -31,8 +31,7 @@ addmessage(formvalue:NgForm){
   this.api.addmessage(formvalue).subscribe(res=>{
    console.log("hello"+res);
    console.log("Your data was posted successfully!");
-   // window.location.replace("/query")
-  //  alert('your data is added successfully')
+   
   this.tostr.showSuccess("Success","Feedback sent successfully")
    },rej=>{
    console.log("opps! Can not post data"+rej);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import{DatabaseService}from'../database.service'
@@ -19,7 +19,7 @@ userdata :  any = [];
 ngOnInit(): void {
   this.regForm = this.formbuilder.group({
     name: ['',[Validators.required]],
-    // mobileNumber: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
+    
     mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]] ,
     email:['',[Validators.required, Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
     password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]]

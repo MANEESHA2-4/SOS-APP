@@ -20,18 +20,7 @@ export class ReportdetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getreport();
   }
-  // erase (id:string,rev:string){
-    
-  //   this.api.deletereport(id,rev).subscribe((data) => {
-  //     console.log(data);
-      // alert("your data was deleted");
-      
-    //   this.tostr.showSuccess("Deleted",'Deleted succesfully');
-    //   window.setTimeout(function(){location.reload()},1500)
-      
-    // });
-    // location.reload();
-  // }
+
 
   deletereport(data:any,data1:any){
     this.api.clearreport(data._id,data1._rev).subscribe(_res=>{

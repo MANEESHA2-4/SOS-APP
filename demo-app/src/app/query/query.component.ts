@@ -38,8 +38,6 @@ export class QueryComponent implements OnInit {
         this.obj=res;
         console.log("hello"+this.obj);
         console.log("Your data was posted successfully!");
-        // window.location.replace("/query")
-        // alert('your data is added successfully')
         this.tostr.showSuccess("Success","Data added succesfully")
         },rej=>{
         console.log("opps! Can not post data"+rej);

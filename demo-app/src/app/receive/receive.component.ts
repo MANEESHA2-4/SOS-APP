@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup,NgForm,Validators } from '@angular/forms';
 import { DatabaseService } from '../database.service';
 @Component({
   selector: 'app-receive',
@@ -11,7 +11,8 @@ export class ReceiveComponent implements OnInit {
   alluser!:any;
   exchange!:any;
   object:any=[];
-  constructor(private api:DatabaseService ) {}
+  constructor(private api:DatabaseService ) {
+  }
 
   ngOnInit(): void {
     this.getreply()
