@@ -1,40 +1,20 @@
- /* .joinnow
-{
-    background-color: #eff6ff;
-    padding: 140px 100px;
-}
-.login
-{
-    background-color: #ffffff;
-    padding: 20px 30px;
-}
 
-@media screen and (max-width:600px)
-{
-
-    .joinnow
-{
-    padding: 140px 30px;
-}
-}  */
 .container{
-    padding: 70px;
-border: 2px solid gray;
-background-image: linear-gradient(to right,rgb(135, 162, 231),rgb(141, 193, 241));
-
-}
+      background-image: linear-gradient(to right,rgb(135, 162, 231),rgb(141, 193, 241));
+      border: 2px solid gray;
+      padding: 70px;
+  }
 .form-control{
-    width:60%;
-}
+      width:60%;
+  }
 #size{
-width:123%
+  width:123%
 }
 #logout{
-    margin-left: 20px;
-}
+      margin-left: 20px;
+  }
 .contact-us{
-    margin-left: 555px;
-    
-    width: 63%;
-    margin-top: -286px;
-}
+      margin-left: 555px;
+      margin-top: -286px;
+      width: 63%;
+  }

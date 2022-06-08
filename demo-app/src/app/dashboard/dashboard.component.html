@@ -1,163 +1,167 @@
 <div *ngIf="divboolean == 1">
-<div class="dashboard-river">
+  <div class="dashboard-river">
 
-  <div class="dashboard-container">
+    <div class="dashboard-container">
 
-    <div class="dashboard">
+      <div class="dashboard">
 
-      <div class="ui-row-1">
+        <div class="ui-row-1">
 
-        <div class="logo-comp">
-          
-          <p>User-Dashboard</p>
-          
-        </div>
+          <div class="logo-comp">
 
-        
-        <div class="profile">
-          
-          
-          
-         
-          {{email}}
-          
-          <div><button type="button" id="logout"class="btn btn-primary" (click)="out()">LOGOUT</button></div>
-
-        </div>
- 
-        <div class="profile-small">
-         
-        </div>
-
-      </div>
-
-      <div class="ui-row-2">
-
-        <div class="left-sidebar">
-
-        </div>
-
-        <div class="main-content">
-
-          <div class="header">
-
-            <div class="page-display">
-              <h1>SOS</h1>
-              <h2>Emergency app</h2>
-            </div>
-
-            <div class="clay-category">
-              <p (click)="changeTab(2)" routerLink="contact">E-mail📧</p>
-            </div>
-
-            <div class="clay-category">
-              
-              <p (click)="changeTab(2)" routerLink="receive">Chat📲</p>
-            </div>
-
-            <div class="clay-category">
-             
-               
-              <p (click)="changeTab(2)" routerLink="query">Query📝</p>
-            </div>
+            <p>User-Dashboard</p>
 
           </div>
 
-          <div class="large-banner">
 
-            <h2>Personal Security Solution</h2>
-            <a href="" title="Explore">
-              Get Started
-            </a>
+          <div class="profile">
 
-          </div>
 
-          <hr>
 
-          <div class="featured-clay">
 
-            <div>
+            {{email}}
 
-              <div></div>
-
-              <div>
-                <h3>Add Emergency Contact</h3>
-                <p>This service provides you to add the contact.Tap the Add button
-                  Tap a contact, then add their contact members. 
-                   </p>
-                <a href="" title="featured clay"(click)="changeTab(2)" routerLink="add">Let's Go</a>
-              </div>
-
-            </div>
-
-            <div>
-
-              <div></div>
-
-              <div>
-                <h3>Remove your contact</h3>
-                <p>This service provides you to delete the contact which you have added before,Tap the Delete button  next to a details in table, then tap Delete.</p>
-                <a href="" title="featured clay"(click)="changeTab(2)" routerLink="remove">Let's Go</a>
-              </div>
-
-            </div>
-
-            <div>
-
-              <div></div>
-
-              <div>
-                <h3>Contact Us</h3>
-                <p>Try 100 or 112.[1] These numbers work with many mobile service providers worldwide, d Try these first, unless a local knows a number that will work on mobile phones.</p>
-                <a href="" title="featured clay"(click)="changeTab(2)" routerLink="card">Let's Go</a>
-              </div>
-
-            </div>
-
-            <div>
-
-              <div></div>
-
-              <div>
-                <h3>Report</h3>
-                <p>This service provides you to report the complaint about the missing women or children</p>
-                <a href="" title="featured clay" (click)="changeTab(2)" routerLink="reportform">Let's Go</a>
-              </div>
-
-            </div>
-
-            <div>
-
-              <div></div>
-
-              <div>
-                <h3>Terms & Privacy</h3>
-                <p>Our application helps by alerts to you.
-                  It will help all people who travel alone, as well as older people, feel safe!</p>
-                <a href="" title="featured clay" (click)="changeTab(2)" routerLink="terms">Let's Go</a>
-              </div>
-
-            </div>
-
-            <div>
-
-             <div></div>
-
-              <div>
-                <h3>Feedback</h3>
-                <p>This features helps us to understand our services which will helpful to you or not,
-    
-                </p>
-                <a href="" title="featured clay" (click)="changeTab(2)" routerLink="contact-us">Let's Go</a>
-              </div>
-
-            </div>
+            <div><button type="button" id="logout" class="btn btn-primary" (click)="out()">LOGOUT</button></div>
 
           </div>
 
-          <hr>
+          <div class="profile-small">
 
-         
+          </div>
+
+        </div>
+
+        <div class="ui-row-2">
+
+          <div class="left-sidebar">
+
+          </div>
+
+          <div class="main-content">
+
+            <div class="header">
+
+              <div class="page-display">
+                <h1>SOS</h1>
+                <h2>Emergency app</h2>
+              </div>
+
+              <div class="clay-category">
+                <p (click)="changeTab(2)" routerLink="contact">E-mail📧</p>
+              </div>
+
+              <div class="clay-category">
+
+                <p (click)="changeTab(2)" routerLink="receive">Chat📲</p>
+              </div>
+
+              <div class="clay-category">
+
+
+                <p (click)="changeTab(2)" routerLink="query">Query📝</p>
+              </div>
+
+            </div>
+
+            <div class="large-banner">
+
+              <h2>Personal Security Solution</h2>
+              <a href="" title="Explore">
+                Get Started
+              </a>
+
+            </div>
+
+            <hr>
+
+            <div class="featured-clay">
+
+              <div>
+
+                <div></div>
+
+                <div>
+                  <h3>Add Emergency Contact</h3>
+                  <p>This service provides you to add the contact.Tap the Add button
+                    Tap a contact, then add their contact members.
+                  </p>
+                  <a href="" title="featured clay" (click)="changeTab(2)" routerLink="add">Let's Go</a>
+                </div>
+
+              </div>
+
+              <div>
+
+                <div></div>
+
+                <div>
+                  <h3>Remove your contact</h3>
+                  <p>This service provides you to delete the contact which you have added before,Tap the Delete button
+                    next to a details in table, then tap Delete.</p>
+                  <a href="" title="featured clay" (click)="changeTab(2)" routerLink="remove">Let's Go</a>
+                </div>
+
+              </div>
+
+              <div>
+
+                <div></div>
+
+                <div>
+                  <h3>Contact Us</h3>
+                  <p>Try 100 or 112.[1] These numbers work with many mobile service providers worldwide, d Try these
+                    first, unless a local knows a number that will work on mobile phones.</p>
+                  <a href="" title="featured clay" (click)="changeTab(2)" routerLink="card">Let's Go</a>
+                </div>
+
+              </div>
+
+              <div>
+
+                <div></div>
+
+                <div>
+                  <h3>Report</h3>
+                  <p>This service provides you to report the complaint about the missing women or children</p>
+                  <a href="" title="featured clay" (click)="changeTab(2)" routerLink="reportform">Let's Go</a>
+                </div>
+
+              </div>
+
+              <div>
+
+                <div></div>
+
+                <div>
+                  <h3>Terms & Privacy</h3>
+                  <p>Our application helps by alerts to you.
+                    It will help all people who travel alone, as well as older people, feel safe!</p>
+                  <a href="" title="featured clay" (click)="changeTab(2)" routerLink="terms">Let's Go</a>
+                </div>
+
+              </div>
+
+              <div>
+
+                <div></div>
+
+                <div>
+                  <h3>Feedback</h3>
+                  <p>This features helps us to understand our services which will helpful to you or not,
+
+                  </p>
+                  <a href="" title="featured clay" (click)="changeTab(2)" routerLink="contact-us">Let's Go</a>
+                </div>
+
+              </div>
+
+            </div>
+
+            <hr>
+
+
+
+          </div>
 
         </div>
 
@@ -166,12 +170,10 @@
     </div>
 
   </div>
-
-</div>
 </div>
 
 <div *ngIf="divboolean == 2">
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>

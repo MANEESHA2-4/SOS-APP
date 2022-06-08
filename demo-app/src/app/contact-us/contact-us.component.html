@@ -7,29 +7,30 @@
                         <div class="col-md-10">
                             <div class="contact_form_inner">
                                 <div class="contact_field">
-                                
+
                                     <h3>Help us to improve</h3>
                                     <form [formGroup]="addform">
-                                    <input type="text" class="form-control form-group" formControlName="name" id="name"placeholder="Name" />
-                                    <textarea class="form-control form-group"formControlName="message" id="message" placeholder="Feedback"></textarea>
-                                    <ngb-rating [(rate)]="star"></ngb-rating> 
-                                    <pre>Rate us: <strong>{{star}}</strong></pre>
-                                    <button class="contact_form_submit"  (click)="addmessage(this.addform.value)">Send feedback</button>
-                                </form>
-                            </div>
+                                        <input type="text" class="form-control form-group" formControlName="name"
+                                            id="name" placeholder="Name" />
+                                        <textarea class="form-control form-group" formControlName="message" id="message"
+                                            placeholder="Feedback"></textarea>
+                                        <ngb-rating [(rate)]="star"></ngb-rating>
+                                        <pre>Rate us: <strong>{{star}}</strong></pre>
+                                        <button class="contact_form_submit"
+                                            (click)="addmessage(this.addform.value)">Send feedback</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                       
+
                     </div>
                     <div class="contact_info_sec">
                         <img src="../../assets/Feedback_Icon.png" alt="feedback icon image" width="280">
-        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </section>
-
-

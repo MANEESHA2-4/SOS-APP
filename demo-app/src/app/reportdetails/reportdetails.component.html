@@ -1,36 +1,35 @@
+<div class="container">
+  <h1 class="caption">User's Report</h1>
+  <table class="table table-hover">
 
-        <div class="container">
-          <h1 class="caption">User's Report</h1>
-          <table class="table table-hover">
-            
-            <caption></caption>
-            <thead>
-              <tr>
-                <th scope="row">Name</th>
-                <th scope="row">Mobile NO</th>
-                <th scope="row">Date of Birth</th>
-                <th scope="row">Gender</th>
-                <th scope="row">City</th>
-                <th scope="row">Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let obj of object">
-                <th scope="row">{{ obj.name }}</th>
-                <th scope="row">{{ obj.mobileno}}</th>
-                <th scope="row">{{ obj. dateofbirth }}</th>
-                <th scope="row">{{ obj.gender }}</th>
-                <th scope="row">{{ obj.city }}</th>
+    <caption></caption>
+    <thead>
+      <tr>
+        <th scope="row">Name</th>
+        <th scope="row">Mobile NO</th>
+        <th scope="row">Date of Birth</th>
+        <th scope="row">Gender</th>
+        <th scope="row">City</th>
+        <th scope="row">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of object">
+        <th scope="row">{{ obj.name }}</th>
+        <th scope="row">{{ obj.mobileno}}</th>
+        <th scope="row">{{ obj. dateofbirth }}</th>
+        <th scope="row">{{ obj.gender }}</th>
+        <th scope="row">{{ obj.city }}</th>
         <th scope="row">{{obj.time}}</th>
-              
-                <td>
-                  <button class="btn btn-primary" (click)=" deletereport(obj,obj)">
-                    Delete
-                  </button>
-                </td>
-               
-              </tr>
-            </tbody>
-          </table>
-          <button type="button"class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
-        </div>
+
+        <td>
+          <button class="btn btn-primary" (click)=" deletereport(obj,obj)">
+            Delete
+          </button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
+</div>

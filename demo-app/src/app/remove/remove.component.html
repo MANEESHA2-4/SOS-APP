@@ -1,31 +1,31 @@
 <div class="container">
   <h1 class="caption">Remove Contact</h1>
-    <table class="table table-hover">
-      
-      <caption></caption>
-      <thead>
-        <tr>
-          <th scope="row">FIRSTNAME</th>
-          <th scope="row">LASTNAME</th>
-          <th scope="row">COUNTRY</th>
-          <th scope="row">MOBILE NO</th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let obj of object">
-          <th scope="row">{{ obj.firstname }}</th>
-          <th scope="row">{{ obj.lastname }}</th>
-          <th scope="row">{{ obj.country }}</th>
-         <th scope="row">{{ obj.mobileno}}</th>
-        
-          
-          <td>
-            
-            <button class="btn btn-primary"(click)="removecontact(obj,obj)" >Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button type="button"class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
-    </div>
+  <table class="table table-hover">
+
+    <caption></caption>
+    <thead>
+      <tr>
+        <th scope="row">FIRSTNAME</th>
+        <th scope="row">LASTNAME</th>
+        <th scope="row">COUNTRY</th>
+        <th scope="row">MOBILE NO</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of object">
+        <th scope="row">{{ obj.firstname }}</th>
+        <th scope="row">{{ obj.lastname }}</th>
+        <th scope="row">{{ obj.country }}</th>
+        <th scope="row">{{ obj.mobileno}}</th>
+
+
+        <td>
+
+          <button class="btn btn-primary" (click)="removecontact(obj,obj)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
+</div>

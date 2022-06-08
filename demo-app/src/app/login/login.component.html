@@ -1,41 +1,40 @@
-
 <div class="title">
-    <h1 class="heading">User</h1>
-  </div>
+  <h1 class="heading">User</h1>
+</div>
 <div class="container">
   <div class="container-fluid">
     <div class="row">
-        <div class="col-12">
-            <form [formGroup]="loginForm">
+      <div class="col-12">
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <label for="email"></label>
+            <input type="email" placeholder="Email Address" formControlName="email">
+            <span class="text-danger"
+              *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched"><br>Invalid Email
+              Address</span>
+          </div>
 
-              
+          <div class="form-group">
+            <label for="password"></label>
+            <input type="password" placeholder="Password" formControlName="password">
+            <span class="text-danger"
+              *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched"><br>Invalid
+              Password</span>
+          </div>
 
-                <div class="form-group">
-                    <label for="email"></label>
-                    <input type="email" placeholder="Email Address" formControlName="email">
-                    <span class="text-danger" *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched"><br>Invalid Email Address</span>
-                </div>
+          <div class="text-center">
 
-                <div class="form-group">
-                    <label for="password"></label>
-                    <input type="password" placeholder="Password" formControlName="password">
-                    <span class="text-danger" *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched"><br>Invalid Password</span>
-                </div>
+            <button id="submitButton" type="submit" class="btn btn-primary"
+              (click)="login(this.loginForm.value)">Login</button>
+          </div>
 
-                <div class="text-center">
-                    
-                    <button id="submitButton" type="submit" class="btn btn-primary"  (click)="login(this.loginForm.value)">Login</button>
-                </div>
-              
-                <div class="text-center text-success" *ngIf="successMessage">{{successMessage}}</div>
-                <div class="signup text-center">
-                  <label for="signup" class="text-dark"
-                    >Don't Have a Account?
-                    <a routerLink="/signup" class="text-danger">Signup</a></label
-                  >
-                  </div>
-            </form>
-        </div>
+          <div class="text-center text-success" *ngIf="successMessage">{{successMessage}}</div>
+          <div class="signup text-center">
+            <label for="signup" class="text-dark">Don't Have a Account?
+              <a routerLink="/signup" class="text-danger">Signup</a></label>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
+  </div>
 </div>

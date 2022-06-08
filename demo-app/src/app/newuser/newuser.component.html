@@ -1,29 +1,29 @@
 <div class="container">
-    <h1 class="caption">Registered User</h1>
-      
-    <table class="table table-hover">
-     
-      <caption></caption>
-      <thead>
-        <tr>
-          
-          <th scope="row">New User</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let obj of object">
-          
-          <th scope="row">{{ obj.email }}</th>
-         
-  
-          <td>
-            <button class="btn btn-primary" (click)="removeuser(obj,obj)">
-              Delete
-            </button>
-          </td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <button type="button"class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
-  </div>
+  <h1 class="caption">Registered User</h1>
+
+  <table class="table table-hover">
+
+    <caption></caption>
+    <thead>
+      <tr>
+
+        <th scope="row">New User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of object">
+
+        <th scope="row">{{ obj.email }}</th>
+
+
+        <td>
+          <button class="btn btn-primary" (click)="removeuser(obj,obj)">
+            Delete
+          </button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
+</div>

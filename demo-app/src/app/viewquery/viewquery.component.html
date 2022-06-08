@@ -1,36 +1,36 @@
 <div class="container">
   <h1 class="caption">User's Query</h1>
-      
-    <table class="table table-hover">
-  <caption></caption>
-      <thead>
-        <tr>
-          <th scope="row">Firstname</th>
-          <th scope="row">Lastname</th>
-          <th scope="row">Email</th>
-          <th scope="row">Mobile NO</th>
-          <th scope="row">Query</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let obj of object">
-          <th scope="row">{{ obj.firstname }}</th>
-          <th scope="row">{{ obj.lastname }}</th>
-          <th scope="row">{{ obj.email }}</th>
-          <th scope="row">{{ obj.mobileno }}</th>
-          <th scope="row">{{ obj.query }}</th>
-  
-          <td>
-            <button class="btn btn-primary" (click)="deletequery(obj,obj)">
-              Delete
-            </button>
-           
-          <td>
-             
-            <button class="btn btn-primary"  (click)="reply(obj.email)" >Reply</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button type="button"class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
-  </div>
+
+  <table class="table table-hover">
+    <caption></caption>
+    <thead>
+      <tr>
+        <th scope="row">Firstname</th>
+        <th scope="row">Lastname</th>
+        <th scope="row">Email</th>
+        <th scope="row">Mobile NO</th>
+        <th scope="row">Query</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of object">
+        <th scope="row">{{ obj.firstname }}</th>
+        <th scope="row">{{ obj.lastname }}</th>
+        <th scope="row">{{ obj.email }}</th>
+        <th scope="row">{{ obj.mobileno }}</th>
+        <th scope="row">{{ obj.query }}</th>
+
+        <td>
+          <button class="btn btn-primary" (click)="deletequery(obj,obj)">
+            Delete
+          </button>
+
+        <td>
+
+          <button class="btn btn-primary" (click)="reply(obj.email)">Reply</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" routerLink="/dashboard-admin">Back</button>
+</div>

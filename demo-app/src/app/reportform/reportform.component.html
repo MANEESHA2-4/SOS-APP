@@ -1,104 +1,65 @@
+<section class="entire">
+  <div class="container">
+    <h2 class="heading">Report Form</h2>
+    <form [formGroup]="addform">
+      <div class="row100">
+        <div class="col">
+          <span for="name" class="text">Name </span>
+          <span class="line"></span>
+          <div class="inputBox">
+            <input type="text" id="name" formControlName="name" class="form-control" />
 
-
-   <section class="entire">
-    <div class="container">
-      <h2 class="heading">Report Form</h2>
-      <form [formGroup]="addform">
-        <div class="row100">
-          <div class="col">
-            <span for="name" class="text">Name </span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="inputBox">
+            <span for="mobileno" class="text">Mobile no </span>
             <span class="line"></span>
-            <div class="inputBox">
-              <input
-                type="text"
-                id="name"
-                formControlName="name"
-                class="form-control"
-              />
-             
-            </div>
-          </div>
-          <div class="col">
-            <div class="inputBox">
-              <span for="mobileno" class="text">Mobile no </span>
-              <span class="line"></span>
-              <input
-                type="text"
-                id="mobileno"
-                formControlName="mobileno"
-                class="form-control"
-              />
-              
-            </div>
-          </div>
-          <div class="col">
-            <div class="inputBox">
-              <span for="dateofbirth" class="text">Date of birth </span>
-              <span class="line"></span>
-              <input
-                type="date"
-                id="dateofbirth"
-                formControlName="dateofbirth"
-                class="form-control"
-              />
-             
-            </div>
-          </div>
-          <div class="col">
-            <div class="inputBox">
-              <span for="gender" class="text">Gender </span>
-              <span class="line"></span>
-              <input
-                type="text"
-                id="gender"
-                formControlName="gender"
-                class="form-control"
-              />
-             
-            </div>
-          </div>
-          <div class="col">
-            <div class="inputBox">
-              <span for="city" class="text">City</span>
-              <span class="line"></span>
-              <input
-                type="text"
-                value=""
-                formControlName="city"
-                class="form-control"
-                id="city"
-              />
-             
-            </div>
-          </div>
-          -
-        </div>
-        <div class="row100">
-          <div class="col">
-            <div class="inputBox textarea">
-              <span for="time" class="text">Time</span>
-              <span class="line"></span>
-              <input
-                type="time"
-                value=""
-                formControlName="time"
-                class="form-control"
-                id="time"
-              />
-             
-            </div>
+            <input type="text" id="mobileno" formControlName="mobileno" class="form-control" />
+
           </div>
         </div>
-        <div class="row100">
-          <div class="col">
-            <input
-              type="submit"
-              value="send"
-              (click)="addreport(this.addform.value)"
-              [disabled]="!addform.valid"
-            />
+        <div class="col">
+          <div class="inputBox">
+            <span for="dateofbirth" class="text">Date of birth </span>
+            <span class="line"></span>
+            <input type="date" id="dateofbirth" formControlName="dateofbirth" class="form-control" />
+
           </div>
         </div>
-      </form>
-    </div>
-  </section>
+        <div class="col">
+          <div class="inputBox">
+            <span for="gender" class="text">Gender </span>
+            <span class="line"></span>
+            <input type="text" id="gender" formControlName="gender" class="form-control" />
+
+          </div>
+        </div>
+        <div class="col">
+          <div class="inputBox">
+            <span for="city" class="text">City</span>
+            <span class="line"></span>
+            <input type="text" value="" formControlName="city" class="form-control" id="city" />
+
+          </div>
+        </div>
+        -
+      </div>
+      <div class="row100">
+        <div class="col">
+          <div class="inputBox textarea">
+            <span for="time" class="text">Time</span>
+            <span class="line"></span>
+            <input type="time" value="" formControlName="time" class="form-control" id="time" />
+
+          </div>
+        </div>
+      </div>
+      <div class="row100">
+        <div class="col">
+          <input type="submit" value="send" (click)="addreport(this.addform.value)" [disabled]="!addform.valid" />
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

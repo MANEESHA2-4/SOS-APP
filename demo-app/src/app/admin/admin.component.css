@@ -1,36 +1,36 @@
 
 input{
-    background: transparent;
-    border-bottom:solid black;
-    size:3px;
-    margin-left: 10px;
-    width: 85%;
-  }
-  
+      background: transparent;
+      border-bottom:solid black;
+      margin-left: 10px;
+      size:3px;
+      width: 85%;
+  }  
   label{
-    color: grey;
+      color: grey;
   }
   .form-group{
-    margin-top:30px;
+      margin-top:30px;
   }
   form{
-    padding:12px;
+      padding:12px;
   }
   .title{
-    text-align: center;
-    margin-top: 30px;
+      margin-top: 30px;
+      text-align: center;
   }
   #submitButton{
-    margin: 25px;
-    width: 40%;
+      margin: 25px;
+      width: 40%;
   }
   .container-fluid {
-    margin-left: 320px;
-    margin-top: 50px;
-    width: 500px;
-    border: 2px solid silver;
-background-image: linear-gradient(to right,rgb(62, 233, 150),rgb(34, 232, 232));
-  
-     margin-bottom:120px; 
-     /* background-image: url('../../assets/top.jpg'); */
+      background-image: linear-gradient(to right,rgb(62, 233, 150),rgb(34, 232, 232));
+      background-image: url('../../assets/top.jpg');
+      border: 2px solid silver;
+      margin-bottom:120px;
+      margin-left: 320px;
+      margin-top: 50px;
+      width: 500px;
+
+     /*  */
   }

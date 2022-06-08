@@ -1,39 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" *ngIf="this.shared.navShow">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" routerLink="">EMERGENCY-SOS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-light bg-dark" routerLink="" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}">Home</a>
+        </li>
 
- <nav class="navbar navbar-expand-lg navbar-light bg-dark" *ngIf="this.shared.navShow">
-    <div class="container-fluid">
-      <a class="navbar-brand text-light" routerLink="">EMERGENCY-SOS</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-light bg-dark" routerLink=""  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >Home</a>
+        <ul>
+
+          <li>
+            <a href="#" class="nav-link text-light bg-dark" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{exact:true}">Login ▾</a>
+            <ul class="dropdown">
+              <li><a href="#" class="nav-link text-light bg-dark" routerLink="login">User</a></li>
+              <li><a href="#" class="nav-link text-light bg-dark" routerLink="admin">Admin</a></li>
+            </ul>
           </li>
 
-          <ul>
-           
-            <li>
-                <a href="#" class="nav-link text-light bg-dark"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Login ▾</a>
-                <ul class="dropdown">
-                    <li><a href="#" class="nav-link text-light bg-dark" routerLink="login">User</a></li>
-                    <li><a href="#" class="nav-link text-light bg-dark" routerLink="admin">Admin</a></li>
-                </ul>
-            </li>
-            
-       
-          
+
+
           <li class="nav-item">
             <a class="nav-link text-light bg-dark" routerLink="faq" routerLinkActive="active-link">FAQ</a>
-          </li> 
-          
+          </li>
+
           <li class="nav-item">
             <a class="nav-link text-light bg-dark" routerLink="about" routerLinkActive="active-link">About</a>
           </li>
-          
-
-
-
-       
-
-           
