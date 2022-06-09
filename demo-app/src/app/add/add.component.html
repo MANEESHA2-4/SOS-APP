@@ -27,17 +27,7 @@
       * country is required!!
     </span>
 </div>
-    <!-- <div>
-      <label>Mobile Number</label>
-      <input for="mobileno" type="number" value="" placeholder="enter your mobile number" formControlName="mobileno" class="form-control" pattern="^((\\+91-?)|0)?[0-9]{10}$"
-      id="mobileno">
-      <span class="text-danger" *ngIf="addform.controls['mobileno'].touched && addform.hasError('required','mobileno')">
-        * Mobile Number is required!!
-      </span>
-      <span class="text-danger" *ngIf="addform.hasError('required','mobileno')">
-        * Mobile Number should contain 10 Numbers!!
-      </span>
-    </div> -->
+    
     <div>
       <label for="mobile number">Mobile Number</label>
       <input for="mobileno" class="form-control" formControlName="mobileno" pattern="^((\\+91-?)|0)?[0-9]{10}$" type="tel" placeholder="Contact Number" maxlength="10"/>
