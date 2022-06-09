@@ -207,9 +207,9 @@ app.get('/viewQuery', (_request, response) => {
     }
   }
   
-  dbconnection.get(data,"login_form").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data,"login_form").then((_res) => {
+    if (_res) {
+      response.send(_res);
     } else {
       response.send('error');
     }
@@ -359,9 +359,9 @@ app.delete("/deletequery/:id/:id1", (request, _response) => {
  app.delete("/clearreport/:id/:id1", (_request, _response) => {
   dbconnection
    .del_id(_request.params.id, _request.params.id1, "login_form")
-   .then((res) => {
-    if (res) {
-     _response.send(res);
+   .then((result) => {
+    if (result) {
+     _response.send(result);
     } else {
      _response.send("error");
     }
@@ -390,14 +390,14 @@ app.delete("/deleteuser/:id/:id1", (request, response) => {
 
 //-----------------------------------deletecontact--------------------//
  
-app.delete("/deletecontact/:id/:id1", (request, response) => {
+app.delete("/deletecontact/:id/:id1", (request, _response) => {
   dbconnection
    .del_id(request.params.id, request.params.id1, "login_form")
    .then((res) => {
     if (res) {
-     response.send(res);
+     _response.send(res);
     } else {
-     response.send("error");
+     _response.send("error");
     }
    }).catch((err)=>{
     console.log("UserNot exist!!!",err);
