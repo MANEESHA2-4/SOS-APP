@@ -52,7 +52,7 @@ img, svg {
       position: relative;
       width: 100%;
 
-    /*  */
+   
   }
 #about .col-left .about-img::after {
       border: 7px solid crimson;
@@ -64,7 +64,7 @@ img, svg {
       width: 98%;
       z-index: -1;
 
-    /*  */
+    
   }
 .btn{
       background-color: rgb(168, 107, 168);

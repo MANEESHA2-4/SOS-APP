@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { NewsComponent } from './pages/news/news.component';
+
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -17,8 +17,7 @@ import { AddComponent } from './add/add.component';
 import { FaqComponent } from './faq/faq.component';
 import { RemoveComponent } from './remove/remove.component';
 import { TermsComponent } from './terms/terms.component';
-import { BlogComponent } from './blog/blog.component';
-import { FeatureComponent } from './feature/feature.component';
+
 
 import { AdminComponent } from './admin/admin.component';
 import { QueryComponent } from './query/query.component';
@@ -46,7 +45,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    NewsComponent,
+   
     LoginComponent,
     FooterComponent,
     NavbarComponent,
@@ -57,8 +56,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FaqComponent,
     RemoveComponent,
     TermsComponent,
-    BlogComponent,
-    FeatureComponent,
+   
     
     AdminComponent,
     QueryComponent,
