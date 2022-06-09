@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DatabaseService } from '../database.service';
 import { ToastarService } from '../toastarservice.service';
 
@@ -10,12 +11,14 @@ import { ToastarService } from '../toastarservice.service';
 })
 export class RemoveComponent implements OnInit {
   addform!:FormGroup;
+  divBoolean:any;
   alluser!:any;
   exchange!:any;
   object:any=[];
-  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private tostr: ToastarService) { }
+  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private tostr: ToastarService,private route :Router) { }
 
   ngOnInit(): void {
+   this.divBoolean = 1;
    this.get();
   }
   // erase (id:string,rev:string){
@@ -33,18 +36,18 @@ removecontact(data:any,data1:any){
     this.api.deletecontact(data._id,data1._rev).subscribe(_res=>{
       console.log('Your data was Deleted from the database');
       this.tostr.showSuccess("Deleted",'Deleted succesfully');
-    })
-    setTimeout(function(){
-      location.reload();
-    },2000);
+      this.get();
+      
     
-       
+    })
+   
   }
 
   get(){
     this.api.get().subscribe(data=>{
       console.log(data);
       console.log('Data was fetching');
+      this.object = [];
       this.alluser=data;
       this.alluser=this.alluser.docs;
       console.log(this.alluser);
@@ -52,9 +55,10 @@ removecontact(data:any,data1:any){
         
             this.object.push(i);
             console.log('Fetched successfuly in add component');
-          
-  
+           
       }
+   
+
     
     },err=>{
       console.log(err);

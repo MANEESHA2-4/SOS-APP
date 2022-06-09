@@ -1,12 +1,5 @@
 
-  body {
-      align-items: center;
-      background-image: var(--body-bg);
-      display: flex;
-      font-family: Helvetica, sans-serif;
-      height: 100vh;
-      justify-content: center;
-  }  
+  
   .msger {
       background: rgb(7, 248, 116);
       background:rgb(68, 234, 167);
@@ -36,15 +29,7 @@
       overflow-y: auto;
       padding: 10px;
   }
-  .msger-chat::-webkit-scrollbar {
-      width: 6px;
-  }
-  .msger-chat::-webkit-scrollbar-track {
-      background: #ddd;
-  }
-  .msger-chat::-webkit-scrollbar-thumb {
-      background: #bdbdbd;
-  }
+ 
   .msg {
       align-items: flex-end;
       display: flex;
@@ -63,12 +48,7 @@
       margin-right: 10px;
       width: 50px;
   }
-  .msg-bubble {
-      background: var(--left-msg-bg);
-      border-radius: 15px;
-      max-width: 450px;
-      padding: 15px;
-  }
+  
   .msg-info {
       align-items: center;
       display: flex;
@@ -79,9 +59,14 @@
       font-weight: bold;
       margin-right: 10px;
   }
-  .msg-info-time {
-      font-size: 0.85em;
-  }  
+  
   .left-msg .msg-bubble {
       border-bottom-left-radius: 0;
+  }
+  #button{
+    margin-left: 765px;
+    margin-top: -219px;
+    height: 30px;
+    padding: 2px;
+    width: 58px;
   }

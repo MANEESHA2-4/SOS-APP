@@ -62,7 +62,7 @@
   .contact-info {
       background: #50e4bd;
       border:2px solid black;
-      margin-left: 406px;
+      margin-left: 330px;
       margin-top: 20px;
       padding: 30px 30px 20px;
       width: 43%;
@@ -82,4 +82,11 @@
   .contact-info .info-box .details p,
   .contact-info .info-box .details a {
       color: var(--text-color);
+  }
+  #button{
+    margin-left: 498px;
+    margin-top: 28px;
+    height: 46px;
+    padding: 6px;
+    width: 106px;
   }

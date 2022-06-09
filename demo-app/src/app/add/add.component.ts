@@ -20,7 +20,7 @@ export class AddComponent implements OnInit {
        firstname:['',Validators.required],
        lastname:['',Validators.required],
        country:['',Validators.required],
-       mobileno:['',Validators.required],
+       mobileno:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
        _id:[''],
        _rev:[''],
       })
@@ -35,7 +35,7 @@ export class AddComponent implements OnInit {
        this.api.add(formvalue).subscribe(res=>{
         console.log("hello"+res);
         console.log("Your data was posted successfully!");
-        // window.location.replace("/remove")
+       window.location.replace("/dashboard")
         alert('your data is added successfully')
         },rej=>{
         console.log("opps! Can not post data"+rej);

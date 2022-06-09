@@ -14,16 +14,19 @@
         <div class="col">
           <div class="inputBox">
             <span for="mobileno" class="text">Mobile no </span>
-            <span class="line"></span>
-            <input type="text" id="mobileno" formControlName="mobileno" class="form-control" />
+            <span class="text-danger"
+                        *ngIf="addform.controls.mobileNumber.errors && addform.controls.mobileNumber.touched ">
+                        <br>Invalid Mobile Number
+                    </span>
+            <input type="number" id="mobileno" formControlName="mobileno" class="form-control" />
 
           </div>
         </div>
         <div class="col">
           <div class="inputBox">
-            <span for="dateofbirth" class="text">Date of birth </span>
+            <span for="age" class="text">Age </span>
             <span class="line"></span>
-            <input type="date" id="dateofbirth" formControlName="dateofbirth" class="form-control" />
+            <input type="text" id="dateofbirth" formControlName="dateofbirth" class="form-control" />
 
           </div>
         </div>
@@ -59,6 +62,8 @@
         <div class="col">
           <input type="submit" value="send" (click)="addreport(this.addform.value)" [disabled]="!addform.valid" />
         </div>
+  <button type="button" class="btn btn-primary" id="button" routerLink="/dashboard">Back</button>
+
       </div>
     </form>
   </div>

@@ -17,7 +17,9 @@ export class ReportformComponent implements OnInit {
   ngOnInit(): void {
       this.addform=this.formbuilder.group({
        name:['',Validators.required],
-       mobileno:['',Validators.required],
+      
+    mobileno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]] ,
+
        dateofbirth:['',Validators.required],
        gender:['',Validators.required],
        city:['',Validators.required],

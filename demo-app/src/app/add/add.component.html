@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="heading">ADD - EMERGENCY CONTACTS</h1>
-  <form [formGroup]="addform">
+  <form [formGroup]="addform" >
 
     <label for="firstname">First Name</label>
     <input type="text" id="firstname" formControlName="firstname" class="form-control" placeholder="Your name..">
@@ -16,12 +16,14 @@
     </select>
 
     <label for="mobileno">Mobile Number</label>
-    <input type="text" value="" placeholder="enter your mobile number" formControlName="mobileno" class="form-control"
+    <input type="number" value="" placeholder="enter your mobile number" formControlName="mobileno" class="form-control"
       id="mobileno">
+      
     <div>
       <button type="button" class="btn btn-primary" (click)="add(this.addform.value)">ADD</button>
 
     </div>
+    <button type="button" class="btn btn-primary" id="button" routerLink="/dashboard">Back</button>
 
   </form>
 

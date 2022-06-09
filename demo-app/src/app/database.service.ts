@@ -76,9 +76,7 @@ storedata(formvalue:any){
   get(){
     return this.http.get('http://localhost:8000/removecontact/');
   }
-  getAll(id:any){
-    return this.http.get(`http://localhost:8000/get_all_query/${id}`);
-  }
+  
   
 
   addQuery(doc:any){

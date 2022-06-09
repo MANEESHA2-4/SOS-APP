@@ -13,7 +13,7 @@ import { SharedService } from 'src/app/service/shared.service';
 export class DashboardComponent implements OnInit {
   email: any;
   name: any;
-  divboolean:any;
+  divboolean:number = 1;
  
   constructor(private activeparam:ActivatedRoute,private data:CouchService,private api:ApiserviceService,private database:DatabaseService,private route:Router,private shared:SharedService ) { 
     
@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
     let user=JSON.parse(userId.toString())
     this.email=user['email']
    
-    this.divboolean = 1;
+   
 
 }
 out() {

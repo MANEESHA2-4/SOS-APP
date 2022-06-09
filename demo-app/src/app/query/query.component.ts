@@ -31,7 +31,6 @@ export class QueryComponent implements OnInit {
     
      
      addQuery(formvalue:NgForm){
-       console.log('hi');
        console.log(formvalue);
        this.store.push(formvalue)
        this.api.addQuery(formvalue).subscribe(res=>{

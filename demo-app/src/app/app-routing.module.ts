@@ -36,6 +36,7 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent,
   children:[
     {path:'',component:DashboardComponent},
+    
     {path:'query',component:QueryComponent},
     {path:'contact',component:ContactComponent},
     {path:'reportform',component:ReportformComponent},
