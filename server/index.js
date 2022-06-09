@@ -16,6 +16,8 @@ app.use(
   })
 );
 
+
+//---------------------mail---------------------//
 app.post('/mail',(_request,_response,_next)=>{
   console.log('mmm');
  
@@ -29,6 +31,9 @@ app.post('/mail',(_request,_response,_next)=>{
   setmail.getemail(_request.body.email_id);
   console.log(object);
 })
+
+
+//---------------------signup------------------------//
 
 app.post('/signupdata', function (req,res) {
   let name = req.body.firstname;
@@ -73,7 +78,7 @@ app.get('/get_usersignup', (_request, response) => {
 
 
 
-
+//------------------validation---------------------//
 
 app.get('/checkuserlogin/:id', (req,res) => {
   console.log("retreived......",req.params.id);
@@ -97,6 +102,8 @@ app.get('/checkuserlogin/:id', (req,res) => {
       
   }))
 })
+
+//------------------admin-----------------------//
 app.get('/getadmindata/:id', (req,res) => {
   console.log("retreived......",req.params.id);
 
@@ -147,16 +154,18 @@ app.post('/addcontact', (_request, response) => {
     console.log('Data Added');
 });
 
-app.get('/removecontact', (_request, response) => {
-  console.log('start',_request.params.id);
+//----------------------------removeform-----------------//
+
+app.get('/removecontact', (request, response) => {
+  console.log('start',request.params.id);
   let data={
     selector:{
       type:"add",
-      username:_request.params.id,
+      username:request.params.id,
     
     }
   }
-  console.log("email",data);
+  // console.log("email",data);
   dbconnection.get(data,'login_form').then((res) => {
     if (res) {
       response.send(res);
@@ -168,7 +177,7 @@ app.get('/removecontact', (_request, response) => {
 
 
 
-//---------------query--------//
+//---------------query-------------------------------//
 app.post('/addQuery', (_request, response) => {
   let object = {
     firstname: _request.body.firstname,
@@ -214,7 +223,7 @@ app.get('/viewQuery', (_request, response) => {
 
 
 
-//--------reply-----------//
+//--------reply--------------------------------------------//
 app.post('/post_reply', (_request, response) => {
   let object = {
     message: _request.body.message,
@@ -254,7 +263,7 @@ app.get('/get_reply/:id', (_request, response) => {
 
 
 
-//-----------------------//
+//--------report-----------------------------------------//
 
 app.post('/sendreport', (_request, response) => {
   let object = {
@@ -292,12 +301,7 @@ app.get('/showreport', (_request, response) => {
   });
 });
 
-
-
-
-
-
-
+//------------------feedback-----------------------------//
 
 app.post('/post_feedback', (_request, response) => {
   let object = {
@@ -332,8 +336,10 @@ app.get('/get_feedback', (_request, response) => {
     }
   });
 });
-//-------deletequery--------------//
-app.delete("/deletequery/:id/:id1", (request, response) => {
+
+//-------deletequery------------------------------------------//
+
+app.delete("/deletequery/:id/:id1", (request, _response) => {
   dbconnection
    .del_id(request.params.id, request.params.id1, "login_form")
    .then((res) => {
@@ -342,8 +348,12 @@ app.delete("/deletequery/:id/:id1", (request, response) => {
     } else {
      response.send("error");
     }
-   });
+   }).catch((err)=>{
+    console.log("UserNot exist!!!",err);
+    
+  });
  });
+
  //---------deletereport--------------//
 
  app.delete("/clearreport/:id/:id1", (request, response) => {
@@ -355,10 +365,15 @@ app.delete("/deletequery/:id/:id1", (request, response) => {
     } else {
      response.send("error");
     }
-   });
+   }).catch((err)=>{
+    console.log("UserNot exist!!!",err);
+    
+  });
  });
+
 //-----------------delete registered user------------------------//
- app.delete("/deleteuser/:id/:id1", (request, response) => {
+
+app.delete("/deleteuser/:id/:id1", (request, response) => {
   dbconnection
    .del_id(request.params.id, request.params.id1, "login_form")
    .then((res) => {
@@ -367,10 +382,15 @@ app.delete("/deletequery/:id/:id1", (request, response) => {
     } else {
      response.send("error");
     }
+   }).catch((err)=>{
+     console.log("UserNot exist!!!",err);
+
    });
  });
+
 //-----------------------------------deletecontact--------------------//
- app.delete("/deletecontact/:id/:id1", (request, response) => {
+ 
+app.delete("/deletecontact/:id/:id1", (request, response) => {
   dbconnection
    .del_id(request.params.id, request.params.id1, "login_form")
    .then((res) => {
@@ -379,7 +399,10 @@ app.delete("/deletequery/:id/:id1", (request, response) => {
     } else {
      response.send("error");
     }
-   });
+   }).catch((err)=>{
+    console.log("UserNot exist!!!",err);
+    
+  });
  });
 
 
