@@ -20,7 +20,7 @@ export class AddComponent implements OnInit {
        firstname:['',Validators.required],
        lastname:['',Validators.required],
        country:['',Validators.required],
-       mobileno:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+       mobileno:['', Validators.required],
        _id:[''],
        _rev:[''],
       })

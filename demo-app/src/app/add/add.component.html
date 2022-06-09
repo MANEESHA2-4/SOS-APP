@@ -1,26 +1,56 @@
 <div class="container">
   <h1 class="heading">ADD - EMERGENCY CONTACTS</h1>
   <form [formGroup]="addform" >
-
+<div>
     <label for="firstname">First Name</label>
-    <input type="text" id="firstname" formControlName="firstname" class="form-control" placeholder="Your name..">
-
-    <label for="lastname">Last Name</label>
-    <input type="text" id="lastname" formControlName="lastname" class="form-control" placeholder="Your last name..">
-
+    <input for="firstname" class="form-control" formControlName="firstname" placeholder="Your name..">
+    <span class="text-danger" *ngIf="addform.controls['firstname'].touched && addform.hasError('required','firstname')">
+      * firstname is required!!
+    </span>
+</div>
+   
+<div>
+  <label for="lastname">Last Name</label>
+  <input for="lastname" class="form-control" formControlName="lastname" placeholder="Your name..">
+  <span class="text-danger" *ngIf="addform.controls['lastname'].touched && addform.hasError('required','lastname')">
+    * lastname is required!!
+  </span>
+</div>
+<div>
     <label for="country">Country</label>
-    <select id="country" formControlName="country" class="form-control">
+    <select formControlName="country" class="form-control" id="country" >
       <option value="India">India</option>
       <option value="canada">Canada</option>
       <option value="usa">USA</option>
     </select>
-
-    <label for="mobileno">Mobile Number</label>
-    <input type="number" value="" placeholder="enter your mobile number" formControlName="mobileno" class="form-control"
+    <span class="text-danger" *ngIf="addform.controls['country'].touched && addform.hasError('required','country')">
+      * country is required!!
+    </span>
+</div>
+    <!-- <div>
+      <label>Mobile Number</label>
+      <input for="mobileno" type="number" value="" placeholder="enter your mobile number" formControlName="mobileno" class="form-control" pattern="^((\\+91-?)|0)?[0-9]{10}$"
       id="mobileno">
+      <span class="text-danger" *ngIf="addform.controls['mobileno'].touched && addform.hasError('required','mobileno')">
+        * Mobile Number is required!!
+      </span>
+      <span class="text-danger" *ngIf="addform.hasError('required','mobileno')">
+        * Mobile Number should contain 10 Numbers!!
+      </span>
+    </div> -->
+    <div>
+      <label for="mobile number">Mobile Number</label>
+      <input for="mobileno" class="form-control" formControlName="mobileno" pattern="^((\\+91-?)|0)?[0-9]{10}$" type="tel" placeholder="Contact Number" maxlength="10"/>
+      <span class="text-danger" *ngIf="addform.controls['mobileno'].touched && addform.hasError('required','mobileno')">
+        * mobileno is required!!
+      </span>
+      <span class="text-danger" *ngIf="addform.hasError('pattern','mobileno')">
+        * mobileno should contain 10 Numbers!!
+      </span>   
+  </div>
       
     <div>
-      <button type="button" class="btn btn-primary" (click)="add(this.addform.value)">ADD</button>
+      <button type="button" class="btn btn-primary" [disabled]="!addform.valid" (click)="add(this.addform.value)">ADD</button>
 
     </div>
     <button type="button" class="btn btn-primary" id="button" routerLink="/dashboard">Back</button>

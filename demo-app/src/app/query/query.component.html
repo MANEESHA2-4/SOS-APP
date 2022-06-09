@@ -5,45 +5,56 @@
       <div class="row100">
         <div class="col">
           <div class="inputBox">
-            <span for="firstname" class="text">First Name </span>
-            <span class="line"></span>
-            <input type="text" id="firstname" formControlName="firstname" class="form-control" />
-
+            <div>
+              <label for="firstname">First Name</label>
+              <input for="firstname" class="form-control" formControlName="firstname" placeholder="Your name..">
+              <span class="text-danger" *ngIf="addform.controls['firstname'].touched && addform.hasError('required','firstname')">
+                * firstname is required!!
+              </span>
+          </div>
           </div>
         </div>
         <div class="col">
-          <div class="inputBox">
-            <span for="lastname" class="text">Last Name </span>
-            <span class="line"></span>
-            <input type="text" id="lastname" formControlName="lastname" class="form-control" />
-
+          <div>
+            <label for="lastname">Last Name</label>
+            <input for="lastname" class="form-control" formControlName="lastname" placeholder="Your name..">
+            <span class="text-danger" *ngIf="addform.controls['lastname'].touched && addform.hasError('required','lastname')">
+              * lastname is required!!
+            </span>
           </div>
         </div>
         <div class="col">
-          <div class="inputBox">
-            <span for="email" class="text">Email </span>
-            <span class="line"></span>
-            <input type="text" id="email" formControlName="email" class="form-control" />
-
-          </div>
+          <div>
+            <label for="email">E mail</label>
+            <input for="email" class ="form-control"placeholder="Email Address" formControlName="email">
+            <span class="text-danger"  *ngIf="addform.controls['email'].touched && addform.hasError('required','email')">
+                *Invalid Email Address
+            </span>
+        </div>
         </div>
         <div class="col">
-          <div class="inputBox">
-            <span for="mobileno" class="text">Mobile</span>
-            <span class="line"></span>
-            <input type="text" value="" formControlName="mobileno" class="form-control" id="mobileno" />
-
-          </div>
+          <div>
+            <label for="lastname">Mobile Number</label>
+            <input for="mobileno" class="form-control" formControlName="mobileno" pattern="^((\\+91-?)|0)?[0-9]{10}$" type="tel" placeholder="mobile number" maxlength="10"/>
+            <span class="text-danger" *ngIf="addform.controls['mobileno'].touched && addform.hasError('required','mobileno')">
+              * mobileno is required!!
+            </span>
+            <span class="text-danger" *ngIf="addform.hasError('pattern','mobileno')">
+              * mobileno should contain 10 Numbers!!
+            </span>   
         </div>
-        -
+        </div>
+        
       </div>
       <div class="row100">
         <div class="col">
           <div class="inputBox textarea">
-            <span for="query" class="text">Type Your Message Here....</span>
-            <span class="line"></span>
-            <input type="text" value="" formControlName="query" class="form-control" id="query" />
-
+            <label for="query">Type Your Message Here....</label>
+            
+            <input for="text" value="" formControlName="query" class="form-control" id="query"  />
+            <span class="text-danger"  *ngIf="addform.controls['query'].touched && addform.hasError('required','query')">
+              *Query is required
+          </span>
           </div>
         </div>
       </div>

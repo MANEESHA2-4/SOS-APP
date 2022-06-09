@@ -10,10 +10,20 @@
 
                                     <h3>Help us to improve</h3>
                                     <form [formGroup]="addform">
-                                        <input type="text" class="form-control form-group" formControlName="name"
+                                        <div>
+                                        <input for="text" class="form-control form-group" formControlName="name"
                                             id="name" placeholder="Name" />
+                                            <span class="text-danger" *ngIf="addform.controls['name'].touched && addform.hasError('required','name')">
+                                                * Name is required!!
+                                              </span>
+                                            </div>
+                                            <div>
                                         <textarea class="form-control form-group" formControlName="message" id="message"
                                             placeholder="Feedback"></textarea>
+                                            <span class="text-danger" *ngIf="addform.controls['message'].touched && addform.hasError('required','message')">
+                                                * Feedback is required!!
+                                              </span>
+                                            </div>
                                         <ngb-rating [(rate)]="star"></ngb-rating>
                                         <pre>Rate us: <strong>{{star}}</strong></pre>
                                         <button class="contact_form_submit"

@@ -4,57 +4,71 @@
     <form [formGroup]="addform">
       <div class="row100">
         <div class="col">
-          <span for="name" class="text">Name </span>
-          <span class="line"></span>
-          <div class="inputBox">
-            <input type="text" id="name" formControlName="name" class="form-control" />
+          <div>
+          <label for="name" class="text">Name </label>
+          <input for="text" id="name" formControlName="name" class="form-control" />
+          <span class="text-danger" *ngIf="addform.controls['name'].touched && addform.hasError('required','name')">
+            * Name is required!!
+          </span>
+         </div>
+        <div>
+            
 
           </div>
         </div>
         <div class="col">
-          <div class="inputBox">
-            <span for="mobileno" class="text">Mobile no </span>
-            <span class="text-danger"
-                        *ngIf="addform.controls.mobileNumber.errors && addform.controls.mobileNumber.touched ">
-                        <br>Invalid Mobile Number
-                    </span>
-            <input type="number" id="mobileno" formControlName="mobileno" class="form-control" />
+         <div>
+            <label for="mobile no">Mobile no </label>
+            <input for="number" id="mobileno" formControlName="mobileno" class="form-control" />
+            <span class="text-danger" *ngIf="addform.controls['mobileno'].touched && addform.hasError('required','mobileno')">
+              * mobileno is required!!
+            </span>
+            <span class="text-danger" *ngIf="addform.hasError('pattern','mobileno')">
+              * mobileno should contain 10 Numbers!!
+            </span>   
 
           </div>
         </div>
         <div class="col">
-          <div class="inputBox">
-            <span for="age" class="text">Age </span>
-            <span class="line"></span>
-            <input type="text" id="dateofbirth" formControlName="dateofbirth" class="form-control" />
-
+            <div>
+            <label for="dateofbirth">Age</label>
+            <input for="text" id="dateofbirth" formControlName="dateofbirth" class="form-control" />
+            <span class="text-danger" *ngIf="addform.controls['dateofbirth'].touched && addform.hasError('required','dateofbirth')">
+              * Age is required!!
+            </span>
           </div>
         </div>
         <div class="col">
-          <div class="inputBox">
-            <span for="gender" class="text">Gender </span>
-            <span class="line"></span>
-            <input type="text" id="gender" formControlName="gender" class="form-control" />
-
+          <div >
+            <label for="gender" >Gender </label>
+            <input for="text" id="gender" formControlName="gender" class="form-control" />
+           
+            <span class="text-danger" *ngIf="addform.controls['gender'].touched && addform.hasError('required','gender')">
+              * gender is required!!
+            </span>
+            
           </div>
         </div>
         <div class="col">
-          <div class="inputBox">
-            <span for="city" class="text">City</span>
-            <span class="line"></span>
-            <input type="text" value="" formControlName="city" class="form-control" id="city" />
-
+          <div>
+            <label for="city">City</label>
+            <input for="text" value="" formControlName="city" class="form-control" id="city" />
+            <span class="text-danger" *ngIf="addform.controls['city'].touched && addform.hasError('required','city')">
+              * city is required!!
+            </span>
+            
           </div>
         </div>
-        -
       </div>
       <div class="row100">
         <div class="col">
-          <div class="inputBox textarea">
-            <span for="time" class="text">Time</span>
-            <span class="line"></span>
+          <div>
+            <label for="time" >Time</label>
+           
             <input type="time" value="" formControlName="time" class="form-control" id="time" />
-
+            <span class="text-danger" *ngIf="addform.controls['time'].touched && addform.hasError('required','time')">
+              * Time is required!!
+            </span>
           </div>
         </div>
       </div>

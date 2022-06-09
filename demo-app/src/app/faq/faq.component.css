@@ -9,7 +9,7 @@ box-sizing: inherit;
 /*================================================*/
 body {
     background-size: cover;
-    background: var(--bg-gradient);
+    
     color: var(--neutral-dark-color);
     font-family: var(--principal-font);
     font-size: 12px;
