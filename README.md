@@ -59,9 +59,11 @@
       
       * Admin form-user name and password  match to the database the admin dashboard will appear in the website.
       
-      * Admin Dashboard-This Dashboard is used only by admin,In this Dashboard contains the information that submitted by user(for example:In user dashboard,user raise         
-      the Query in Query form and they submit it.That submitted information can view by admin in admin dashboard).The admin respond to their query by sending reply to       
-      user.
+      * Admin Dashboard-This Dashboard is used only by admin,In this Dashboard contains the information that submitted by user(for example:In user dashboard,
+       
+       user raise the Query in Query form and they submit it.That submitted information can view by admin in admin dashboard).The admin respond to their query
+      
+       by sending reply to user.
       
       * About us-About the emergency-SOS app. 
       
