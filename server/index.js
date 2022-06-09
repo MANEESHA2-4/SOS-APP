@@ -165,7 +165,7 @@ app.get('/removecontact', (request, response) => {
     
     }
   }
-  // console.log("email",data);
+ 
   dbconnection.get(data,'login_form').then((res) => {
     if (res) {
       response.send(res);
@@ -188,9 +188,9 @@ app.post('/addQuery', (_request, response) => {
     type:"query"
    
   };
-  dbconnection.insert(object,"login_form" ).then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object,"login_form" ).then((result) => {
+    if (result) {
+      response.send(result);
     } else {
       response.send('error');
     }
@@ -344,9 +344,9 @@ app.delete("/deletequery/:id/:id1", (request, _response) => {
    .del_id(request.params.id, request.params.id1, "login_form")
    .then((res) => {
     if (res) {
-     response.send(res);
+     _response.send(res);
     } else {
-     response.send("error");
+     _response.send("error");
     }
    }).catch((err)=>{
     console.log("UserNot exist!!!",err);
@@ -356,14 +356,14 @@ app.delete("/deletequery/:id/:id1", (request, _response) => {
 
  //---------deletereport--------------//
 
- app.delete("/clearreport/:id/:id1", (request, response) => {
+ app.delete("/clearreport/:id/:id1", (_request, _response) => {
   dbconnection
-   .del_id(request.params.id, request.params.id1, "login_form")
+   .del_id(_request.params.id, _request.params.id1, "login_form")
    .then((res) => {
     if (res) {
-     response.send(res);
+     _response.send(res);
     } else {
-     response.send("error");
+     _response.send("error");
     }
    }).catch((err)=>{
     console.log("UserNot exist!!!",err);
