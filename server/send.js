@@ -3,7 +3,7 @@ let sender = nodemail.createTransport({
     service:'gmail',
     auth:{
         user:'sosapp24@gmail.com',
-        pass:'SOSAPP@24'
+        pass:'ypeqxzkuxilkhuwa'
     }
 })
 module.exports.getemail = function(params)
