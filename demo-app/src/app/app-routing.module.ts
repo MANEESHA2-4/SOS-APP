@@ -63,10 +63,8 @@ const routes: Routes = [
   // {path:'contact-us',component:ContactUsComponent},
   {path:'contactdetails',component:ContactdetailsComponent},
   // {path:'reportform',component:ReportformComponent},
-  {path:'reportdetails',component:ReportdetailsComponent,
-  children:[
-    {path:'reply/:name',component:ReplyComponent}
-  ]},
+  {path:'reportdetails',component:ReportdetailsComponent},
+ 
   {path:'reply/:name',component:ReplyComponent},
   // {path:'receive',component:ReceiveComponent},
   {path:'newuser',component:NewuserComponent},

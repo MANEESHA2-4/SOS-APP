@@ -19,18 +19,7 @@ export class ContactdetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getmessage();
   }
-  // erase (id:string,rev:string){
-  //   this.api.deletemail(id,rev).subscribe((data) => {
-  //     console.log(data);
-  //     // alert("your data was deleted");
-  //     // window.location.reload();
-  //     this.tostr.showSuccess("Deleted",'Deleted succesfully');
-  //     window.setTimeout(function(){location.reload()},1500)
-  //   },err=>{
-  //     console.log(err);
-  //   });
-    
-  // }
+  
 
 
   removecontact(data:any,data1:any){

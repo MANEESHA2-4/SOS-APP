@@ -2,14 +2,19 @@
   <nav>
     <h1 class="text-dark" id="tag">Admin Panel</h1>
     
-    
+   
     <div class="left-sidebar x">
-      <ul>
-        <li><a href="#"><em class="fa fa-home"></em> <span>Dashboard</span></a></li>
-        <li><a href="#" routerLink="/reply"><em class="fa fa-comment"></em> <span>compose</span></a></li>
-        <li><a href="#" (click)="out()"><em class="fa fa-sign-out"></em> <span>Sign Out</span></a>
-        </li>
-      </ul>
+      <div>
+        <button class="btn btn-secondary" id="dashboard"><em class="fa fa-home"></em>Dashboard</button>
+        </div>
+        <div>
+        <button class= "btn btn-secondary"id="compose"routerLink="reply"><em class="fa fa-comment"></em>compose</button>
+       </div>
+       <div>
+        <button class="btn btn-secondary" id="sign" (click)="out()"><em class="fa fa-sign-out"></em>Sign Out</button>
+        
+      </div>
+      
     </div>
   </nav>
 </section>
@@ -22,7 +27,7 @@
     <span class="admin_name">Admin</span>
     <img src="../../assets/profile.png" class="admin" alt="profile" />
    
-    <em class="bx bx-chevron-down"></em>
+
   </div>
   <div class="cards">
     <div class="card one">

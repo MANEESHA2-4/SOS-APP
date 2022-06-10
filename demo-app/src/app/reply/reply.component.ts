@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { DatabaseService } from '../database.service';
+import { ToastarService } from '../toastarservice.service';
 @Component({
   selector: 'app-reply',
   templateUrl: './reply.component.html',
@@ -14,7 +15,7 @@ export class ReplyComponent implements OnInit {
   route: any;
  
   currentpage = {name:'string'}
-  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private active:ActivatedRoute) {
+  constructor(private formbuilder:FormBuilder,private api:DatabaseService,private active:ActivatedRoute,private tostr:ToastarService) {
     this.active.params.subscribe((data:Params)=>{
       this.currentpage = {
         name:data['name']
@@ -48,12 +49,6 @@ export class ReplyComponent implements OnInit {
     
   }
 
-  
-  
-
-
-
-
   addreply(formvalue:NgForm){
     console.log('hi');
     console.log(formvalue);
@@ -61,8 +56,8 @@ export class ReplyComponent implements OnInit {
     this.api.addreply(formvalue).subscribe(res=>{
      console.log("hello"+res);
      console.log("Your data was posted successfully!");
-    
-     alert('your data is added successfully')
+    this.tostr.showSuccess("Success","Reply Sent");
+    //  alert('your data is added successfully')
      },rej=>{
      console.log("opps! Can not post data"+rej);
      });

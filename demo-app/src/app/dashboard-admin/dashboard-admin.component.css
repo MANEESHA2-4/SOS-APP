@@ -137,6 +137,15 @@ h1 {
 }
 
 
+#dashboard{
+  margin-top: 10px;
+}
+#sign{
+  margin-top: 30px;
+}
+#compose{
+  margin-top: 30px;
+}
 
 .details {
   width: 100%;

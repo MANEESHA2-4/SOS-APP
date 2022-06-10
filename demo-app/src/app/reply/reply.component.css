@@ -73,4 +73,10 @@
         padding: 10px 15px;
         width: 40%;
       }  
- 
+      #button{
+        margin-left: 259px;
+        margin-top: 20px;
+        height: 40px;
+        padding: 2px;
+        width: 78px;
+      }
