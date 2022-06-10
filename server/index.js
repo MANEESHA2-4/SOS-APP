@@ -67,9 +67,9 @@ app.get('/get_usersignup', (_request, response) => {
     }
   }
   
-  dbconnection.get(data,"login_form").then((login_res) => {
-    if (login_res) {
-      response.send(login_res);
+  dbconnection.get(data,"login_form").then((log_res) => {
+    if (log_res) {
+      response.send(log_res);
     } else {
       response.send('error');
     }
@@ -231,9 +231,9 @@ app.post('/post_reply', (_request, response) => {
    type:"reply"
    
   };
-  dbconnection.insert(object,"login_form" ).then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object,"login_form" ).then((reply_res) => {
+    if (reply_res) {
+      response.send(reply_res);
     } else {
       response.send('error');
     }
