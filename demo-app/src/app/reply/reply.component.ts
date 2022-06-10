@@ -57,7 +57,7 @@ export class ReplyComponent implements OnInit {
      console.log("hello"+res);
      console.log("Your data was posted successfully!");
     this.tostr.showSuccess("Success","Reply Sent");
-    //  alert('your data is added successfully')
+    
      },rej=>{
      console.log("opps! Can not post data"+rej);
      });

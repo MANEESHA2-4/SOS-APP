@@ -27,12 +27,12 @@ ul li ul.dropdown {
     position: absolute;
     z-index: 999;
 
-   /* Set width of the dropdown */
+ 
   }
 ul li:hover ul.dropdown {
     display: block;
 
-   /* Display the dropdown */
+   
   }
 ul li ul.dropdown li {
     display: block;

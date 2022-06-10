@@ -35,9 +35,7 @@ ngOnInit(): void {
   })
 }
 
-// login(){
-//   this.successMessage="Successfully Loggined In..."
-// }
+
 
 login(obj:any){
   this.email=obj.email
