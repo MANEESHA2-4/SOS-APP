@@ -19,12 +19,7 @@ app.use(
   app.post('/mail',(request,_response)=>{
     console.log('mmm');
    
-    // let object ={
-    //     first_name:request.body.first_name,
-    //     last_name:request.body.last_name,
-    //     email:request.body.email_id,
-    //     mobile:request.body.Mobile,
-    // }
+   
     setmail.getemail(request.body.email_id);
     console.log(object);
 })
