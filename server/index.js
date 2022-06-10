@@ -275,9 +275,9 @@ app.post('/sendreport', (_request, response) => {
     time:_request.body.time,
     type:"report"
   };
-  dbconnection.insert(object, 'login_form').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object, 'login_form').then((report_res) => {
+    if (report_res) {
+      response.send(report_res);
     } else {
       response.send('error');
     }
