@@ -292,9 +292,9 @@ app.get('/showreport', (_request, response) => {
       type:"report",
     }
   }
-  dbconnection.get(data,'login_form').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data,'login_form').then((show_res) => {
+    if (show_res) {
+      response.send(show_res);
     } else {
       response.send('error');
     }
