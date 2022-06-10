@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label for="mobileNumber" class="fa fa-mobile"></label>
-                    <input type="number" placeholder="Mobile Number" formControlName="mobileNumber">
+                    <input type="tel" placeholder="Mobile Number" formControlName="mobileNumber" maxlength="10">
                     <span class="text-danger"
                         *ngIf="regForm.controls.mobileNumber.errors && regForm.controls.mobileNumber.touched ">
                         <br>Invalid Mobile Number

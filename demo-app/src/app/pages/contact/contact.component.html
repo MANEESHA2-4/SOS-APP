@@ -18,7 +18,7 @@
                     Id is required </span>
             </div>
             <div class="col-lg-12 mt-2 mb-2">
-                <input type="text" class="form-control" placeholder="Enter Mobile" formControlName="Mobile">
+                <input type="tel" class="form-control" placeholder="Enter Mobile" formControlName="Mobile" maxlength="10">
                 <span class="text-danger"
                     *ngIf="contactform.controls['Mobile'].touched && contactform.hasError('required','Mobile')">*Mobile
                     is required </span>

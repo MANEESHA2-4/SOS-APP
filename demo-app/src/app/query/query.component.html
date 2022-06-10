@@ -26,10 +26,13 @@
         <div class="col">
           <div>
             <label for="email">E mail</label>
-            <input for="email" class ="form-control"placeholder="Email Address" formControlName="email">
+            <input for="email" class ="form-control"placeholder="Email Address" formControlName="email" pattern="[A-Za-z0-9]*@gmail.com">
             <span class="text-danger"  *ngIf="addform.controls['email'].touched && addform.hasError('required','email')">
                 *Invalid Email Address
             </span>
+            <span class="text-danger"
+                        *ngIf="addform.controls['email'].touched && addform.hasError('pattern','email')">*Email pattern is invalid
+                    </span>
         </div>
         </div>
         <div class="col">
