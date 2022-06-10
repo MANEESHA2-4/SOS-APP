@@ -43,8 +43,8 @@ app.post('/signupdata', function (req,res) {
       mobileNumber : req.body.mobileNumber,
       email : req.body.email,
       password : req.body.password,
-      "type" : "user"
-      
+      "type" : "user",
+      lastmodifieddate:new Date()
       
   }
   console.log("data from angular",objectnew);
