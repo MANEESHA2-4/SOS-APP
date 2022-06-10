@@ -310,9 +310,9 @@ app.post('/post_feedback', (_request, response) => {
 type:'message'
     
   };
-  dbconnection.insert(object, 'login_form').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object, 'login_form').then((feedback_res) => {
+    if (feedback_res) {
+      response.send(feedback_res);
     } else {
       response.send('error');
     }
