@@ -3,7 +3,7 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatabaseService } from '../database.service';
 import { ToastarService } from '../toastarservice.service';
-
+import * as lodash from 'lodash'
 @Component({
   selector: 'app-newuser',
   templateUrl: './newuser.component.html',
@@ -16,21 +16,16 @@ export class NewuserComponent implements OnInit {
   alluser!:any;
   exchange!:any;
   object:any=[];
+  data: any=[];
   constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router,private tostr: ToastarService) { }
 
   ngOnInit(): void {
-    this.getnewuser();
-  }
-  // erase (id:string,rev:string){
-  //   this.api.deletequery(id,rev).subscribe((data) => {
-  //     console.log(data);
-  //     alert("your data was deleted");
-  //     window.location.reload();
-  //   });
+    this.getNewUser();
     
-  // }
-  removeuser(data:any,data1:any){
-    this.api.deleteuser(data._id,data1._rev).subscribe(_res=>{
+  }
+ 
+  removeUser(data:any,data1:any){
+    this.api.deleteUser(data._id,data1._rev).subscribe(_res=>{
       console.log('Your data was Deleted from the database');
       this.tostr.showSuccess("Deleted",'Deleted succesfully');
     })
@@ -41,26 +36,23 @@ export class NewuserComponent implements OnInit {
        
   }
   
-    getnewuser(){
-      this.api.getnewuser().subscribe(data=>{
+    getNewUser(){
+      this.api.getNewUser().subscribe(data=>{
         console.log(data);
+
         console.log('Data was fetching');
         this.alluser=data;
         this.alluser=this.alluser.docs;
         console.log(this.alluser);
         for(const i of this.alluser){
-          // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
-          //   const elt = this.alldata[i];
-          //   console.log(elt.id);
-          //   this.api.supplierId(elt.id).subscribe(res=>{
-          //     console.log(res);
+          
               this.object.push(i);
               console.log('Fetched successfuly in add component');
-            // })
-          // }
-    
+           
         }
       
+        this.object=lodash.sortBy(this.alluser.filter((x:any)=>x.lastmodifieddate),'lastmodifieddate')
+        console.log(this.data)
       },err=>{
         console.log(err);
       });

@@ -27,7 +27,7 @@ ngOnInit(): void {
 }
 
 storing(formvalue:any) {
-this.api.storedata(formvalue).subscribe((data)=>{
+this.api.storeData(formvalue).subscribe((data)=>{
       console.log("data returned from server",data);
      
     console.log(data.id);
@@ -57,17 +57,7 @@ this.api.storedata(formvalue).subscribe((data)=>{
   console.log(rej);
 
 });}
-// register(FormValue:NgForm){
-//   this.successMessage = "Successfully Registered..."
-// this.api.registerdata(FormValue).subscribe((result)=>{
-//   console.log(result);
-//   alert("Data posted Successfully");
-//   this.regForm.reset();
-// },rej=>{
-//   console.log("Error"+rej);
-// });
-// console.log(FormValue)
-// }
+
 }
 
  

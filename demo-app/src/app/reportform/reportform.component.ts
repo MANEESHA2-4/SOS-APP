@@ -31,11 +31,11 @@ export class ReportformComponent implements OnInit {
     
     
      
-     addreport(formvalue:NgForm){
+     addReport(formvalue:NgForm){
        console.log('hi');
        console.log(formvalue);
        this.store.push(formvalue)
-       this.api.addreport(formvalue).subscribe(res=>{
+       this.api.addReport(formvalue).subscribe(res=>{
         console.log("hello"+res);
         console.log("Your data was posted successfully!");
         

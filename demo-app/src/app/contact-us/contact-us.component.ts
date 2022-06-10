@@ -24,11 +24,11 @@ store:any=[];
   }
 
 
-addmessage(formvalue:NgForm){
+addMessage(formvalue:NgForm){
   console.log('hi');
   console.log(formvalue);
   this.store.push(formvalue)
-  this.api.addmessage(formvalue).subscribe(res=>{
+  this.api.addMessage(formvalue).subscribe(res=>{
    console.log("hello"+res);
    console.log("Your data was posted successfully!");
    

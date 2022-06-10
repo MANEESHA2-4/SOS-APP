@@ -15,16 +15,16 @@ export class ReceiveComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getreply()
+    this.getReply()
   }
 
   
   
-getreply(){
+getReply(){
   this.object=[];
 let id=localStorage.getItem("emailreply");
 console.log("id",id)
-  this.api.getreply(id).subscribe(data=>{
+  this.api.getReply(id).subscribe(data=>{
     console.log(data);
     console.log('Data was fetching');
     this.alluser=data;

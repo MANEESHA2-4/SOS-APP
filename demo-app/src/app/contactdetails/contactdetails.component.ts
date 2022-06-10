@@ -17,7 +17,7 @@ export class ContactdetailsComponent implements OnInit {
   constructor(private formbuilder:FormBuilder,private api:DatabaseService,private route:Router,private tostr: ToastarService) { }
 
   ngOnInit(): void {
-    this.getmessage();
+    this.getMessage();
   }
   
 
@@ -35,8 +35,8 @@ export class ContactdetailsComponent implements OnInit {
   }
 
 
-getmessage(){
-  this.api.getmessage().subscribe(data=>{
+getMessage(){
+  this.api.getMessage().subscribe(data=>{
     console.log(data);
     console.log('Data was fetching');
     this.alluser=data;

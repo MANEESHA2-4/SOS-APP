@@ -22,8 +22,8 @@ export class ReportdetailsComponent implements OnInit {
   }
 
 
-  deletereport(data:any,data1:any){
-    this.api.clearreport(data._id,data1._rev).subscribe(_res=>{
+  deleteReport(data:any,data1:any){
+    this.api.clearReport(data._id,data1._rev).subscribe(_res=>{
       console.log('Your data was Deleted from the database');
       this.tostr.showSuccess("Deleted",'Deleted succesfully');
     })

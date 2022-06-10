@@ -49,11 +49,11 @@ export class ReplyComponent implements OnInit {
     
   }
 
-  addreply(formvalue:NgForm){
+  addReply(formvalue:NgForm){
     console.log('hi');
     console.log(formvalue);
     this.store.push(formvalue)
-    this.api.addreply(formvalue).subscribe(res=>{
+    this.api.addReply(formvalue).subscribe(res=>{
      console.log("hello"+res);
      console.log("Your data was posted successfully!");
     this.tostr.showSuccess("Success","Reply Sent");

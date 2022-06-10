@@ -31,19 +31,17 @@ remove(id:any,id1:any){
 clear(id:any,id1:any){
   return this.http.delete(`http://localhost:8000/deletereport/${id}/${id1}`);
 }
-clearreport(id:any,id1:any){
+clearReport(id:any,id1:any){
   return this.http.delete(`http://localhost:8000/clearreport/${id}/${id1}`);
 }
 deletecontact(id:any,id1:any){
   return this.http.delete(`http://localhost:8000/deletecontact/${id}/${id1}`);
 }
-deleteuser(id:any,id1:any){
+deleteUser(id:any,id1:any){
   return this.http.delete(`http://localhost:8000/deleteuser/${id}/${id1}`);
 }
-  // registerdata(formObject:any){
-  //   return this.http.post('http://localhost:8000/postquery',formObject)
-  // }
-  getnewuser(){
+ 
+  getNewUser(){
     return this.http.get('http://localhost:8000/get_usersignup/')
    }
   add(doc:any){
@@ -55,19 +53,10 @@ deleteuser(id:any,id1:any){
     return this.http.delete(urld,this.httpOptions);
 
   }
-  // deletecontact(id:string,rev:string){
-  //   const urld = this.url+'login_form/'+id+'/?rev='+rev;
-  //   return this.http.delete(urld,this.httpOptions);
-
-  // }
-  deletemail(id:string,rev:string){
-    const urld = this.url+'login_form/'+id+'/?rev='+rev;
-    return this.http.delete(urld,this.httpOptions);
-
-  }
- 
+  
+  
    
-storedata(formvalue:any){
+storeData(formvalue:any){
   return this.http.post<any>('http://localhost:8000/signupdata/',formvalue);
 }
 
@@ -91,18 +80,16 @@ storedata(formvalue:any){
      }
     
 
-     addreply(doc:any){
+     addReply(doc:any){
       console.log(doc);
       return this.http.post('http://localhost:8000/post_reply/',doc)
     }
-    getreply(id:any){
+    getReply(id:any){
      return this.http.get(`http://localhost:8000/get_reply/${id}`)
     }
-    getAllreply(id:any){
-     return this.http.get(`http://localhost:8000/get_all_reply/${id}`);
-    }
+    
 
-     addreport(doc:any){
+     addReport(doc:any){
       console.log(doc);
       return this.http.post('http://localhost:8000/sendreport/',doc)
     }
@@ -113,11 +100,11 @@ storedata(formvalue:any){
      return this.http.get(`http://localhost:8000/get_all_report/${id}`);
     }
 
-addmessage(doc:any){
+addMessage(doc:any){
   console.log(doc);
   return this.http.post('http://localhost:8000/post_feedback/',doc)
 }
-getmessage(){
+getMessage(){
  return this.http.get('http://localhost:8000/get_feedback/')
 }
 getAllmessage(id:any){
