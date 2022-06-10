@@ -166,9 +166,9 @@ app.get('/removecontact', (request, response) => {
     }
   }
  
-  dbconnection.get(data,'login_form').then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data,'login_form').then((login_res) => {
+    if (login_res) {
+      response.send(login_res);
     } else {
       response.send('error');
     }
@@ -342,9 +342,9 @@ app.get('/get_feedback', (_request, response) => {
 app.delete("/deletequery/:id/:id1", (request, _response) => {
   dbconnection
    .del_id(request.params.id, request.params.id1, "login_form")
-   .then((res) => {
-    if (res) {
-     _response.send(res);
+   .then((del_res) => {
+    if (del_res) {
+     _response.send(del_res);
     } else {
      _response.send("error");
     }
